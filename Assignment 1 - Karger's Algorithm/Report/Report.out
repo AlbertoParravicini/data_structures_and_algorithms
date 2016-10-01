@@ -1,0 +1,11 @@
+\BOOKMARK [1][-]{section.1}{Abstract}{}% 1
+\BOOKMARK [1][-]{section.2}{Karger's algorithm implementation}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Theoretical background}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Notes}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{R implementation}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{Analysis of the success frequency}{}% 6
+\BOOKMARK [2][-]{subsection.3.1}{Theoretical background}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.2}{First test: increasing number of vertices and edges}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.3}{Second test: increasing number of edges, fixed number of nodes}{section.3}% 9
+\BOOKMARK [1][-]{section.4}{Addendum}{}% 10
+\BOOKMARK [2][-]{subsection.4.1}{Execution time analysis}{section.4}% 11
