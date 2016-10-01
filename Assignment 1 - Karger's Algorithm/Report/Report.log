@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.4.12)  1 OCT 2016 23:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.4.12)  2 OCT 2016 00:37
 entering extended mode
-**"C:/Users/albyr/OneDrive/Documenti/ULB/First Year/Data Structures and Algorit
-hms/Assigments/Assignment 1 - Karger's Algorithm/Report/Report.tex"
+**"C:/Users/albyr/Documents/data_structures_and_algorithms/Assignment 1 - Karge
+r's Algorithm/Report/Report.tex"
 
-("C:/Users/albyr/OneDrive/Documenti/ULB/First Year/Data Structures and Algorith
-ms/Assigments/Assignment 1 - Karger's Algorithm/Report/Report.tex"
+("C:/Users/albyr/Documents/data_structures_and_algorithms/Assignment 1 - Karger
+'s Algorithm/Report/Report.tex"
 LaTeX2e <2015/01/01> patch level 2
 Babel <3.9m> and hyphenation patterns for 69 languages loaded.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
@@ -1108,24 +1108,24 @@ File: "EXEC_TIME_edges".pdf Graphic file (type pdf)
 <use "EXEC_TIME_edges".pdf>
 Package pdftex.def Info: "EXEC_TIME_edges".pdf used on input line 269.
 (pdftex.def)             Requested size: 426.79135pt x 284.54036pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 272.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 274.
  [7 <./EXEC_TIME_vertices_edges.pdf> <./EXEC_TIME_edges.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 272.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 274.
  (Report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 272.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 272.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 274.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 274.
 Package rerunfilecheck Info: File `Report.out' has not changed.
 (rerunfilecheck)             Checksum: 41C04CF9FA1172902D0B969F71F74EEC;779.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 272.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 274.
  ) 
 Here is how much of TeX's memory you used:
  17520 strings out of 493673
- 291505 string characters out of 3141530
+ 291400 string characters out of 3141530
  540209 words of memory out of 3000000
  20303 multiletter control sequences out of 15000+200000
  71356 words of font info for 248 fonts, out of 3000000 for 9000
  1027 hyphenation exceptions out of 8191
- 54i,21n,79p,1087b,1784s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 54i,21n,79p,1052b,1784s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc} <C:\Users
 \albyr\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1095.pk>
  <C:\Users\albyr\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ec
@@ -1140,9 +1140,9 @@ gram Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplb8a.pfb><C:/Program Fil
 es (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Program Files (x86
 )/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files (x86)/MiKTeX
  2.9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on Report.pdf (7 pages, 163707 bytes).
+Output written on Report.pdf (7 pages, 165066 bytes).
 PDF statistics:
- 304 PDF objects out of 1000 (max. 8388607)
+ 305 PDF objects out of 1000 (max. 8388607)
  65 named destinations out of 1000 (max. 500000)
  48749 words of extra memory for PDF output out of 51595 (max. 10000000)
 
