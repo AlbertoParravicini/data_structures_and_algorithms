@@ -117,10 +117,13 @@ return the size of the set of edges that connects the two remaining vertices.}
 \subsection{Notes}
 \vspace{-5mm}
 Self loops aren't allowed in the graph: if an edge contraction produces self loops, they are removed. \\
-The following analyses assume a \textit{connected graph}. Whether a graph is disconnected or not (and thus has a minimum cut of $0$) can be determined deterministically
-with algorithms whose complexity is lower than Karger's algorithm, for example using a \textbf{breadth first search} (time complexity $O(|V| + |E|))$.
+The following analyses assume a \textit{connected graph}. Karger's algorithm can determine if a graph is disconnected in $O(|V|)$ time, 
+if we assume that the edge contraction is done in constant time (with trivial modifications it would work even if $|V| > |E|$);
+the focus of the report is on the relation between the empirical success frequency and the theoretical success frequency of the algorithm,
+and using disconnected graph would positively skew the observed success frequency and make the results less useful in practice. 
 
 \subsection{R implementation}
+\vspace{-5mm}
 \textit{R} was chosen as the programming language of the implementation as the focus of the report isn't on the speed and computational efficiency of the implementation,
 but on the analysis of the success rate of the algorithm. \\
 \textit{R} offers a robust graph library called \textit{igraph}, which in turns is a wrapper to the homonymous \textit{C} library.

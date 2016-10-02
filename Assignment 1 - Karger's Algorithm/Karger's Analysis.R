@@ -3,7 +3,7 @@ library(dplyr)
 library(ggplot2)
 library(microbenchmark)
 
-setwd("C:\\Users\\albyr\\OneDrive\\Documenti\\ULB\\First Year\\Data Structures and Algorithms\\Assigments\\Assignment 1 - Karger's Algorithm")
+setwd("C:\\Users\\albyr\\Documenti\\data_structures_and_algorithms\\Assignment 1 - Karger's Algorithm")
 source("Karger's Algorithm.R")
 
 # -------------------

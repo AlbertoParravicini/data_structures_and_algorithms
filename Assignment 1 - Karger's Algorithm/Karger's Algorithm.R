@@ -66,3 +66,6 @@ karger_random_min_cut <- function(g, plot_graphs = T, plot_intermediate_graphs =
   return(length(E(g)))
 }
 
+
+
+
