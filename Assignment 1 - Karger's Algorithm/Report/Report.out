@@ -9,3 +9,4 @@
 \BOOKMARK [2][-]{subsection.3.3}{Second test: increasing number of edges, fixed number of nodes}{section.3}% 9
 \BOOKMARK [1][-]{section.4}{Addendum}{}% 10
 \BOOKMARK [2][-]{subsection.4.1}{Execution time analysis}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.2}{Implementation in Rust}{section.4}% 12

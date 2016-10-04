@@ -2,7 +2,7 @@ library(igraph)
 library(dplyr)
 library(ggplot2)
 
-setwd("C:\\Users\\albyr\\OneDrive\\Documenti\\ULB\\First Year\\Data Structures and Algorithms\\Assigments\\Assignment 1 - Karger's Algorithm")
+setwd("C:\\Users\\albyr\\Documents\\data_structures_and_algorithms\\Assignment 1 - Karger's Algorithm")
 
 # Generate a random connected graph with given number of vertices and edges.
 make_random_connected_graph <- function(num_vertices = 10, num_edges = 20, details = T) {

@@ -117,10 +117,10 @@ return the size of the set of edges that connects the two remaining vertices.}
 \subsection{Notes}
 \vspace{-5mm}
 Self loops aren't allowed in the graph: if an edge contraction produces self loops, they are removed. \\
-The following analyses assume a \textit{connected graph}. Karger's algorithm can determine if a graph is disconnected in $O(|V|)$ time, 
+The following analyses assume a \textit{connected graph}. Karger's algorithm can determine if a graph is disconnected in $O(|V|)$ time,
 if we assume that the edge contraction is done in constant time (with trivial modifications it would work even if $|V| > |E|$);
 the focus of the report is on the relation between the empirical success frequency and the theoretical success frequency of the algorithm,
-and using disconnected graph would positively skew the observed success frequency and make the results less useful in practice. 
+and using disconnected graph would positively skew the observed success frequency and make the results less useful in practice.
 
 \subsection{R implementation}
 \vspace{-5mm}
@@ -272,7 +272,30 @@ In the second plot, where the number of vertices is kept constant, this behaviou
     \includegraphics[width=1\textwidth, center, keepaspectratio=1]{{"EXEC_TIME_edges"}.pdf}
 \end{figure}
 
-$\bullet$ \textbf{Full code available at \newline \href{https://github.com/AlbertoParravicini/data_structures_and_algorithms}{https://github.com/AlbertoParravicini/data\_structures\_and\_algorithms}}
+\subsection{Implementation in Rust}
+As it was possible to notice from the reported execution times, the \textit{R} implementation of Karger's algorithm is very time consuming, even for graphs of modest size. \\
+To overcome this limitation, the same algorithm was re-implemented by making use of \textit{Rust} and its \textit{petgraph} library.
+The \textit{Rust} implementation is orders of magnitude faster than the \textit{R} one: 
+
+\makebox[\linewidth]{
+\renewcommand{\arraystretch}{2}
+  \begin{tabular}{p{2.8cm}p{2.8cm}p{4cm}p{4cm}}
+
+    \toprule
+    Vertices & Edges & R Exec. Time [sec] & Rust Exec. Time [sec] \\
+    \midrule
+    50 & 500 & 5.93075 & 0.00042 \\
+    100 & 400 & 5.62426 & 0.00029 \\
+    1000 & 4000 & 72.18256 & 0.621770866 \\
+    \bottomrule 
+  \end{tabular}
+}
+
+Still, the algorithm implemented in \textit{Rust} is fundamentally the same as the \textit{R} implementation.
+As such, \textit{Rust} implementation doesn't affect the results that emerged from the analysis of the \textit{R} version if the algorithm.
+
+\vspace{20mm}
+$\bullet$ \textbf{Full code (R and Rust implementations + R profiling) available at \newline \href{https://github.com/AlbertoParravicini/data_structures_and_algorithms}{https://github.com/AlbertoParravicini/data\_structures\_and\_algorithms}}
 
 \end{document}
 

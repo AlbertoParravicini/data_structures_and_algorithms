@@ -3,7 +3,7 @@ library(dplyr)
 library(ggplot2)
 library(microbenchmark)
 
-setwd("C:\\Users\\albyr\\Documenti\\data_structures_and_algorithms\\Assignment 1 - Karger's Algorithm")
+setwd("C:\\Users\\albyr\\Documents\\data_structures_and_algorithms\\Assignment 1 - Karger's Algorithm")
 source("Karger's Algorithm.R")
 
 # -------------------
@@ -25,8 +25,8 @@ write_with_name_and_date <- function(results, name, append = T) {
 
 # ---- TEST 1 ----
 # Increasing nodes and edges; num_nodes = 20:100, num_edges = 4*num_nodes
-min_num_nodes = 500
-max_num_nodes = 5000
+min_num_nodes = 1000
+max_num_nodes = 1000
 step = 10
 edge_amplification = 4
 
