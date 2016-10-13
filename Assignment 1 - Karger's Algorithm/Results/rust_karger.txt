@@ -2,3 +2,5 @@ num_vertices num_edges time[sec]
 50 500 0.000422376  
 100 400 0.000292976  
 1000 4000 0.621770866   
+
+make -D CMAKE_C_COMPILER="/mnt/c/Users/albyr/AppData/Local/lxss/rootfs/usr/bin/gcc" -D CMAKE_CXX_COMPILER "/mnt/c/Users/albyr/AppData/Local/lxss/rootfs/usr/bin/gcc" /mnt/c/Users/albyr/AppData/Local/lxss/rootfs/usr/share/cmake-3.5/Modules/FortranCInterface

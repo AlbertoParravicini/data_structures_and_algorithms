@@ -1,0 +1,9 @@
+[package]
+name = "quickselect"
+version = "0.1.0"
+authors = ["Alberto Parravicini <albyratta@gmail.com>"]
+
+[dependencies]
+rand = "*"
+time = "*"
+csv = "*"
