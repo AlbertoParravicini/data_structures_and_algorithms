@@ -134,7 +134,8 @@ Indeed, \textbf{Quickselect} can be seen as a modified version of \textbf{Quicks
 \vspace{-5mm}
 \textit{Rust} was chosen as the programming language of the implementation as the inherent speed of the language, combined with the relative simplicity of the \textbf{Quickselect} algorithm, make it a good candidate for performing a large number of tests over many different parameter values. 
 
-What follows are snippets of code, to explain how the \textbf{Quickselect} algorithm was implemented:
+What follows are snippets of code, to explain how the \textbf{Quickselect} algorithm was implemented.
+The following code is inspired to the pseudo-code of the algorithm found on \textit{Wikipedia}. \cite{quickselect_wiki}
 
 $\bullet$ \textbf{Quickselect}
 \begin{minted}[baselinestretch=1, fontsize=\footnotesize]{rust}
@@ -221,24 +222,25 @@ A number of observations can be done on this formula:
     \item If $k$ is chosen to be proportional to $n$, the number of comparisons becomes linear with respect to $n$.\\
     As an example, if $k = \frac{n}{2}$, \textcolor{Maroon}{$E[X] = n \cdot (2 + 2 \cdot \ln(2)) \cdot (1 + o(1))$}.
 
-    \item The function $(\ast)$ is not defined for $k = n$; that said, it can be seen that for $k = n$ the value of $(\ast)$ is very close to its value in $k = 0$. \\
+    \item The function $(\ast)$ is not defined for $k = n$; that said, it can be seen that for $k = n$ the value of $(\ast)$ is very close to its value in $k = 1$. \\
         As such, the function will be approximated in this way in the following analyses.
 
     \item In the interval $k \in [1, n)$, it can be seen that $(\ast)$ has a single local maximum, in $k = \frac{n}{2}$. In fact, by putting the derivative of $(\ast)$ w.r.t. $k$ equal to $0$: $$\frac{\partial}{\partial k}\Big(2n + 2n \cdot\ln\Big(\frac{n}{n - k}\Big) + 2k \cdot\ln\Big(\frac{n - k}{k}\Big)\Big) = \ln\Big(\frac{n}{k} - 1 \Big) = 0$$
     From which one can find \textcolor{Maroon}{$k = \frac{n}{2}$}, which is a maximum as the second derivative is negative in the interval $k \in [1, n)$.
-    Moreover, the local minima of $(\ast)$ are at the extremes of the range of $k$.
+    Moreover, the local minima of $(\ast)$ are at the extremes of the range of $k$, and the function is concave, with no other extrema in the $k\in[1, n)$.
 \end{itemize}
 
 The \textbf{Quicksort} algorithm has been tested against lists of increasing size, while keeping the value of $k$ proportional to the size of the list, and against different values of $k$, while keeping the list size fixed.
 Note that as the selection of the pivot is random, the permutation of the input list doesn't influence the number of comparisons performed by the algorithm; as such, it is possible to use already sorted list as input of the algorithm.
 
 \subsection{\textbf{First test:} increasing size of the list, select the median}
-The first test consisted in running Karger's algorithm against connected graphs with \textit{increasing number of vertices and edges}.
-The number of vertices goes from $20$ to $100$ (with a step size of $10$ vertices), and the number of edges of each graph is equal to $4 \cdot num\_vertices$.
-For each graph, Karger's algorithm was run $50$ times. For each graph size, $5$ different graphs were built
-(thus, $9 \cdot 50 \cdot 5$ iterations of the algorithm have been performed in this test).
+The first test consisted in running \textbf{Quickselect} on lists with \textit{increasing size $n$ and $k = \frac{n}{2}$}.
+Using a value of $k$ proportional to $n$ is required to make the expected number of comparisons a function of only $n$.\\
+It can be seen from $(\ast)$ that if $k = \frac{n}{2}$ (i.e. one wants to find the \textbf{median} of a list), the expected number of comparisons will be equal to $$E[X] = n \cdot (2 + 2 \cdot \ln(2)) \cdot (1 + o(1)) \quad\quad(\ast\ast)$$ linear with respect to $n$, with a constant slope of $~3.38$ (note from the following plot that $o(1)$ doesn't seem to have any meaningful impact on the number of comparisons).
 
-The success rate of the algorithm with respect to each graph size has been compared to the theoretical success rate baseline.
+In the test, the size of the lists ranged from $10000$ to $1000000$, with increments of $10000$. For each list size, \textit{Quickselect} was run $1000$ times.
+
+The empirical number of comparisons with respect to each list size has been compared to the theoretical number of comparisons given by $(\ast\ast)$.
 
 \begin{figure}[H]
     \centering
@@ -246,18 +248,14 @@ The success rate of the algorithm with respect to each graph size has been compa
     \caption{\emph{In {\color{RoyalBlue} blue}, the measured number of comparisons. In {\color{red}red}, the theoretical number of comparisons.}}
 \end{figure}
 
-It can be seen that if the ratio between number of edges and vertices is kept constant, increasing the number of vertices doesn't hinder
-the success rate of Karger's algorithm. In all cases, the verified success rate is much higher than the theoretical lower bound,
-which could be related to the low value of the ratio between number of edges and vertices.
+It can be seen that the empirical number of comparisons is perfectly in line with the theoretical numbers given by $(\ast\ast)$.
+In fact, the \textit{mean absolute percentage error (MAPE)} \cite{mape} is of just $0.6\%$. The \textit{MAPE} is defined as $\frac{100}{m}\sum_{i = 1}^{m}{\big|1 - \frac{F_i}{A_i}\big|}$, with $A$ the theoretical number of comparisons, $F$ the observed number of comparisons, and $m$ the size of $A$ and $F$,
 
 \subsection{\textbf{Second test:} increasing value of k, fixed list size}
-From the previous test, it was empirically shown that as long as the ratio between number of edges and vertices is constant,
-Karger's algorithm success rate isn't affected by the size of the graph.
-On the other hand, increasing the number of edges while keeping the number of vertices fixed could have an impact on the algorithm success percentage.
+As a second test, the size of the list was kept constant, and it was measured how changing the value of $k$ can influence the expected number of comparisons. By fixing $n$, the number of comparisons becomes thus a function of only $k$, ranging from $1$ to $n$.
+Note that $(\ast)$ isn't defined for $k = n$, but its value can be approximated by using $k = 1$.
 
-To verify this hypothesis, Karger's algorithm was run on connected graphs with 50 vertices and a number of edges ranging from $50$ to $500$ (with a step size of $50$ edges).
-For each number of edges, $5$ different graphs were built. On each of them, the algorithm was run $50$ times, for a total of $10 \cdot 5 \cdot 50$ iterations of the algorithm.
-Once again, the results are compared to the theoretical success rate baseline.
+The test was performed on a list of size $100000$, with $k$ ranging from $1$ to $100000$, with increments of $123$ (this value is used so that it is possible to cover the entire range of $k$, as $123$ is a divisor of $100000 - 1 = 99999$). For each value of $k$, the \textit{Quickselect} algorithm was run $1000$ times.
 
 \begin{figure}[H]
     \centering
@@ -265,31 +263,25 @@ Once again, the results are compared to the theoretical success rate baseline.
     \caption{\emph{In {\color{RoyalBlue} blue}, the measured number of comparisons. In {\color{red}red}, the theoretical number of comparisons.}}
 \end{figure}
 
-It can be seen that increasing the number of edges while keeping the number of vertices fixed dramatically reduces the algorithm success rate,
-to the point where the theoretical lower bound of the success rate is almost reached. \\
-
-This can be intuitively explained as follows: Karger's algorithm will output the correct minimum cut size as long as no edge belonging to the minimum cut is contracted. \\
-However, increasing the number of edges while keeping fixed the number of vertices implies that the graph will have many multi-edges.
-Clearly, if an edge between two vertices belongs to the minimum cut, all edges between these two edges will also belong to the minimum cut. \\
-If we have a multi-edge between two nodes, and this multi-edge belongs to the minimum cut, the probability of contracting it (which would lead to a fail of Karger's algorithm) will be higher that the probability
-of selecting a single edge.
-
-It can also be noted that if $|V|$ = $|E|$, Karger's algorithm always give the correct minimum cut value (i.e. $1$): this happens because the graph is a tree, and contracting the edges will never form a multi-edge. Hence, after $n - 2$ iterations, the graph will always have just $1$ edge left.
+The number of comparisons seems to have a parabolic concave shape, with a unique local maximum in $k = \frac{n}{2}$, consistent with the previous theoretical results.
+Once again, the measured values are inline with the theoretical ones. In this case, the \textit{MAPE} is $0.79\%$.
 
 \section{Addendum}
 
 \subsection{Execution time analysis}
-By making use of the \textit{microbenchmark} library, it is possible to monitor the execution time of the implementation of Karger's algorithm.\\
-Even though the implementation is not optimized for fast execution times, it is still interesting to study how the execution time scales with respect to the number of nodes and edges of a graph.\\
+While executing the previous tests, it was possible to gather the execution times of the algorithm.\\
+It is interesting to measure how the number of comparisons is related to the effective execution time.
 
 For both the previous tests, execution times were recorded and summarized in the following plots.
 
-It emerges a linear scaling with respect to the number of vertices and edges.\\
-This empirical results are coherent with the theoretical ones if we assume that the contraction operation happens in constant time.\\
-Even without knowing the details of \textit{igraph}, it is clear that contracting an edge requires a loop whose number of steps is equal to the size of the neighbourhood of a given vertex (i.e. at most $|V|$). \\
-This would give a theoretical complexity of $O(|V|^2)$; however, if the graph is rather sparse, it might happen that the size of the neighbourhood of a given vertex is quite small, and thus the contraction operation happens quite fast in practice.
+The tests were performed on a \textit{Surface Pro 4} with a Intel Core i5-6300U  CPU clocked at 2.95 Ghz, and 4 GB of DDR3 RAM at 1867Mhz.
 
-In the second plot, where the number of vertices is kept constant, this behaviour emerges even more: having a constant number of vertices would imply a constant execution time, but in practice it can be noticed once again a linear scaling; this happens because the graph becomes progressively less sparse, and thus the contraction operation becomes more and more time consuming.
+In the case of increasing list size $n$, with $k = \frac{n}{2}$, it emerges once again a linear scaling with respect to $n$.
+A linear regression was performed on the measured data: the \textit{slope} of the line has been found to be $4.39 \cdot 10^{-6}$ (note that the execution times are expressed in \textit{milliseconds}), and the \textit{intercept} is $-29.02$.
+
+If $n$ is kept constant and $k$ ranges from $1$ to $n$, it emerges a parabolic shape, which is coherent with the results found in the second test.
+The maximum execution time, not considering the obvious outliers, is found for $k = \frac{n}{2}$. \\
+From the measured data, it was performed a order-2 polynomial regression. The parabola found by the regression has parameters $[-1164.60, -46.11 , 364.06]$, and the measured \textit{MAPE} is $4.39\%$.
 
 \vspace{-10mm}
 \begin{figure}[H]
@@ -305,7 +297,10 @@ In the second plot, where the number of vertices is kept constant, this behaviou
 \end{figure}
 
 \vspace{20mm}
-$\bullet$ \textbf{Full code (Rust implementations + R profiling) available at \newline \href{https://github.com/AlbertoParravicini/data_structures_and_algorithms}{https://github.com/AlbertoParravicini/data\_structures\_and\_algorithms}}
+$\bullet$ \textbf{Full code (Rust implementations + R analysis) available at \newline \href{https://github.com/AlbertoParravicini/data_structures_and_algorithms}{https://github.com/AlbertoParravicini/data\_structures\_and\_algorithms}}
+
+\bibliographystyle{plainurl}
+\bibliography{bibliography}
 
 \end{document}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.4.12)  15 OCT 2016 15:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.4.12)  15 OCT 2016 19:01
 entering extended mode
 **"Quickselect Report.tex"
 ("Quickselect Report.tex"
@@ -1424,74 +1424,66 @@ LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
  [2])
 (_minted-Quickselect_Report/473922F17093A9591A1E0919BDB0ECC8C56BD362A526EB5D112
 22BE3361BB4ED.pygtex)
-Underfull \hbox (badness 10000) in paragraph at lines 208--209
+Underfull \hbox (badness 10000) in paragraph at lines 209--210
 
  []
 
 [3]
-LaTeX Font Info:    Try loading font information for TS1+pplj on input line 221
+LaTeX Font Info:    Try loading font information for TS1+pplj on input line 222
 .
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ts1pplj.fd"
 File: ts1pplj.fd 2004/09/06 font definitions for TS1/pplj.
 )
 LaTeX Font Info:    Font shape `T1/pplj/bx/it' in size <12> not available
-(Font)              Font shape `T1/pplj/b/it' tried instead on input line 235.
-
-<"increasing_size".pdf, id=69, 578.16pt x 433.62pt>
+(Font)              Font shape `T1/pplj/b/it' tried instead on input line 236.
+ [4]
+<"increasing_size".pdf, id=77, 578.16pt x 433.62pt>
 File: "increasing_size".pdf Graphic file (type pdf)
 
 <use "increasing_size".pdf>
-Package pdftex.def Info: "increasing_size".pdf used on input line 245.
+Package pdftex.def Info: "increasing_size".pdf used on input line 247.
 (pdftex.def)             Requested size: 426.79135pt x 320.09303pt.
- [4]
-<"increasing_rank".pdf, id=76, 578.16pt x 433.62pt>
+ [5 <./increasing_size.pdf>]
+<"increasing_rank".pdf, id=92, 578.16pt x 433.62pt>
 File: "increasing_rank".pdf Graphic file (type pdf)
 
 <use "increasing_rank".pdf>
-Package pdftex.def Info: "increasing_rank".pdf used on input line 264.
+Package pdftex.def Info: "increasing_rank".pdf used on input line 262.
 (pdftex.def)             Requested size: 426.79135pt x 320.09303pt.
- [5 <./increasing_size.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 268--270
-
- []
-
-[6 <./increasing_rank.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 282--284
-
- []
-
-<"increasing_size_time".pdf, id=99, 578.16pt x 433.62pt>
+ [6 <./increasing_rank.pdf>]
+<"increasing_size_time".pdf, id=104, 578.16pt x 433.62pt>
 File: "increasing_size_time".pdf Graphic file (type pdf)
 
 <use "increasing_size_time".pdf>
-Package pdftex.def Info: "increasing_size_time".pdf used on input line 297.
+Package pdftex.def Info: "increasing_size_time".pdf used on input line 289.
 (pdftex.def)             Requested size: 384.1096pt x 288.0824pt.
 
-<"increasing_rank_time".pdf, id=100, 578.16pt x 433.62pt>
+<"increasing_rank_time".pdf, id=105, 578.16pt x 433.62pt>
 File: "increasing_rank_time".pdf Graphic file (type pdf)
 
 <use "increasing_rank_time".pdf>
-Package pdftex.def Info: "increasing_rank_time".pdf used on input line 303.
+Package pdftex.def Info: "increasing_rank_time".pdf used on input line 295.
 (pdftex.def)             Requested size: 384.1096pt x 288.0824pt.
- [7]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 310.
- [8 <./increasing_size_time.pdf> <./increasing_rank_time.pdf>] [9]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 310.
+ [7] ("Quickselect Report.bbl" [8 <./increasing_size_time.pdf> <./increasing_ra
+nk_time.pdf>])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 305.
+ [9]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 305.
  ("Quickselect Report.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 310.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 310.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 305.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 305.
 Package rerunfilecheck Info: File `"Quickselect Report".out' has not changed.
 (rerunfilecheck)             Checksum: 004A7663B85444B48DEC30DE0134750D;740.
 runsystem(del Quickselect_Report.pyg)...executed.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 310.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 305.
  ) 
 Here is how much of TeX's memory you used:
- 20168 strings out of 493673
- 350401 string characters out of 3141530
+ 20173 strings out of 493673
+ 350540 string characters out of 3141530
  626887 words of memory out of 3000000
- 22915 multiletter control sequences out of 15000+200000
- 85125 words of font info for 249 fonts, out of 3000000 for 9000
+ 22920 multiletter control sequences out of 15000+200000
+ 85802 words of font info for 246 fonts, out of 3000000 for 9000
  1027 hyphenation exceptions out of 8191
  57i,21n,79p,967b,783s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc} <C:\Users
@@ -1504,17 +1496,17 @@ s/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/
 euler/euex10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts
 /euler/eufm10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfont
 s/euler/eurm10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/euler/eusm10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/fpl/f
-plbj8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/fpl/fplrc8a.pf
-b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/fpl/fplrij8a.pfb><C:/Pr
-ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:
-/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplb8a.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Program Files 
-(x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files (x86)/Mi
-KTeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on "Quickselect Report.pdf" (9 pages, 319359 bytes).
+ts/euler/eurm7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/fpl/fp
+lbj8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/fpl/fplrc8a.pfb
+><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/fpl/fplrij8a.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplb8a.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files (x86)/MiK
+TeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on "Quickselect Report.pdf" (9 pages, 327485 bytes).
 PDF statistics:
- 311 PDF objects out of 1000 (max. 8388607)
- 24 named destinations out of 1000 (max. 500000)
+ 325 PDF objects out of 1000 (max. 8388607)
+ 26 named destinations out of 1000 (max. 500000)
  54373 words of extra memory for PDF output out of 61914 (max. 10000000)
 

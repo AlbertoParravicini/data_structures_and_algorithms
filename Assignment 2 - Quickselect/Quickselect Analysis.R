@@ -39,7 +39,7 @@ p <- p  +  ggtitle(bquote(atop(.("Quickselect applied on a vector of increasing 
 p
 
 # NUMBER OF COMPARISONS
-grouped_data_rank <- results_rank  %>% group_by(rank) %>% summarise_each(funs(mean(.)), -iteration_number)
+grouped_data_rank <- results_rank  %>% filter(time..usec. <= 15000) %>% group_by(rank) %>% summarise_each(funs(mean(.)), -iteration_number)
 
 p <- ggplot(grouped_data_rank, aes(x= rank, y = num_of_comparisons))
 p <- p + geom_line(size = 5, color = "#ff4d4d", aes(x = rank, y = th_num_of_comparisons), lineend = "round")
@@ -66,5 +66,9 @@ p <- p + theme(axis.text=element_text(size=12), axis.title=element_text(size=14)
 p <- p + scale_y_continuous(labels = comma)
 p <- p  +  ggtitle(bquote(atop(.("Quickselect, select items of increasing rank"), atop(italic(.("Regression done with a polynomial model of order 2")), "")))) 
 p
+
+mape <- function(f, a) {
+  mean(abs(1 - f/a))
+}
 
 
