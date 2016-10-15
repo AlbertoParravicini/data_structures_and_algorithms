@@ -1,0 +1,10 @@
+\BOOKMARK [1][-]{section.1}{Abstract}{}% 1
+\BOOKMARK [1][-]{section.2}{Quickselect's algorithm implementation}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Theoretical background}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Rust implementation}{section.2}% 4
+\BOOKMARK [1][-]{section.3}{Analysis of the expected number of comparisons}{}% 5
+\BOOKMARK [2][-]{subsection.3.1}{Theoretical background}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.2}{First test: increasing size of the list, select the median}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.3}{Second test: increasing value of k, fixed list size}{section.3}% 8
+\BOOKMARK [1][-]{section.4}{Addendum}{}% 9
+\BOOKMARK [2][-]{subsection.4.1}{Execution time analysis}{section.4}% 10

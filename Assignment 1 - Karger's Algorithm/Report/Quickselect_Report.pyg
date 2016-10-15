@@ -1,0 +1,29 @@
+fn quickselect(vec: &mut Vec<usize>, start: usize, end: usize, k: usize, num_of_comparisons: u32) -> (usize, u32) {
+    let mut num_of_comparisons: u32 = num_of_comparisons;
+
+    if k < start || k > end {
+        panic!("INVALID VALUE OF K: {}", k)
+    }
+    // If just one element is present, return it;
+    if start >= end {
+        return (vec[end], num_of_comparisons)
+    }
+    let pivot_index = rand::thread_rng().gen_range(start, end + 1);
+    // Put the current pivot in its correct place, and return its position;
+    let (pivot_index, temp_num_of_comparisons) = partition(vec, start, end, pivot_index);
+    num_of_comparisons += temp_num_of_comparisons;
+
+    // Apply the sorting only where the desired element could be,
+    // or return it if it was found;
+    if k == pivot_index {
+        return (vec[k], num_of_comparisons)
+    }
+    else if k < pivot_index {
+        let result = quickselect(vec, start, pivot_index, k, num_of_comparisons);
+        return result
+    }
+    else {
+        let result = quickselect(vec, pivot_index + 1, end, k, num_of_comparisons);
+        return result
+    }
+}

@@ -1,0 +1,27 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{fn}\PYG{+w}{ }\PYG{n}{partition}\PYG{p}{(}\PYG{n}{vec}\PYG{o}{:}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{k}{mut}\PYG{+w}{ }\PYG{n+nb}{Vec}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{usize}\PYG{o}{\PYGZgt{}}\PYG{p}{,}
+\PYG{+w}{             }\PYG{n}{start}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{usize}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{end}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{usize}\PYG{p}{,}
+\PYG{+w}{             }\PYG{n}{pivot\PYGZus{}index}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{usize}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{usize}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{u32}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k+kd}{let}\PYG{+w}{ }\PYG{n}{pivot\PYGZus{}value}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{vec}\PYG{p}{[}\PYG{n}{pivot\PYGZus{}index}\PYG{p}{];}
+\PYG{+w}{    }\PYG{k+kd}{let}\PYG{+w}{ }\PYG{k}{mut}\PYG{+w}{ }\PYG{n}{temp\PYGZus{}num\PYGZus{}of\PYGZus{}comparisons}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{u32}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{c+c1}{// Temporarily put the pivot at the end of the vector;}
+\PYG{+w}{    }\PYG{n}{vec}\PYG{p}{.}\PYG{n}{swap}\PYG{p}{(}\PYG{n}{pivot\PYGZus{}index}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{end}\PYG{p}{);}
+\PYG{+w}{    }\PYG{k+kd}{let}\PYG{+w}{ }\PYG{k}{mut}\PYG{+w}{ }\PYG{n}{store\PYGZus{}index}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{start}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{for}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{n}{start}\PYG{p}{..}\PYG{n}{end}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{temp\PYGZus{}num\PYGZus{}of\PYGZus{}comparisons}\PYG{+w}{ }\PYG{o}{+=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k}{if}\PYG{+w}{ }\PYG{n}{vec}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{pivot\PYGZus{}value}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{c+c1}{// If a value lower than the pivot is found, put it in the left part of the vector;}
+\PYG{+w}{            }\PYG{n}{vec}\PYG{p}{.}\PYG{n}{swap}\PYG{p}{(}\PYG{n}{store\PYGZus{}index}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{);}
+\PYG{+w}{            }\PYG{c+c1}{// store\PYGZus{}index keeps track of how many values lower that the pivot exist,}
+\PYG{+w}{            }\PYG{c+c1}{// and where the pivot should be placed at the end;}
+\PYG{+w}{            }\PYG{n}{store\PYGZus{}index}\PYG{+w}{ }\PYG{o}{+=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{c+c1}{// Put the pivot in its correct place;}
+\PYG{+w}{    }\PYG{n}{vec}\PYG{p}{.}\PYG{n}{swap}\PYG{p}{(}\PYG{n}{end}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{store\PYGZus{}index}\PYG{p}{);}
+
+\PYG{+w}{    }\PYG{c+c1}{// Return the sorted position of the pivot and the number of comparisons performed;}
+\PYG{+w}{    }\PYG{p}{(}\PYG{n}{store\PYGZus{}index}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{temp\PYGZus{}num\PYGZus{}of\PYGZus{}comparisons}\PYG{p}{)}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

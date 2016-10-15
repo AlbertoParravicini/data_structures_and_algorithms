@@ -56,7 +56,7 @@ p
 # TIME COMPLEXITY
 p <- ggplot(grouped_data_rank, aes(x= rank, y = time..usec. / 1000))
 
-fit <- lm(time..usec. ~ poly(rank,3), data = grouped_data_rank)
+fit <- lm(time..usec. ~ poly(rank,2), data = grouped_data_rank)
 p <- p + geom_line(size = 3, color = "#ff4d4d", aes(x = rank, y = predict(fit, newdata = data.frame(rank = grouped_data_rank$rank)) / 1000), lineend = "round")
 
 p <- p + geom_line(size = 0.8, color = "#4f72fc") + geom_point(size = 1.5, color ="#021f91") 
@@ -64,7 +64,7 @@ p <- p + geom_line(size = 0.8, color = "#4f72fc") + geom_point(size = 1.5, color
 p <- p + theme_minimal() + xlab("Rank") + ylab("Time required [msec]")
 p <- p + theme(axis.text=element_text(size=12), axis.title=element_text(size=14)) + theme(axis.text.x = element_text(angle = 90, hjust = 1))
 p <- p + scale_y_continuous(labels = comma)
-p <- p  +  ggtitle(bquote(atop(.("Quickselect, select items of increasing rank"), atop(italic(.("Regression done with a polynomial model of order 3")), "")))) 
+p <- p  +  ggtitle(bquote(atop(.("Quickselect, select items of increasing rank"), atop(italic(.("Regression done with a polynomial model of order 2")), "")))) 
 p
 
 

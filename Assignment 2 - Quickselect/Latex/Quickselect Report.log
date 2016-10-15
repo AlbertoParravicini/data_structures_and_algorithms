@@ -1,10 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.4.12)  15 OCT 2016 11:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.4.12)  15 OCT 2016 15:11
 entering extended mode
-**"C:/Users/albyr/Documents/data_structures_and_algorithms/Assignment 1 - Karge
-r's Algorithm/Report/Report.tex"
-
-("C:/Users/albyr/Documents/data_structures_and_algorithms/Assignment 1 - Karger
-'s Algorithm/Report/Report.tex"
+**"Quickselect Report.tex"
+("Quickselect Report.tex"
 LaTeX2e <2015/01/01> patch level 2
 Babel <3.9m> and hyphenation patterns for 69 languages loaded.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
@@ -303,6 +300,64 @@ Package csquotes Info: ... configuration file loaded successfully.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\csquotes\csquotes.cfg"
 File: csquotes.cfg 
 ))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip62
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks23
+\ex@=\dimen139
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen140
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count119
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count120
+\leftroot@=\count121
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count122
+\DOTSCASE@=\count123
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box30
+\strutbox@=\box31
+\big@size=\dimen141
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count124
+\c@MaxMatrixCols=\count125
+\dotsspace@=\muskip11
+\c@parentequation=\count126
+\dspbrk@lvl=\count127
+\tag@help=\toks24
+\row@=\count128
+\column@=\count129
+\maxfields@=\count130
+\andhelp@=\toks25
+\eqnshift@=\dimen142
+\alignsep@=\dimen143
+\tagshift@=\dimen144
+\tagwidth@=\dimen145
+\totwidth@=\dimen146
+\lineht@=\dimen147
+\@envbody=\toks26
+\multlinegap=\skip63
+\multlinetaggap=\skip64
+\mathdisplay@stack=\toks27
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\adjustbox\adjustbox.sty"
 Package: adjustbox 2012/05/21 v1.0 Adjusting TeX boxes (trim, clip, ...)
 
@@ -311,10 +366,10 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xkeyval\xkeyval.tex"
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xkeyval\xkvutils.tex"
-\XKV@toks=\toks23
-\XKV@tempa@toks=\toks24
+\XKV@toks=\toks28
+\XKV@tempa@toks=\toks29
 )
-\XKV@depth=\count119
+\XKV@depth=\count131
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\adjustbox\adjcalc.sty"
@@ -338,37 +393,37 @@ File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 94.
 )
-\Gin@req@height=\dimen139
-\Gin@req@width=\dimen140
+\Gin@req@height=\dimen148
+\Gin@req@width=\dimen149
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\collectbox\collectbox.sty"
 Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
-\collectedbox=\box30
+\collectedbox=\box32
 )
-\tc@llx=\dimen141
-\tc@lly=\dimen142
-\tc@urx=\dimen143
-\tc@ury=\dimen144
+\tc@llx=\dimen150
+\tc@lly=\dimen151
+\tc@urx=\dimen152
+\tc@ury=\dimen153
 Package trimclip Info: Using driver 'tc-pdftex.def'.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\adjustbox\tc-pdftex.def"
 File: tc-pdftex.def 2012/05/13 v1.0 Clipping driver for pdftex
 ))
-\adjbox@Width=\dimen145
-\adjbox@Height=\dimen146
-\adjbox@Depth=\dimen147
-\adjbox@Totalheight=\dimen148
+\adjbox@Width=\dimen154
+\adjbox@Height=\dimen155
+\adjbox@Depth=\dimen156
+\adjbox@Totalheight=\dimen157
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ifoddpage\ifoddpage.sty"
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count120
+\c@checkoddpage=\count132
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ltxmisc\varwidth.sty"
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box31
-\sift@deathcycles=\count121
-\@vwid@loff=\dimen149
-\@vwid@roff=\dimen150
+\@vwid@box=\box33
+\sift@deathcycles=\count133
+\@vwid@loff=\dimen158
+\@vwid@roff=\dimen159
 ))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\titlepic\titlepic.sty"
 Package: titlepic 2009/08/03 1.1 Package to display a picture on the title page
@@ -376,39 +431,39 @@ Package: titlepic 2009/08/03 1.1 Package to display a picture on the title page
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
 Package: geometry 2010/09/12 v5.6 Page Geometry
-\Gm@cnth=\count122
-\Gm@cntv=\count123
-\c@Gm@tempcnt=\count124
-\Gm@bindingoffset=\dimen151
-\Gm@wd@mp=\dimen152
-\Gm@odd@mp=\dimen153
-\Gm@even@mp=\dimen154
-\Gm@layoutwidth=\dimen155
-\Gm@layoutheight=\dimen156
-\Gm@layouthoffset=\dimen157
-\Gm@layoutvoffset=\dimen158
-\Gm@dimlist=\toks25
+\Gm@cnth=\count134
+\Gm@cntv=\count135
+\c@Gm@tempcnt=\count136
+\Gm@bindingoffset=\dimen160
+\Gm@wd@mp=\dimen161
+\Gm@odd@mp=\dimen162
+\Gm@even@mp=\dimen163
+\Gm@layoutwidth=\dimen164
+\Gm@layoutheight=\dimen165
+\Gm@layouthoffset=\dimen166
+\Gm@layoutvoffset=\dimen167
+\Gm@dimlist=\toks30
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.sty"
-\lst@mode=\count125
-\lst@gtempboxa=\box32
-\lst@token=\toks26
-\lst@length=\count126
-\lst@currlwidth=\dimen159
-\lst@column=\count127
-\lst@pos=\count128
-\lst@lostspace=\dimen160
-\lst@width=\dimen161
-\lst@newlines=\count129
-\lst@lineno=\count130
-\lst@maxwidth=\dimen162
+\lst@mode=\count137
+\lst@gtempboxa=\box34
+\lst@token=\toks31
+\lst@length=\count138
+\lst@currlwidth=\dimen168
+\lst@column=\count139
+\lst@pos=\count140
+\lst@lostspace=\dimen169
+\lst@width=\dimen170
+\lst@newlines=\count141
+\lst@lineno=\count142
+\lst@maxwidth=\dimen171
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count131
-\lst@skipnumbers=\count132
-\lst@framebox=\box33
+\c@lstnumber=\count143
+\lst@skipnumbers=\count144
+\lst@framebox=\box35
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.cfg"
 File: listings.cfg 2015/06/04 1.6 listings configuration
@@ -417,7 +472,7 @@ Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption.sty"
 Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
-\c@ContinuedFloat=\count133
+\c@ContinuedFloat=\count145
 Package caption Info: float package is loaded.
 Package caption Info: floatrow package is loaded.
 Package caption Info: hyperref package is loaded.
@@ -432,8 +487,8 @@ LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
 Package: inputenc 2015/03/17 v1.2c Input encoding file
-\inpenc@prehook=\toks27
-\inpenc@posthook=\toks28
+\inpenc@prehook=\toks32
+\inpenc@posthook=\toks33
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
@@ -651,8 +706,8 @@ Now handling font encoding PD1 ...
 ))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\subcaption.sty"
 Package: subcaption 2016/02/20 v1.1-142 Sub-captions (AR)
-\c@subfigure=\count134
-\c@subtable=\count135
+\c@subfigure=\count146
+\c@subtable=\count147
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\classicthesis\classicthesis.sty"
 Package: classicthesis 2015/09/06 v4.2 Typographic style for a classic-looking 
@@ -675,19 +730,19 @@ Package: eulervm 2005/01/11 v4.0 (WaS)
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\microtype\microtype.sty"
 Package: microtype 2013/05/23 v2.5a Micro-typographical refinements (RS)
-\MT@toks=\toks29
-\MT@count=\count136
+\MT@toks=\toks34
+\MT@count=\count148
 LaTeX Info: Redefining \textls on input line 766.
-\MT@outer@kern=\dimen163
+\MT@outer@kern=\dimen172
 LaTeX Info: Redefining \textmicrotypecontext on input line 1285.
-\MT@listname@count=\count137
+\MT@listname@count=\count149
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\microtype\microtype-pdftex.def"
 File: microtype-pdftex.def 2013/05/23 v2.5a Definitions specific to pdftex (RS)
 
 LaTeX Info: Redefining \lsstyle on input line 915.
 LaTeX Info: Redefining \lslig on input line 915.
-\MT@outer@space=\skip62
+\MT@outer@space=\skip65
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 
@@ -716,8 +771,8 @@ Package scrlfile, 2015/10/03 v3.19a KOMA-Script package (loading files)
                   Copyright (C) Markus Kohm
 
 )))
-\ta@bcor=\skip63
-\ta@div=\count138
+\ta@bcor=\skip66
+\ta@div=\count150
 Package typearea Info: You've used standard option `a4paper'.
 (typearea)             This is correct!
 (typearea)             Internally I'm using `paper=a4'.
@@ -730,10 +785,10 @@ Package typearea Info: You've used standard option `oneside'.
 (typearea)             If you'd like to set the option with \KOMAoptions,
 (typearea)             you'd have to use `twoside=false' there
 (typearea)             instead of `oneside', too.
-\ta@hblk=\skip64
-\ta@vblk=\skip65
-\ta@temp=\skip66
-\footheight=\skip67
+\ta@hblk=\skip67
+\ta@vblk=\skip68
+\ta@temp=\skip69
+\footheight=\skip70
 LaTeX Font Info:    Try loading font information for T1+pplj on input line 1509
 .
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1pplj.fd"
@@ -780,15 +835,15 @@ Package: textcase 2004/10/07 v0.07 Text only upper/lower case changing (DPC)
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\soul\soul.sty"
 Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
-\SOUL@word=\toks30
-\SOUL@lasttoken=\toks31
-\SOUL@cmds=\toks32
-\SOUL@buffer=\toks33
-\SOUL@token=\toks34
-\SOUL@spaceskip=\skip68
-\SOUL@ttwidth=\dimen164
-\SOUL@uldp=\dimen165
-\SOUL@ulht=\dimen166
+\SOUL@word=\toks35
+\SOUL@lasttoken=\toks36
+\SOUL@cmds=\toks37
+\SOUL@buffer=\toks38
+\SOUL@token=\toks39
+\SOUL@spaceskip=\skip71
+\SOUL@ttwidth=\dimen173
+\SOUL@uldp=\dimen174
+\SOUL@ulht=\dimen175
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\koma-script\scrlayer-scrpage.sty"
 Package: scrlayer-scrpage 2015/10/03 v3.19a KOMA-Script package (end user inter
@@ -810,64 +865,64 @@ Package scrlayer-scrpage Info: auto-selection of `pagestyleset=standard'.
 1: subsection
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\titlesec\titlesec.sty"
 Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
-\ttl@box=\box34
-\beforetitleunit=\skip69
-\aftertitleunit=\skip70
-\ttl@plus=\dimen167
-\ttl@minus=\dimen168
-\ttl@toksa=\toks35
-\titlewidth=\dimen169
-\titlewidthlast=\dimen170
-\titlewidthfirst=\dimen171
+\ttl@box=\box36
+\beforetitleunit=\skip72
+\aftertitleunit=\skip73
+\ttl@plus=\dimen176
+\ttl@minus=\dimen177
+\ttl@toksa=\toks40
+\titlewidth=\dimen178
+\titlewidthlast=\dimen179
+\titlewidthfirst=\dimen180
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tocloft\tocloft.sty"
 Package: tocloft 2013/05/02 v2.3f parameterised ToC, etc., typesetting
 Package tocloft Info: The document has section divisions on input line 44.
-\cftparskip=\skip71
-\cftbeforetoctitleskip=\skip72
-\cftaftertoctitleskip=\skip73
-\cftbeforepartskip=\skip74
-\cftpartnumwidth=\skip75
-\cftpartindent=\skip76
-\cftbeforesecskip=\skip77
-\cftsecindent=\skip78
-\cftsecnumwidth=\skip79
-\cftbeforesubsecskip=\skip80
-\cftsubsecindent=\skip81
-\cftsubsecnumwidth=\skip82
-\cftbeforesubsubsecskip=\skip83
-\cftsubsubsecindent=\skip84
-\cftsubsubsecnumwidth=\skip85
-\cftbeforeparaskip=\skip86
-\cftparaindent=\skip87
-\cftparanumwidth=\skip88
-\cftbeforesubparaskip=\skip89
-\cftsubparaindent=\skip90
-\cftsubparanumwidth=\skip91
-\cftbeforeloftitleskip=\skip92
-\cftafterloftitleskip=\skip93
-\cftbeforefigskip=\skip94
-\cftfigindent=\skip95
-\cftfignumwidth=\skip96
-\c@lofdepth=\count139
-\c@lotdepth=\count140
-\cftbeforelottitleskip=\skip97
-\cftafterlottitleskip=\skip98
-\cftbeforetabskip=\skip99
-\cfttabindent=\skip100
-\cfttabnumwidth=\skip101
+\cftparskip=\skip74
+\cftbeforetoctitleskip=\skip75
+\cftaftertoctitleskip=\skip76
+\cftbeforepartskip=\skip77
+\cftpartnumwidth=\skip78
+\cftpartindent=\skip79
+\cftbeforesecskip=\skip80
+\cftsecindent=\skip81
+\cftsecnumwidth=\skip82
+\cftbeforesubsecskip=\skip83
+\cftsubsecindent=\skip84
+\cftsubsecnumwidth=\skip85
+\cftbeforesubsubsecskip=\skip86
+\cftsubsubsecindent=\skip87
+\cftsubsubsecnumwidth=\skip88
+\cftbeforeparaskip=\skip89
+\cftparaindent=\skip90
+\cftparanumwidth=\skip91
+\cftbeforesubparaskip=\skip92
+\cftsubparaindent=\skip93
+\cftsubparanumwidth=\skip94
+\cftbeforeloftitleskip=\skip95
+\cftafterloftitleskip=\skip96
+\cftbeforefigskip=\skip97
+\cftfigindent=\skip98
+\cftfignumwidth=\skip99
+\c@lofdepth=\count151
+\c@lotdepth=\count152
+\cftbeforelottitleskip=\skip100
+\cftafterlottitleskip=\skip101
+\cftbeforetabskip=\skip102
+\cfttabindent=\skip103
+\cfttabnumwidth=\skip104
 )
-\newnumberwidth=\skip102
-\beforebibskip=\skip103
-\newchnumberwidth=\skip104
-\figurelabelwidth=\skip105
-\tablelabelwidth=\skip106
+\newnumberwidth=\skip105
+\beforebibskip=\skip106
+\newchnumberwidth=\skip107
+\figurelabelwidth=\skip108
+\tablelabelwidth=\skip109
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\footmisc\footmisc.sty"
 Package: footmisc 2011/06/06 v5.5b a miscellany of footnote facilities
-\FN@temptoken=\toks36
-\footnotemargin=\dimen172
-\c@pp@next@reset=\count141
+\FN@temptoken=\toks41
+\footnotemargin=\dimen181
+\c@pp@next@reset=\count153
 Package footmisc Info: Declaring symbol style bringhurst on input line 855.
 Package footmisc Info: Declaring symbol style chicago on input line 863.
 Package footmisc Info: Declaring symbol style wiley on input line 872.
@@ -885,6 +940,278 @@ n" for footnote setup (not 100\% the same as with KOMA).
 Package: scrtime 2015/10/03 v3.19a KOMA-Script package (time of LaTeX run)
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\carlisle\remreset.sty"))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\minted\minted.sty"
+Package: minted 2016/07/20 v2.4 Yet another Pygments shim for LaTeX
+
+(C:\Users\albyr\AppData\Roaming\MiKTeX\2.9\tex\latex\fvextra\fvextra.sty
+Package: fvextra 2016/09/02 v1.2.1 fvextra - extensions and patches for fancyvr
+b
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fancyvrb\fancyvrb.sty"
+Package: fancyvrb 2008/02/07
+
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz)
+\FV@CodeLineNo=\count154
+\FV@InFile=\read1
+\FV@TabBox=\box37
+\c@FancyVerbLine=\count155
+\FV@StepNumber=\count156
+\FV@OutFile=\write3
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\upquote\upquote.sty"
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\textcomp.sty"
+Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1enc.def"
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+Now handling font encoding TS1 ...
+... processing UTF-8 mapping file for font encoding TS1
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1enc.dfu"
+File: ts1enc.dfu 2015/06/27 v1.1n UTF-8 support for inputenc
+   defining Unicode char U+00A2 (decimal 162)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00A4 (decimal 164)
+   defining Unicode char U+00A5 (decimal 165)
+   defining Unicode char U+00A6 (decimal 166)
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AC (decimal 172)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B0 (decimal 176)
+   defining Unicode char U+00B1 (decimal 177)
+   defining Unicode char U+00B2 (decimal 178)
+   defining Unicode char U+00B3 (decimal 179)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B5 (decimal 181)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00B9 (decimal 185)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+00BC (decimal 188)
+   defining Unicode char U+00BD (decimal 189)
+   defining Unicode char U+00BE (decimal 190)
+   defining Unicode char U+00D7 (decimal 215)
+   defining Unicode char U+00F7 (decimal 247)
+   defining Unicode char U+0192 (decimal 402)
+   defining Unicode char U+02C7 (decimal 711)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+02DD (decimal 733)
+   defining Unicode char U+0E3F (decimal 3647)
+   defining Unicode char U+2016 (decimal 8214)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+203B (decimal 8251)
+   defining Unicode char U+203D (decimal 8253)
+   defining Unicode char U+2044 (decimal 8260)
+   defining Unicode char U+204E (decimal 8270)
+   defining Unicode char U+2052 (decimal 8274)
+   defining Unicode char U+20A1 (decimal 8353)
+   defining Unicode char U+20A4 (decimal 8356)
+   defining Unicode char U+20A6 (decimal 8358)
+   defining Unicode char U+20A9 (decimal 8361)
+   defining Unicode char U+20AB (decimal 8363)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+20B1 (decimal 8369)
+   defining Unicode char U+2103 (decimal 8451)
+   defining Unicode char U+2116 (decimal 8470)
+   defining Unicode char U+2117 (decimal 8471)
+   defining Unicode char U+211E (decimal 8478)
+   defining Unicode char U+2120 (decimal 8480)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+2127 (decimal 8487)
+   defining Unicode char U+212E (decimal 8494)
+   defining Unicode char U+2190 (decimal 8592)
+   defining Unicode char U+2191 (decimal 8593)
+   defining Unicode char U+2192 (decimal 8594)
+   defining Unicode char U+2193 (decimal 8595)
+   defining Unicode char U+2329 (decimal 9001)
+   defining Unicode char U+232A (decimal 9002)
+   defining Unicode char U+2422 (decimal 9250)
+   defining Unicode char U+25E6 (decimal 9702)
+   defining Unicode char U+25EF (decimal 9711)
+   defining Unicode char U+266A (decimal 9834)
+))
+LaTeX Info: Redefining \oldstylenums on input line 334.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 351.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 352.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 353.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 354.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 355.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 356.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 357.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 358.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 359.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 360.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 361.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 362.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 363.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 364.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 365.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 366.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 367.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 368.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 376.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 377.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 378.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 379.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 380.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 381.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 382.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 383.
+Package textcomp Info: Setting lmtt sub-encoding to TS1/0 on input line 384.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 385.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 386.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 387.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 388.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 389.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 390.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 391.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 392.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 393.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 394.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 395.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 396.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 397.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 398.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 399.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 400.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 401.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 402.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 403.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 404.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 405.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lineno\lineno.sty"
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+\linenopenalty=\count157
+\output=\toks42
+\linenoprevgraf=\count158
+\linenumbersep=\dimen182
+\linenumberwidth=\dimen183
+\c@linenumber=\count159
+\c@pagewiselinenumber=\count160
+\c@LN@truepage=\count161
+\c@internallinenumber=\count162
+\c@internallinenumbers=\count163
+\quotelinenumbersep=\dimen184
+\bframerule=\dimen185
+\bframesep=\dimen186
+\bframebox=\box38
+
+
+LaTeX Warning: Command \@parboxrestore  has changed.
+               Check if current package is valid.
+
+LaTeX Info: Redefining \\ on input line 3056.
+)
+
+Package fvextra Warning: csquotes should be loaded after fvextra, to avoid a wa
+rning from the lineno package on input line 37.
+
+\c@FV@TrueTabGroupLevel=\count164
+\c@FV@TrueTabCounter=\count165
+\FV@TabBox@Group=\box39
+\FV@TmpLength=\skip110
+\c@FV@HighlightLinesStart=\count166
+\c@FV@HighlightLinesStop=\count167
+\FV@BreakIndent=\dimen187
+\FV@BreakSymbolSepLeft=\dimen188
+\FV@BreakSymbolSepRight=\dimen189
+\FV@BreakSymbolIndentLeft=\dimen190
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 562.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+\FV@BreakSymbolIndentRight=\dimen191
+\c@FancyVerbLineBreakLast=\count168
+\FV@LineBox=\box40
+\FV@LineIndentBox=\box41
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\calc.sty"
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count169
+\calc@Bcount=\count170
+\calc@Adimen=\dimen192
+\calc@Bdimen=\dimen193
+\calc@Askip=\skip111
+\calc@Bskip=\skip112
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count171
+\calc@Cskip=\skip113
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ifplatform\ifplatform.sty"
+Package: ifplatform 2010/10/22 v0.4 Testing for the operating system
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\catchfile.sty"
+Package: catchfile 2011/03/01 v1.6 Catch the contents of a file (HO)
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xstring\xstring.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xstring\xstring.tex"
+\@xs@message=\write4
+\integerpart=\count172
+\decimalpart=\count173
+)
+Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\framed\framed.sty"
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip114
+\fb@frw=\dimen194
+\fb@frh=\dimen195
+\FrameRule=\dimen196
+\FrameSep=\dimen197
+)
+\minted@appexistsfile=\read2
+\minted@bgbox=\box42
+\minted@code=\write5
+\c@minted@FancyVerbLineTemp=\count174
+\c@minted@pygmentizecounter=\count175
+\c@listing=\count176
+)
+runsystem(if not exist _minted-Quickselect_Report mkdir _minted-Quickselect_Rep
+ort)...executed.
+
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
@@ -895,58 +1222,72 @@ File: lstlang2.sty 2015/06/04 1.6 listings language file
 File: lstlang3.sty 2015/06/04 1.6 listings language file
 )
 
-Package csquotes Warning: Load 'inputenc' before 'csquotes' on input line 85.
+Package csquotes Warning: Load 'inputenc' before 'csquotes' on input line 93.
 
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
-(Report.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+runsystem(for ^%i in (pygmentize.exe pygmentize.bat pygmentize.cmd) do set > Qu
+ickselect_Report.aex <nul: /p x=^%~$PATH:i>> Quickselect_Report.aex)...executed
+.
+
+runsystem(del Quickselect_Report.aex)...executed.
+
+("Quickselect Report.aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 93.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 93.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 93.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count142
-\scratchdimen=\dimen173
-\scratchbox=\box35
-\nofMPsegments=\count143
-\nofMParguments=\count144
-\everyMPshowfont=\toks37
-\MPscratchCnt=\count145
-\MPscratchDim=\dimen174
-\MPnumerator=\count146
-\makeMPintoPDFobject=\count147
-\everyMPtoPDFconversion=\toks38
+\scratchcounter=\count177
+\scratchdimen=\dimen198
+\scratchbox=\box43
+\nofMPsegments=\count178
+\nofMParguments=\count179
+\everyMPshowfont=\toks43
+\MPscratchCnt=\count180
+\MPscratchDim=\dimen199
+\MPnumerator=\count181
+\makeMPintoPDFobject=\count182
+\everyMPtoPDFconversion=\toks44
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: floatrow package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\AtBeginShipoutBox=\box36
-Package hyperref Info: Link coloring ON on input line 85.
+\AtBeginShipoutBox=\box44
+Package hyperref Info: Link coloring ON on input line 93.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count148
+\c@section@level=\count183
 )
-LaTeX Info: Redefining \ref on input line 85.
-LaTeX Info: Redefining \pageref on input line 85.
-LaTeX Info: Redefining \nameref on input line 85.
+LaTeX Info: Redefining \ref on input line 93.
+LaTeX Info: Redefining \pageref on input line 93.
+LaTeX Info: Redefining \nameref on input line 93.
 
-(Report.out) (Report.out)
-\@outlinefile=\write3
+("Quickselect Report.out") ("Quickselect Report.out")
+\@outlinefile=\write6
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -986,10 +1327,8 @@ Package geometry Warning: The marginal notes overrun the paper.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count149
-\big@size=\dimen175
-\big@size=\dimen176
-LaTeX Info: Redefining \microtypecontext on input line 85.
+\c@lstlisting=\count184
+LaTeX Info: Redefining \microtypecontext on input line 93.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1004,23 +1343,23 @@ File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
 )
 
 Package hyperref Warning: Option `colorlinks' has already been used,
-(hyperref)                setting the option has no effect on input line 85.
+(hyperref)                setting the option has no effect on input line 93.
 
-Package hyperref Info: Option `breaklinks' set `true' on input line 85.
+Package hyperref Info: Option `breaklinks' set `true' on input line 93.
 
 Package hyperref Warning: Option `bookmarks' has already been used,
-(hyperref)                setting the option has no effect on input line 85.
+(hyperref)                setting the option has no effect on input line 93.
 
 LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <20.74> not available
-(Font)              Font shape `T1/pplj/b/n' tried instead on input line 87.
-LaTeX Font Info:    Try loading font information for U+zeur on input line 87.
+(Font)              Font shape `T1/pplj/b/n' tried instead on input line 95.
+LaTeX Font Info:    Try loading font information for U+zeur on input line 95.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\eulervm\uzeur.fd"
 File: uzeur.fd 2005/01/11 v4.0 (WaS)
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\microtype\mt-eur.cfg"
 File: mt-eur.cfg 2006/07/31 v1.1 microtype config. file: AMS Euler Roman (RS)
 )
-LaTeX Font Info:    Try loading font information for U+zeus on input line 87.
+LaTeX Font Info:    Try loading font information for U+zeus on input line 95.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\eulervm\uzeus.fd"
 File: uzeus.fd 2005/01/11 v4.0 (WaS)
@@ -1028,12 +1367,12 @@ File: uzeus.fd 2005/01/11 v4.0 (WaS)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\microtype\mt-eus.cfg"
 File: mt-eus.cfg 2006/07/28 v1.2 microtype config. file: AMS Euler Script (RS)
 )
-LaTeX Font Info:    Try loading font information for U+zeuex on input line 87.
+LaTeX Font Info:    Try loading font information for U+zeuex on input line 95.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\eulervm\uzeuex.fd"
 File: uzeuex.fd 2005/01/11 v4.0 (WaS)
 )
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 87.
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 95.
 
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1zplm.fd"
@@ -1044,106 +1383,138 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <14> not available
-(Font)              Font shape `T1/pplj/b/n' tried instead on input line 90.
+(Font)              Font shape `T1/pplj/b/n' tried instead on input line 98.
 LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <12> not available
-(Font)              Font shape `T1/pplj/b/n' tried instead on input line 91.
+(Font)              Font shape `T1/pplj/b/n' tried instead on input line 99.
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplj/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 114.
+ [1
 
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
-File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
+{C:/Users/albyr/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 Package microtype Info: Loading generic settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 127.
 
-Overfull \hbox (44.24612pt too wide) in paragraph at lines 114--115
-\T1/cmtt/m/n/12 return the size of the set of edges that connects the two remai
-ning vertices. 
+Overfull \hbox (39.11908pt too wide) in paragraph at lines 127--128
+[]    \T1/cmtt/m/n/12 if []position(pivot) $\U/zeur/m/n/12 <$ \T1/cmtt/m/n/12 k
+[], return []quickselect(start, position(pivot))[]; 
  []
 
-[1
 
-{C:/Users/albyr/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
+Overfull \hbox (26.7721pt too wide) in paragraph at lines 127--128
+[]    \T1/cmtt/m/n/12 if []position(pivot) $\U/zeur/m/n/12 >$ \T1/cmtt/m/n/12 k
+[], return []quickselect(position(pivot), end)[]; 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--128
+
+ []
+
+(_minted-Quickselect_Report/default-pyg-prefix.pygstyle)
+(_minted-Quickselect_Report/tango.pygstyle)
+(_minted-Quickselect_Report/1CA89C87F8BB026A79DB6DC83FB5981DC56BD362A526EB5D112
+22BE3361BB4ED.pygtex
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 2.
+ [2])
+(_minted-Quickselect_Report/473922F17093A9591A1E0919BDB0ECC8C56BD362A526EB5D112
+22BE3361BB4ED.pygtex)
+Underfull \hbox (badness 10000) in paragraph at lines 208--209
+
+ []
+
 [3]
+LaTeX Font Info:    Try loading font information for TS1+pplj on input line 221
+.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ts1pplj.fd"
+File: ts1pplj.fd 2004/09/06 font definitions for TS1/pplj.
+)
 LaTeX Font Info:    Font shape `T1/pplj/bx/it' in size <12> not available
-(Font)              Font shape `T1/pplj/b/it' tried instead on input line 206.
- <"KARGER_vertices_edges".pdf, id=118, 469.755pt x 289.08pt>
-File: "KARGER_vertices_edges".pdf Graphic file (type pdf)
+(Font)              Font shape `T1/pplj/b/it' tried instead on input line 235.
 
-<use "KARGER_vertices_edges".pdf>
-Package pdftex.def Info: "KARGER_vertices_edges".pdf used on input line 216.
-(pdftex.def)             Requested size: 426.79135pt x 262.63974pt.
- [4 <./KARGER_vertices_edges.pdf>]
-<"KARGER_edges".pdf, id=131, 433.62pt x 289.08pt>
-File: "KARGER_edges".pdf Graphic file (type pdf)
- <use "KARGER_edges".pdf>
-Package pdftex.def Info: "KARGER_edges".pdf used on input line 235.
-(pdftex.def)             Requested size: 426.79135pt x 284.54036pt.
+<"increasing_size".pdf, id=69, 578.16pt x 433.62pt>
+File: "increasing_size".pdf Graphic file (type pdf)
 
-Underfull \hbox (badness 10000) in paragraph at lines 239--241
+<use "increasing_size".pdf>
+Package pdftex.def Info: "increasing_size".pdf used on input line 245.
+(pdftex.def)             Requested size: 426.79135pt x 320.09303pt.
+ [4]
+<"increasing_rank".pdf, id=76, 578.16pt x 433.62pt>
+File: "increasing_rank".pdf Graphic file (type pdf)
 
- []
-
-[5 <./KARGER_edges.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 253--255
+<use "increasing_rank".pdf>
+Package pdftex.def Info: "increasing_rank".pdf used on input line 264.
+(pdftex.def)             Requested size: 426.79135pt x 320.09303pt.
+ [5 <./increasing_size.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 268--270
 
  []
 
-<"EXEC_TIME_vertices_edges".pdf, id=143, 433.62pt x 289.08pt>
-File: "EXEC_TIME_vertices_edges".pdf Graphic file (type pdf)
+[6 <./increasing_rank.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 282--284
 
-<use "EXEC_TIME_vertices_edges".pdf>
-Package pdftex.def Info: "EXEC_TIME_vertices_edges".pdf used on input line 267.
+ []
 
-(pdftex.def)             Requested size: 426.79135pt x 284.54036pt.
- [6]
-<"EXEC_TIME_edges".pdf, id=148, 433.62pt x 289.08pt>
-File: "EXEC_TIME_edges".pdf Graphic file (type pdf)
+<"increasing_size_time".pdf, id=99, 578.16pt x 433.62pt>
+File: "increasing_size_time".pdf Graphic file (type pdf)
 
-<use "EXEC_TIME_edges".pdf>
-Package pdftex.def Info: "EXEC_TIME_edges".pdf used on input line 272.
-(pdftex.def)             Requested size: 426.79135pt x 284.54036pt.
- [7 <./EXEC_TIME_vertices_edges.pdf> <./EXEC_TIME_edges.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 300.
- [8]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 300.
- (Report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 300.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 300.
-Package rerunfilecheck Info: File `Report.out' has not changed.
-(rerunfilecheck)             Checksum: 54666F8D9EA0EC2E32D4E6D4BDF8385C;852.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 300.
+<use "increasing_size_time".pdf>
+Package pdftex.def Info: "increasing_size_time".pdf used on input line 297.
+(pdftex.def)             Requested size: 384.1096pt x 288.0824pt.
+
+<"increasing_rank_time".pdf, id=100, 578.16pt x 433.62pt>
+File: "increasing_rank_time".pdf Graphic file (type pdf)
+
+<use "increasing_rank_time".pdf>
+Package pdftex.def Info: "increasing_rank_time".pdf used on input line 303.
+(pdftex.def)             Requested size: 384.1096pt x 288.0824pt.
+ [7]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 310.
+ [8 <./increasing_size_time.pdf> <./increasing_rank_time.pdf>] [9]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 310.
+ ("Quickselect Report.aux")
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 310.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 310.
+Package rerunfilecheck Info: File `"Quickselect Report".out' has not changed.
+(rerunfilecheck)             Checksum: 004A7663B85444B48DEC30DE0134750D;740.
+runsystem(del Quickselect_Report.pyg)...executed.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 310.
  ) 
 Here is how much of TeX's memory you used:
- 17533 strings out of 493673
- 291524 string characters out of 3141530
- 541209 words of memory out of 3000000
- 20304 multiletter control sequences out of 15000+200000
- 71918 words of font info for 256 fonts, out of 3000000 for 9000
+ 20168 strings out of 493673
+ 350401 string characters out of 3141530
+ 626887 words of memory out of 3000000
+ 22915 multiletter control sequences out of 15000+200000
+ 85125 words of font info for 249 fonts, out of 3000000 for 9000
  1027 hyphenation exceptions out of 8191
- 54i,21n,79p,1052b,1784s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 57i,21n,79p,967b,783s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc} <C:\Users
-\albyr\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1095.pk>
+\albyr\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecit1000.pk>
  <C:\Users\albyr\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ec
-tt1200.pk><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cms
-y10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eu
-fm10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/e
-urm10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/
-eurm7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/
-eusm10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/fpl/fplbj8a.pf
-b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/fpl/fplrc8a.pfb><C:/Pro
-gram Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplb8a.pfb><C:/Program Fil
-es (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Program Files (x86
-)/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files (x86)/MiKTeX
- 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on Report.pdf (8 pages, 169012 bytes).
+tt1000.pk> <C:\Users\albyr\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec
+\dpi600\ectt1200.pk><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmex10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/
+euler/euex10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts
+/euler/eufm10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfont
+s/euler/eurm10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/euler/eusm10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/fpl/f
+plbj8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/fpl/fplrc8a.pf
+b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/fpl/fplrij8a.pfb><C:/Pr
+ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:
+/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplb8a.pfb><C:/Program
+ Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on "Quickselect Report.pdf" (9 pages, 319359 bytes).
 PDF statistics:
- 314 PDF objects out of 1000 (max. 8388607)
- 67 named destinations out of 1000 (max. 500000)
- 48757 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 311 PDF objects out of 1000 (max. 8388607)
+ 24 named destinations out of 1000 (max. 500000)
+ 54373 words of extra memory for PDF output out of 61914 (max. 10000000)
 
