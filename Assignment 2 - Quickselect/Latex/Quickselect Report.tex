@@ -103,7 +103,7 @@ The first section of the report presents the algorithm, and its \textbf{Rust imp
 The second section studies the number of \textbf{comparisons} between done by the algorithm,
 i.e. how many elements from the input list must be compared to each other to give the desired output.
 This numbers are then compared to the theoretical expected number of comparisons done by the algorithm.\newline
-The algorithm is tested against vectors with increasing size $n$ and various ranges of $k$. 
+The algorithm is tested against vectors with increasing size $n$ and various ranges of $k$.
 
 As addendum, an analysis of the \textbf{execution time} of \textit{Quickselect} is reported, to show how the number of comparisons influences the running time of the algorithm.
 
@@ -132,15 +132,15 @@ Indeed, \textbf{Quickselect} can be seen as a modified version of \textbf{Quicks
 \vspace{-5mm}
 \subsection{Rust implementation}
 \vspace{-5mm}
-\textit{Rust} was chosen as the programming language of the implementation as the inherent speed of the language, combined with the relative simplicity of the \textbf{Quickselect} algorithm, make it a good candidate for performing a large number of tests over many different parameter values. 
+\textit{Rust} was chosen as the programming language of the implementation as the inherent speed of the language, combined with the relative simplicity of the \textbf{Quickselect} algorithm, make it a good candidate for performing a large number of tests over many different parameter values.
 
 What follows are snippets of code, to explain how the \textbf{Quickselect} algorithm was implemented.
-The following code is inspired to the pseudo-code of the algorithm found on \textit{Wikipedia}. \cite{quickselect_wiki}
+The following code is inspired to the pseudo-code of the algorithm found in \textit{Wikipedia}. \cite{quickselect_wiki}
 
 $\bullet$ \textbf{Quickselect}
 \begin{minted}[baselinestretch=1, fontsize=\footnotesize]{rust}
-fn quickselect(vec: &mut Vec<usize>, 
-               start: usize, end: usize, 
+fn quickselect(vec: &mut Vec<usize>,
+               start: usize, end: usize,
                k: usize, num_of_comparisons: u32) -> (usize, u32) {
     let mut num_of_comparisons: u32 = num_of_comparisons;
 
@@ -174,7 +174,7 @@ fn quickselect(vec: &mut Vec<usize>,
 
 $\bullet$ \textbf{Select a pivot and put it into its sorted position}
 \begin{minted}[baselinestretch=1, fontsize=\footnotesize]{rust}
-fn partition(vec: &mut Vec<usize>, 
+fn partition(vec: &mut Vec<usize>,
              start: usize, end: usize,
              pivot_index: usize) -> (usize, u32) {
     let pivot_value = vec[pivot_index];
@@ -213,14 +213,15 @@ For any two elements $X_i,\ X_j$ of the list, with $j > i$, \\
                     0\ else.
                 \end{cases}
 \]
-The complexity of \textbf{Quickselect} is related to the total number of comparisons $X$ performed by the algorithm.\\
-It can be shown that the expected number of comparisons $E[X]$ is given by:
+The complexity of \textbf{Quickselect} is related to the total number of comparisons $X$ performed by the algorithm. The expected number of comparisons $E[X]$ is given by:
 $$E[X] = E\Big[\sum_{i < j}{X_{i,j}}\Big] = \Big(2n + 2n \cdot\ln\Big(\frac{n}{n - k}\Big) + 2k \cdot\ln\Big(\frac{n - k}{k}\Big)\Big)\cdot (1 + o(1)) \quad\quad (\ast)$$
 \vspace{-5mm}
 A number of observations can be done on this formula:
 \begin{itemize}
     \item If $k$ is chosen to be proportional to $n$, the number of comparisons becomes linear with respect to $n$.\\
     As an example, if $k = \frac{n}{2}$, \textcolor{Maroon}{$E[X] = n \cdot (2 + 2 \cdot \ln(2)) \cdot (1 + o(1))$}.
+    
+    \item The function is \textbf{even} with respect to the $k = \frac{n}{2}$ axis, i.e. $f(k + \frac{n}{2}) = f(k - \frac{n}{2})$, where $f$ is the function $(\ast)$.
 
     \item The function $(\ast)$ is not defined for $k = n$; that said, it can be seen that for $k = n$ the value of $(\ast)$ is very close to its value in $k = 1$. \\
         As such, the function will be approximated in this way in the following analyses.
@@ -234,6 +235,7 @@ The \textbf{Quicksort} algorithm has been tested against lists of increasing siz
 Note that as the selection of the pivot is random, the permutation of the input list doesn't influence the number of comparisons performed by the algorithm; as such, it is possible to use already sorted list as input of the algorithm.
 
 \subsection{\textbf{First test:} increasing size of the list, select the median}
+\vspace{-5mm}
 The first test consisted in running \textbf{Quickselect} on lists with \textit{increasing size $n$ and $k = \frac{n}{2}$}.
 Using a value of $k$ proportional to $n$ is required to make the expected number of comparisons a function of only $n$.\\
 It can be seen from $(\ast)$ that if $k = \frac{n}{2}$ (i.e. one wants to find the \textbf{median} of a list), the expected number of comparisons will be equal to $$E[X] = n \cdot (2 + 2 \cdot \ln(2)) \cdot (1 + o(1)) \quad\quad(\ast\ast)$$ linear with respect to $n$, with a constant slope of $~3.38$ (note from the following plot that $o(1)$ doesn't seem to have any meaningful impact on the number of comparisons).
@@ -263,8 +265,7 @@ The test was performed on a list of size $100000$, with $k$ ranging from $1$ to 
     \caption{\emph{In {\color{RoyalBlue} blue}, the measured number of comparisons. In {\color{red}red}, the theoretical number of comparisons.}}
 \end{figure}
 
-The number of comparisons seems to have a parabolic concave shape, with a unique local maximum in $k = \frac{n}{2}$, consistent with the previous theoretical results.
-Once again, the measured values are inline with the theoretical ones. In this case, the \textit{MAPE} is $0.79\%$.
+The number of comparisons seems to have a parabolic concave shape, with a maximum close to $k = \frac{n}{2}$, and measured values that are consistent with the previous theoretical results. In this case, the \textit{MAPE} is $0.79\%$.
 
 \section{Addendum}
 
