@@ -3,6 +3,7 @@ import scipy.spatial as spatial
 import sys
 import matplotlib.pyplot as plt
 
+MIN_VALUE = -1000000
 
 class Point:
     def __init__(self, x = 0, y = 0):
@@ -34,7 +35,8 @@ def chunks(list, size):
     for i in range(0, len(list), size):
         yield list[i:i + size]
 
-
+def squared_distance(a, b):
+  return (a.x - b.x) ** 2 + (a.y - b.y) ** 2
 
 ###################################
 # ORIENTATION DETERMINANT #########
@@ -123,35 +125,37 @@ def inclusion_in_hull(points, query_point):
 # and must be radially sorted counter-clockwise, 
 # starting from the point with biggest x.
 # Works in linear time, inspired by "http://geomalgorithms.com/a15-_tangents.html"
-def find_tangent_bottom(query_point, points):
-    pass
+def find_tangent_bottom(points, query_point):
+    if inclusion_in_hull(points, query_point):
+        return False
+    
+    tan_b = points[0]
+    tan_index = 0
+    for i in range(1, len(points)):
+        e_prev = orientation_test(points[i - 1], points[i], query_point) >= 0
+        e_next = orientation_test(points[i], points[(i + 1) % len(points)], query_point)
+        if e_prev == 0:
+            tan_b = points[i - 1]
+            tan_index = i - 1
+        elif e_next == 0:
+            tan_b = points[(i + 1) % len(points)]
+            tan_index = (i + 1) % len(points)
+        elif e_prev < 0 and e_next >= 0:
+            tan_b = points[i]
+            tan_index = i
+    return {"tan_point": tan_b, "tan_index": tan_index}
 
 
 
-
-# Test the tangents
-# print("TESTING TANGENTS")
-# points_matrix = np.reshape([p.to_array() for p in points], [-1, 2])
-# hull = points_matrix[spatial.ConvexHull(points_matrix).vertices]
-
-# query_point = Point(0.0, 0.0)
-# plt.plot(query_point.x, query_point.y, 'ro')
-
-# plt.plot(hull[:, 0], hull[:, 1], color='#6699cc', alpha=0.7,
-#     linewidth=3, solid_capstyle='round', zorder=2)
-# plt.axis([0, 1, 0, 1])
-
-# plt.show()
-
-
-
-
-def hull_2d(points, m, H):
+def hull_2d_step(points, m, H):
     # Partition the points in groups of size at most m.
     points_in_groups = list(chunks(points, m))
     
     temp_hulls = []
     hulls = []
+
+    final_hull = []
+
     # Compute the convex hull of each group, and store its vertices in ccw order.
     for group_i in points_in_groups:
         array_points = np.reshape([p.to_array() for p in group_i], [-1, 2])
@@ -165,37 +169,69 @@ def hull_2d(points, m, H):
         for p in hull:
             temp_hull.append(Point(p[0], p[1]))
         hulls.append(temp_hull)
-
-    p_0 = Point(0, MIN_VALUE)
+    
+    final_hull.append(Point(0, MIN_VALUE))
     # Rigthmost point of the list
-    p_1 = max(points, key=lambda p: p.x)
+    final_hull.append(Point(MIN_VALUE, MIN_VALUE))
+    # Find the next point, ccw, belonging to the hull of p_1
+    p_k = Point(MIN_VALUE, MIN_VALUE)
+
+    # Hull index of the last point added to the final hull,
+    # and during the loop of the hull that is a candidate for containing the next point of the final hull.
+    current_hull_number = -1
+    # Position of the last point added to the final hull, 
+    # inside its partial hull
+    pos_in_last_hull = -1
+
+    # Hull number of the last point inserted, updated after inserting a new point in the final hull.
+    old_hull = -1
+
+    for hull_index, hull_i in enumerate(hulls):
+        for i in range(0, len(hull_i)):
+            if hull_i[i].x > final_hull[1].x:
+                final_hull[1] = hull_i[i]
+                current_hull_number = hull_index 
+                pos_in_last_hull = i
+
+    # Find the next point, ccw, belonging to the hull of p_1
+
 
     for k in range(0, H):
-        for i in range(1, np.ceil(len(points) / m)):
+        p_k = hulls[current_hull_number][(pos_in_last_hull + 1) % len(hulls[current_hull_number])]
+        old_hull = current_hull_number
+        # compute the next point in the hull of hull[-1]
+        # also store the index of that hull
+        for hull_index, hull_i in enumerate(hulls):
             # Find the bottom tangent to from p_k-1, p_k to a point q_i in hull_i
-            pass
+            if hull_index != current_hull_number:
+                temp_p = find_tangent_bottom(hull_i, final_hull[-1])
+                if temp_p:
+                    temp_tan = temp_p["tan_point"]
+                    temp_tan_index = temp_p["tan_index"]
 
+                    # Test if the tangent point lies on the left of the segment hull[-1], p_k:
+                    # If so, the angle given by the tangent point is bigger, and we have a new candidate.
+                    o = orientation_test(final_hull[-1], temp_tan, p_k)
 
-    return hulls
+                    # If angle (hull[-2], hull[-1], temp_p) > angle(hull[-2], hull[-1], p_k)
+                    if o > 0:
+                        p_k = temp_tan
+                        current_hull_number = hull_index
+                        pos_in_last_hull = temp_tan_index                  
+        if old_hull == current_hull_number:
+            pos_in_last_hull = (pos_in_last_hull + 1) % len(hulls[current_hull_number])
+        if p_k == final_hull[1]:
+            return final_hull[1:]
+        final_hull.append(p_k)
+    
+    return False
   
 
-
-# print("\n\nFOUND HULLS\n") 
-# import matplotlib.pyplot as plt
-# for hull in hulls:
-#     plt.plot(hull[:,0], hull[:,1], 'b', lw=2)
-#     print(hull)
-# plt.show()
-
-# import numpy as np
-# from scipy.spatial import ConvexHull
-
-# points = np.random.rand(30, 2)
-# hull = ConvexHull(points)
-# plt.plot(points[:,0], points[:,1], 'o')
-# for simplex in hull.simplices:
-#     plt.plot(points[simplex, 0], points[simplex, 1], 'k-')
-# plt.plot(points[hull.vertices,0], points[hull.vertices,1], 'r--', lw=2)
-# plt.plot(points[hull.vertices[0],0], points[hull.vertices[0],1], 'ro')
-# #plt.show()
-# print(points[hull.vertices])
+def hull_2d(points):
+    t = 1
+    while True:
+        H = min(2**2**t, len(points))
+        hull = hull_2d_step(points, H, H)
+        if hull:
+            return hull
+        t += 1

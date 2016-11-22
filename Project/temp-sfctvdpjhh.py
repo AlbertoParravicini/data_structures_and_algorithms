@@ -6,20 +6,34 @@ import pprint
 from convex_hull import *
 
 def main():
-    num_points = 12000
+    num_points = 12
     m = 4
     H = 8
 
-    np.random.seed(1020)
+    np.random.seed(1900)
 
 
 
     points = []
+    # points = [
+    #     Point(3, 3),
+    #     Point(8, 1),
+    #     Point(7, 7),
+    #     Point(4, 5),
+    #     Point(6, 4),
+    #     Point(9, 8),
+    #     Point(6, 9.1),
+    #     Point(5, 9),
+    #     Point(11, 4),
+    #     Point(13, 9),
+    #     Point(12, 8),
+    #     Point(9, 12)
+    # ]
 
     for i in range(0, num_points):
-        points.append(Point(np.floor(np.random.rand() * 1500), np.floor(np.random.rand() * 1500)))
+        points.append(Point(np.floor(np.random.rand() * 15), np.floor(np.random.rand() * 15)))
     print("\n\nPOINTS\n")
-    #print(points, end='\n\n')
+    print(points, end='\n\n')
 
     # Test the tangents
     print("TESTING TANGENTS")
@@ -38,9 +52,9 @@ def main():
 
     #plt.show()
     print("\n\nHULL FIGO:\n")
-    print(len(hull_2d(points)))
+    print(hull_2d(points))
     print("\n\nHULL CORRETTO:\n")
-    print(len(temp_hull))
+    print(temp_hull)
 
 
 main()
