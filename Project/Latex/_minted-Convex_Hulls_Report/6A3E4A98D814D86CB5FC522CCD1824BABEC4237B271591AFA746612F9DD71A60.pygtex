@@ -1,0 +1,50 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Compute the convex hull of the given list of points by using Graham scan}
+\PYG{c+c1}{\PYGZsh{} Inspired by \PYGZdq{}http://www.geeksforgeeks.org/convex\PYGZhy{}hull\PYGZhy{}set\PYGZhy{}2\PYGZhy{}graham\PYGZhy{}scan/\PYGZdq{}}
+\PYG{k}{def} \PYG{n+nf}{convex\PYGZus{}hull\PYGZus{}graham\PYGZus{}scan}\PYG{p}{(}\PYG{n}{input\PYGZus{}points}\PYG{p}{):}
+	\PYG{c+c1}{\PYGZsh{} Copy the input points, so that it is possible to modify them}
+	\PYG{n}{points} \PYG{o}{=} \PYG{n+nb}{list}\PYG{p}{(}\PYG{n}{input\PYGZus{}points}\PYG{p}{)}
+	\PYG{n}{convex\PYGZus{}hull} \PYG{o}{=} \PYG{p}{[]}
+
+	\PYG{c+c1}{\PYGZsh{} Find the point with the smallest x.}
+	\PYG{n}{smallest\PYGZus{}x\PYGZus{}point\PYGZus{}index} \PYG{o}{=} \PYG{l+m+mi}{0}
+	\PYG{k}{for} \PYG{n}{index}\PYG{p}{,} \PYG{n}{p} \PYG{o+ow}{in} \PYG{n+nb}{enumerate}\PYG{p}{(}\PYG{n}{points}\PYG{p}{):}
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{p}\PYG{o}{.}\PYG{n}{x} \PYG{o}{\PYGZlt{}} \PYG{n}{points}\PYG{p}{[}\PYG{n}{smallest\PYGZus{}x\PYGZus{}point\PYGZus{}index}\PYG{p}{]}\PYG{o}{.}\PYG{n}{x}\PYG{p}{)} \PYG{o+ow}{or} \PYGZbs{}
+			\PYG{p}{((}\PYG{n}{p}\PYG{o}{.}\PYG{n}{x} \PYG{o}{==} \PYG{n}{points}\PYG{p}{[}\PYG{n}{smallest\PYGZus{}x\PYGZus{}point\PYGZus{}index}\PYG{p}{]}\PYG{o}{.}\PYG{n}{x}\PYG{p}{)} \PYG{o+ow}{and}
+			\PYG{p}{(}\PYG{n}{p}\PYG{o}{.}\PYG{n}{y} \PYG{o}{\PYGZlt{}} \PYG{n}{points}\PYG{p}{[}\PYG{n}{smallest\PYGZus{}x\PYGZus{}point\PYGZus{}index}\PYG{p}{]}\PYG{o}{.}\PYG{n}{y}\PYG{p}{)):}
+				\PYG{n}{smallest\PYGZus{}x\PYGZus{}point\PYGZus{}index} \PYG{o}{=} \PYG{n}{index}
+
+	\PYG{c+c1}{\PYGZsh{} Put the point with smallest x at the beginning of the list.}
+	\PYG{n}{points}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{],} \PYG{n}{points}\PYG{p}{[}\PYG{n}{smallest\PYGZus{}x\PYGZus{}point\PYGZus{}index}\PYG{p}{]} \PYG{o}{=} \PYG{n}{points}\PYG{p}{[}
+	\PYG{n}{smallest\PYGZus{}x\PYGZus{}point\PYGZus{}index}\PYG{p}{],} \PYG{n}{points}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+
+	\PYG{c+c1}{\PYGZsh{} Order the list with respect to the angle that each point forms}
+	\PYG{c+c1}{\PYGZsh{} with the anchor. Given two points a, b, in the output a is before b}
+	\PYG{c+c1}{\PYGZsh{} if the polar angle of a w.r.t the anchor is bigger than the one of b,}
+	\PYG{c+c1}{\PYGZsh{} in counter\PYGZhy{}clockwise direction.}
+	\PYG{n}{anchor} \PYG{o}{=} \PYG{n}{Point}\PYG{p}{(}\PYG{n}{points}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{x}\PYG{p}{,} \PYG{n}{points}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{y}\PYG{p}{)}
+	\PYG{n}{points} \PYG{o}{=} \PYG{p}{[}\PYG{n}{anchor}\PYG{p}{]} \PYG{o}{+} \PYG{n}{radial\PYGZus{}sort}\PYG{p}{(}\PYG{n}{points}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{:],} \PYG{n}{anchor}\PYG{p}{,} \PYG{n}{cw} \PYG{o}{=} \PYG{n+nb+bp}{False}\PYG{p}{)}
+
+	\PYG{c+c1}{\PYGZsh{} If more points have the same angle w.r.t. the anchor, keep only the farthest one.}
+	\PYG{c+c1}{\PYGZsh{} Used to deal with collinear points\PYGZhy{}}
+	\PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{1}
+	\PYG{k}{while} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{points}\PYG{p}{)} \PYG{o+ow}{and}
+		\PYG{p}{(}\PYG{n}{orientation\PYGZus{}test}\PYG{p}{(}\PYG{n}{anchor}\PYG{p}{,} \PYG{n}{points}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],} \PYG{n}{points}\PYG{p}{[(}\PYG{n}{i} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{points}\PYG{p}{)])} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{):}
+			\PYG{n}{points}\PYG{o}{.}\PYG{n}{pop}\PYG{p}{((}\PYG{n}{i} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{points}\PYG{p}{))}
+
+
+	\PYG{c+c1}{\PYGZsh{} Add the first 3 points to the convex hull.}
+	\PYG{c+c1}{\PYGZsh{} The first 2 will be for sure part of the hull.}
+	\PYG{n}{convex\PYGZus{}hull} \PYG{o}{+=} \PYG{n}{points}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{:}\PYG{l+m+mi}{3}\PYG{p}{]}
+
+	\PYG{k}{for} \PYG{n}{p} \PYG{o+ow}{in} \PYG{n}{points}\PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{:]:}
+		\PYG{c+c1}{\PYGZsh{} While the i\PYGZhy{}th point forms a non\PYGZhy{}left turn with the last 2 elements}
+		\PYG{c+c1}{\PYGZsh{} of the convex hull...}
+		\PYG{k}{while} \PYG{n}{orientation\PYGZus{}test}\PYG{p}{(}\PYG{n}{convex\PYGZus{}hull}\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{p}{],} \PYG{n}{convex\PYGZus{}hull}\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{],} \PYG{n}{p}\PYG{p}{)} \PYG{o}{\PYGZlt{}=} \PYG{l+m+mi}{0}\PYG{p}{:}
+			\PYG{c+c1}{\PYGZsh{} Delete from the convex hull the point that causes a right turn.}
+			\PYG{n}{convex\PYGZus{}hull}\PYG{o}{.}\PYG{n}{pop}\PYG{p}{()}
+		\PYG{c+c1}{\PYGZsh{} Once no new right turns are found, add the point that gives a left turn.}
+		\PYG{n}{convex\PYGZus{}hull}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{p}\PYG{p}{)}
+
+	\PYG{k}{return} \PYG{n}{convex\PYGZus{}hull}
+\end{Verbatim}

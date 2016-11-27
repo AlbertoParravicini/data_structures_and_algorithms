@@ -1,0 +1,81 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{hull\PYGZus{}2d\PYGZus{}step}\PYG{p}{(}\PYG{n}{points}\PYG{p}{,} \PYG{n}{m}\PYG{p}{,} \PYG{n}{H}\PYG{p}{):}
+	\PYG{c+c1}{\PYGZsh{} Partition the points in groups of size at most m.}
+	\PYG{n}{points\PYGZus{}in\PYGZus{}groups} \PYG{o}{=} \PYG{n+nb}{list}\PYG{p}{(}\PYG{n}{chunks}\PYG{p}{(}\PYG{n}{points}\PYG{p}{,} \PYG{n}{m}\PYG{p}{))}
+	\PYG{n}{hulls} \PYG{o}{=} \PYG{p}{[]}
+	\PYG{n}{final\PYGZus{}hull} \PYG{o}{=} \PYG{p}{[]}
+
+	\PYG{c+c1}{\PYGZsh{} Compute the convex hull of each group, and store its vertices in ccw order.}
+	\PYG{k}{for} \PYG{n}{group\PYGZus{}i} \PYG{o+ow}{in} \PYG{n}{points\PYGZus{}in\PYGZus{}groups}\PYG{p}{:}
+		\PYG{n}{hulls}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{convex\PYGZus{}hull\PYGZus{}graham\PYGZus{}scan}\PYG{p}{(}\PYG{n}{group\PYGZus{}i}\PYG{p}{))}
+	\PYG{c+c1}{\PYGZsh{} Leftmost point of the list}
+	\PYG{n}{final\PYGZus{}hull}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{Point}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{n}{MIN\PYGZus{}VALUE}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{n}{MIN\PYGZus{}VALUE}\PYG{p}{))}
+	\PYG{c+c1}{\PYGZsh{} Find the next point, ccw, belonging to the hull of p\PYGZus{}1}
+	\PYG{n}{p\PYGZus{}k} \PYG{o}{=} \PYG{n}{Point}\PYG{p}{(}\PYG{n}{MIN\PYGZus{}VALUE}\PYG{p}{,} \PYG{n}{MIN\PYGZus{}VALUE}\PYG{p}{)}
+
+	\PYG{c+c1}{\PYGZsh{} Hull index of the last point added to the final hull,}
+	\PYG{c+c1}{\PYGZsh{} and during the loop of the hull that is a candidate for containing}
+	\PYG{c+c1}{\PYGZsh{} the next point of the final hull.}
+	\PYG{n}{current\PYGZus{}hull\PYGZus{}number} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}
+	\PYG{c+c1}{\PYGZsh{} Position of the last point added to the final hull,}
+	\PYG{c+c1}{\PYGZsh{} inside its partial hull}
+	\PYG{n}{pos\PYGZus{}in\PYGZus{}last\PYGZus{}hull} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}
+
+	\PYG{c+c1}{\PYGZsh{} Hull number of the last point inserted, updated after inserting a new point}
+	\PYG{c+c1}{\PYGZsh{} in the final hull.}
+	\PYG{n}{old\PYGZus{}hull} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}
+
+	\PYG{c+c1}{\PYGZsh{} Find the leftmost point.}
+	\PYG{k}{for} \PYG{n}{hull\PYGZus{}index}\PYG{p}{,} \PYG{n}{hull\PYGZus{}i} \PYG{o+ow}{in} \PYG{n+nb}{enumerate}\PYG{p}{(}\PYG{n}{hulls}\PYG{p}{):}
+		\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{hull\PYGZus{}i}\PYG{p}{)):}
+			\PYG{k}{if} \PYG{n}{hull\PYGZus{}i}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{.}\PYG{n}{x} \PYG{o}{\PYGZlt{}} \PYG{n}{final\PYGZus{}hull}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{x}\PYG{p}{:}
+				\PYG{n}{final\PYGZus{}hull}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{n}{hull\PYGZus{}i}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}
+				\PYG{n}{current\PYGZus{}hull\PYGZus{}number} \PYG{o}{=} \PYG{n}{hull\PYGZus{}index}
+				\PYG{n}{pos\PYGZus{}in\PYGZus{}last\PYGZus{}hull} \PYG{o}{=} \PYG{n}{i}
+
+	\PYG{k}{for} \PYG{n}{k} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{H}\PYG{p}{):}
+		\PYG{c+c1}{\PYGZsh{} Compute the next point in the hull of hull[\PYGZhy{}1],}
+		\PYG{c+c1}{\PYGZsh{} also store the index of that hull}
+		\PYG{n}{p\PYGZus{}k} \PYG{o}{=} \PYG{n}{hulls}\PYG{p}{[}\PYG{n}{current\PYGZus{}hull\PYGZus{}number}\PYG{p}{][(}\PYG{n}{pos\PYGZus{}in\PYGZus{}last\PYGZus{}hull} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{\PYGZpc{}}
+			\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{hulls}\PYG{p}{[}\PYG{n}{current\PYGZus{}hull\PYGZus{}number}\PYG{p}{])]}
+		\PYG{n}{old\PYGZus{}hull} \PYG{o}{=} \PYG{n}{current\PYGZus{}hull\PYGZus{}number}
+
+	\PYG{k}{for} \PYG{n}{hull\PYGZus{}index}\PYG{p}{,} \PYG{n}{hull\PYGZus{}i} \PYG{o+ow}{in} \PYG{n+nb}{enumerate}\PYG{p}{(}\PYG{n}{hulls}\PYG{p}{):}
+		\PYG{c+c1}{\PYGZsh{} Find the bottom tangent to from p\PYGZus{}k\PYGZhy{}1, p\PYGZus{}k to a point q\PYGZus{}i in hull\PYGZus{}i}
+		\PYG{k}{if} \PYG{n}{hull\PYGZus{}index} \PYG{o}{!=} \PYG{n}{old\PYGZus{}hull}\PYG{p}{:}
+			\PYG{n}{temp\PYGZus{}p} \PYG{o}{=} \PYG{n}{find\PYGZus{}tangent\PYGZus{}bin\PYGZus{}search}\PYG{p}{(}\PYG{n}{hull\PYGZus{}i}\PYG{p}{,} \PYG{n}{final\PYGZus{}hull}\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{])}
+			\PYG{k}{if} \PYG{n}{temp\PYGZus{}p}\PYG{p}{:}
+				\PYG{n}{temp\PYGZus{}tan} \PYG{o}{=} \PYG{n}{temp\PYGZus{}p}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}tan\PYGZus{}point\PYGZdq{}}\PYG{p}{]}
+				\PYG{n}{temp\PYGZus{}tan\PYGZus{}index} \PYG{o}{=} \PYG{n}{temp\PYGZus{}p}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}tan\PYGZus{}index\PYGZdq{}}\PYG{p}{]}
+
+				\PYG{c+c1}{\PYGZsh{} Test if the tangent point lies on the left of}
+				\PYG{c+c1}{\PYGZsh{} the segment hull[\PYGZhy{}1], p\PYGZus{}k:}
+				\PYG{c+c1}{\PYGZsh{} If so, the angle given by the tangent point is bigger,}
+				\PYG{c+c1}{\PYGZsh{} and we have a new candidate.}
+				\PYG{n}{o} \PYG{o}{=} \PYG{n}{orientation\PYGZus{}test}\PYG{p}{(}\PYG{n}{final\PYGZus{}hull}\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{],} \PYG{n}{temp\PYGZus{}tan}\PYG{p}{,} \PYG{n}{p\PYGZus{}k}\PYG{p}{)}
+
+				\PYG{c+c1}{\PYGZsh{} If angle (hull[\PYGZhy{}2], hull[\PYGZhy{}1], temp\PYGZus{}p) \PYGZgt{}}
+				\PYG{c+c1}{\PYGZsh{} angle(hull[\PYGZhy{}2], hull[\PYGZhy{}1], p\PYGZus{}k)}
+				\PYG{k}{if} \PYG{n}{o} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{:}
+				\PYG{n}{p\PYGZus{}k} \PYG{o}{=} \PYG{n}{temp\PYGZus{}tan}
+				\PYG{n}{current\PYGZus{}hull\PYGZus{}number} \PYG{o}{=} \PYG{n}{hull\PYGZus{}index}
+				\PYG{n}{pos\PYGZus{}in\PYGZus{}last\PYGZus{}hull} \PYG{o}{=} \PYG{n}{temp\PYGZus{}tan\PYGZus{}index}
+		\PYG{k}{if} \PYG{n}{old\PYGZus{}hull} \PYG{o}{==} \PYG{n}{current\PYGZus{}hull\PYGZus{}number}\PYG{p}{:}
+			\PYG{n}{pos\PYGZus{}in\PYGZus{}last\PYGZus{}hull} \PYG{o}{=} \PYG{p}{(}
+				\PYG{n}{pos\PYGZus{}in\PYGZus{}last\PYGZus{}hull} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{hulls}\PYG{p}{[}\PYG{n}{current\PYGZus{}hull\PYGZus{}number}\PYG{p}{])}
+		\PYG{k}{if} \PYG{n}{p\PYGZus{}k} \PYG{o}{==} \PYG{n}{final\PYGZus{}hull}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]:}
+			\PYG{k}{return} \PYG{n}{final\PYGZus{}hull}
+		\PYG{n}{final\PYGZus{}hull}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{p\PYGZus{}k}\PYG{p}{)}
+
+	\PYG{k}{return} \PYG{n+nb+bp}{False}
+
+
+\PYG{k}{def} \PYG{n+nf}{hull\PYGZus{}2d}\PYG{p}{(}\PYG{n}{points}\PYG{p}{):}
+	\PYG{n}{t} \PYG{o}{=} \PYG{l+m+mi}{1}
+	\PYG{k}{while} \PYG{n+nb+bp}{True}\PYG{p}{:}
+		\PYG{n}{H} \PYG{o}{=} \PYG{n+nb}{min}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{o}{**}\PYG{l+m+mi}{2}\PYG{o}{**}\PYG{n}{t}\PYG{p}{,} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{points}\PYG{p}{))}
+		\PYG{n}{hull} \PYG{o}{=} \PYG{n}{hull\PYGZus{}2d\PYGZus{}step}\PYG{p}{(}\PYG{n}{points}\PYG{p}{,} \PYG{n}{H}\PYG{p}{,} \PYG{n}{H}\PYG{p}{)}
+		\PYG{k}{if} \PYG{n}{hull}\PYG{p}{:}
+			\PYG{k}{return} \PYG{n}{hull}
+		\PYG{n}{t} \PYG{o}{+=} \PYG{l+m+mi}{1}
+\end{Verbatim}

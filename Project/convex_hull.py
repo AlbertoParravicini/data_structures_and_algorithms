@@ -339,7 +339,6 @@ def hull_2d_step(points, m, H):
     # Partition the points in groups of size at most m.
     points_in_groups = list(chunks(points, m))
 
-    temp_hulls = []
     hulls = []
 
     final_hull = []
@@ -413,3 +412,8 @@ def hull_2d(points):
         if hull:
             return hull
         t += 1
+
+
+
+
+

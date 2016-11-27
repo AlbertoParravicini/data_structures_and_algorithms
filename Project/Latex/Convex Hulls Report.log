@@ -1,22 +1,23 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.4.12)  27 NOV 2016 12:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.4.12)  27 NOV 2016 21:39
 entering extended mode
-**"Quickselect Report.tex"
-("Quickselect Report.tex"
+**"Convex Hulls Report.tex"
+("Convex Hulls Report.tex"
 LaTeX2e <2015/01/01> patch level 2
 Babel <3.9m> and hyphenation patterns for 69 languages loaded.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
-Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\report.cls"
+Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size12.clo"
 File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
-\c@section=\count80
-\c@subsection=\count81
-\c@subsubsection=\count82
-\c@paragraph=\count83
-\c@subparagraph=\count84
-\c@figure=\count85
-\c@table=\count86
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
@@ -38,7 +39,7 @@ Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count87
+\Gread@gobject=\count88
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\colortbl\colortbl.sty"
 Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
@@ -54,7 +55,7 @@ Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \everycr=\toks15
 \minrowclearance=\skip45
 )
-\rownum=\count88
+\rownum=\count89
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
 Package xcolor Info: Model `RGB' extended on input line 1353.
@@ -65,6 +66,9 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\dvipsnam.def"
+File: dvipsnam.def 2014/10/14 v3.0j Driver-dependent file (DPC,SPQR)
+)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xcolor\svgnam.def"
 File: svgnam.def 2007/01/21 v2.11 Predefined colors according to SVG 1.1 (UK)
 ))
@@ -86,7 +90,7 @@ Package caption3 Info: TeX engine: e-TeX on input line 67.
 \caption@parindent=\dimen110
 \caption@hangindent=\dimen111
 )
-\c@float@type=\count89
+\c@float@type=\count90
 \float@exts=\toks17
 \float@box=\box26
 \@floatcapt=\box27
@@ -104,18 +108,18 @@ Package floatrow Info: Modified rotfloat package code loaded on input line 473.
 \FBo@max=\skip49
 \FBc@max=\skip50
 \FBf@max=\skip51
-\c@FBl@b=\count90
-\floatbox@depth=\count91
-\c@FRobj=\count92
-\c@FRsobj=\count93
+\c@FBl@b=\count91
+\floatbox@depth=\count92
+\c@FRobj=\count93
+\c@FRsobj=\count94
 \Xhsize=\skip52
 \sXhsize=\skip53
 \Zhsize=\skip54
 \sZhsize=\skip55
 \flrow@rowbox=\box28
 \FR@Zunitlength=\dimen115
-\c@FBcnt=\count94
-\FPOScnt=\count95
+\c@FBcnt=\count95
+\FPOScnt=\count96
 \LTleft=\skip56
 \LTright=\skip57
 \LTleft=\skip58
@@ -180,13 +184,13 @@ Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
 \@linkdim=\dimen116
-\Hy@linkcounter=\count96
-\Hy@pagecounter=\count97
+\Hy@linkcounter=\count97
+\Hy@pagecounter=\count98
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
-\Hy@SavedSpaceFactor=\count98
+\Hy@SavedSpaceFactor=\count99
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
@@ -199,7 +203,7 @@ Package hyperref Info: Plain pages OFF on input line 4458.
 Package hyperref Info: Backreferencing OFF on input line 4463.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
-\c@Hy@tempcnt=\count99
+\c@Hy@tempcnt=\count100
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\url\url.sty"
 \Urlmuskip=\muskip10
@@ -207,7 +211,7 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5041.
 \XeTeXLinkMargin=\dimen117
-\Fld@menulength=\count100
+\Fld@menulength=\count101
 \Field@Width=\dimen118
 \Fld@charsize=\dimen119
 Package hyperref Info: Hyper figures OFF on input line 6295.
@@ -219,17 +223,17 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6320.
 Package hyperref Info: PDF/A mode OFF on input line 6325.
 LaTeX Info: Redefining \ref on input line 6365.
 LaTeX Info: Redefining \pageref on input line 6369.
-\Hy@abspage=\count101
-\c@Item=\count102
-\c@Hfootnote=\count103
+\Hy@abspage=\count102
+\c@Item=\count103
+\c@Hfootnote=\count104
 )
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
-\Fld@listcount=\count104
-\c@bookmark@seq@number=\count105
+\Fld@listcount=\count105
+\c@bookmark@seq@number=\count106
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
@@ -244,7 +248,7 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \enit@outerparindent=\dimen120
 \enit@toks=\toks20
 \enit@inbox=\box29
-\enitdp@description=\count106
+\enitdp@description=\count107
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\booktabs\booktabs.sty"
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
@@ -258,12 +262,12 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \cmidrulesep=\dimen128
 \cmidrulekern=\dimen129
 \defaultaddspace=\dimen130
-\@cmidla=\count107
-\@cmidlb=\count108
+\@cmidla=\count108
+\@cmidlb=\count109
 \@aboverulesep=\dimen131
 \@belowrulesep=\dimen132
-\@thisruleclass=\count109
-\@lastruleclass=\count110
+\@thisruleclass=\count110
+\@lastruleclass=\count111
 \@thisrulewidth=\dimen133
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\tabularx.sty"
@@ -273,7 +277,7 @@ Package: tabularx 2014/10/28 v2.10 `tabularx' package (DPC)
 \TX@old@col=\dimen136
 \TX@target=\dimen137
 \TX@delta=\dimen138
-\TX@cols=\count111
+\TX@cols=\count112
 \TX@ftn=\toks21
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\csquotes\csquotes.sty"
@@ -281,14 +285,14 @@ Package: csquotes 2016/01/31 v5.1g context-sensitive quotations (JAW)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\etoolbox\etoolbox.sty"
 Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count112
+\etb@tempcnta=\count113
 )
-\csq@reset=\count113
-\csq@gtype=\count114
-\csq@glevel=\count115
-\csq@qlevel=\count116
-\csq@maxlvl=\count117
-\csq@tshold=\count118
+\csq@reset=\count114
+\csq@gtype=\count115
+\csq@glevel=\count116
+\csq@qlevel=\count117
+\csq@maxlvl=\count118
+\csq@tshold=\count119
 \csq@ltx@everypar=\toks22
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\csquotes\csquotes.def"
@@ -320,13 +324,13 @@ Package: amsbsy 1999/11/29 v1.2d
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count119
+\inf@bad=\count120
 LaTeX Info: Redefining \frac on input line 210.
-\uproot@=\count120
-\leftroot@=\count121
+\uproot@=\count121
+\leftroot@=\count122
 LaTeX Info: Redefining \overline on input line 306.
-\classnum@=\count122
-\DOTSCASE@=\count123
+\classnum@=\count123
+\DOTSCASE@=\count124
 LaTeX Info: Redefining \ldots on input line 378.
 LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
@@ -335,15 +339,15 @@ LaTeX Info: Redefining \cdots on input line 466.
 \big@size=\dimen141
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
-\macc@depth=\count124
-\c@MaxMatrixCols=\count125
+\macc@depth=\count125
+\c@MaxMatrixCols=\count126
 \dotsspace@=\muskip11
-\c@parentequation=\count126
-\dspbrk@lvl=\count127
+\c@parentequation=\count127
+\dspbrk@lvl=\count128
 \tag@help=\toks24
-\row@=\count128
-\column@=\count129
-\maxfields@=\count130
+\row@=\count129
+\column@=\count130
+\maxfields@=\count131
 \andhelp@=\toks25
 \eqnshift@=\dimen142
 \alignsep@=\dimen143
@@ -369,7 +373,7 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 \XKV@toks=\toks28
 \XKV@tempa@toks=\toks29
 )
-\XKV@depth=\count131
+\XKV@depth=\count132
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\adjustbox\adjcalc.sty"
@@ -416,12 +420,12 @@ File: tc-pdftex.def 2012/05/13 v1.0 Clipping driver for pdftex
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ifoddpage\ifoddpage.sty"
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count132
+\c@checkoddpage=\count133
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ltxmisc\varwidth.sty"
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box33
-\sift@deathcycles=\count133
+\sift@deathcycles=\count134
 \@vwid@loff=\dimen158
 \@vwid@roff=\dimen159
 ))
@@ -431,9 +435,9 @@ Package: titlepic 2009/08/03 1.1 Package to display a picture on the title page
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
 Package: geometry 2010/09/12 v5.6 Page Geometry
-\Gm@cnth=\count134
-\Gm@cntv=\count135
-\c@Gm@tempcnt=\count136
+\Gm@cnth=\count135
+\Gm@cntv=\count136
+\c@Gm@tempcnt=\count137
 \Gm@bindingoffset=\dimen160
 \Gm@wd@mp=\dimen161
 \Gm@odd@mp=\dimen162
@@ -446,23 +450,23 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.sty"
-\lst@mode=\count137
+\lst@mode=\count138
 \lst@gtempboxa=\box34
 \lst@token=\toks31
-\lst@length=\count138
+\lst@length=\count139
 \lst@currlwidth=\dimen168
-\lst@column=\count139
-\lst@pos=\count140
+\lst@column=\count140
+\lst@pos=\count141
 \lst@lostspace=\dimen169
 \lst@width=\dimen170
-\lst@newlines=\count141
-\lst@lineno=\count142
+\lst@newlines=\count142
+\lst@lineno=\count143
 \lst@maxwidth=\dimen171
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count143
-\lst@skipnumbers=\count144
+\c@lstnumber=\count144
+\lst@skipnumbers=\count145
 \lst@framebox=\box35
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.cfg"
@@ -472,7 +476,7 @@ Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption.sty"
 Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
-\c@ContinuedFloat=\count145
+\c@ContinuedFloat=\count146
 Package caption Info: float package is loaded.
 Package caption Info: floatrow package is loaded.
 Package caption Info: hyperref package is loaded.
@@ -706,8 +710,8 @@ Now handling font encoding PD1 ...
 ))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\subcaption.sty"
 Package: subcaption 2016/02/20 v1.1-142 Sub-captions (AR)
-\c@subfigure=\count146
-\c@subtable=\count147
+\c@subfigure=\count147
+\c@subtable=\count148
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\classicthesis\classicthesis.sty"
 Package: classicthesis 2015/09/06 v4.2 Typographic style for a classic-looking 
@@ -716,26 +720,18 @@ thesis
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-Package classicthesis Info: Using option "nochapters" (probably for an article)
-. This turns off the options "linedheaders", "manychapters", "floatperchapter",
-"listsseparated", "eulerchapternumbers", and "parts". Please be aware of that. 
-on input line 158.
-
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\mathpazo.sty"
 Package: mathpazo 2005/04/12 PSNFSS-v9.2a Palatino w/ Pazo Math (D.Puga, WaS) 
 \symupright=\mathgroup4
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\eulervm\eulervm.sty"
-Package: eulervm 2005/01/11 v4.0 (WaS)
-)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\microtype\microtype.sty"
 Package: microtype 2013/05/23 v2.5a Micro-typographical refinements (RS)
 \MT@toks=\toks34
-\MT@count=\count148
+\MT@count=\count149
 LaTeX Info: Redefining \textls on input line 766.
 \MT@outer@kern=\dimen172
 LaTeX Info: Redefining \textmicrotypecontext on input line 1285.
-\MT@listname@count=\count149
+\MT@listname@count=\count150
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\microtype\microtype-pdftex.def"
 File: microtype-pdftex.def 2013/05/23 v2.5a Definitions specific to pdftex (RS)
@@ -772,7 +768,7 @@ Package scrlfile, 2015/10/03 v3.19a KOMA-Script package (loading files)
 
 )))
 \ta@bcor=\skip66
-\ta@div=\count150
+\ta@div=\count151
 Package typearea Info: You've used standard option `a4paper'.
 (typearea)             This is correct!
 (typearea)             Internally I'm using `paper=a4'.
@@ -859,10 +855,10 @@ Package scrlayer Info: patching LaTeX kernel macro \pagestyle on input line 197
 ))
 Package scrlayer-scrpage Info: auto-selection of `pagestyleset=standard'.
 
-1: subsection
 1: section
+1: chapter
+1: chapter
 1: section
-1: subsection
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\titlesec\titlesec.sty"
 Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
 \ttl@box=\box36
@@ -877,52 +873,55 @@ Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tocloft\tocloft.sty"
 Package: tocloft 2013/05/02 v2.3f parameterised ToC, etc., typesetting
-Package tocloft Info: The document has section divisions on input line 44.
+Package tocloft Info: The document has chapter divisions on input line 44.
 \cftparskip=\skip74
 \cftbeforetoctitleskip=\skip75
 \cftaftertoctitleskip=\skip76
 \cftbeforepartskip=\skip77
 \cftpartnumwidth=\skip78
 \cftpartindent=\skip79
-\cftbeforesecskip=\skip80
-\cftsecindent=\skip81
-\cftsecnumwidth=\skip82
-\cftbeforesubsecskip=\skip83
-\cftsubsecindent=\skip84
-\cftsubsecnumwidth=\skip85
-\cftbeforesubsubsecskip=\skip86
-\cftsubsubsecindent=\skip87
-\cftsubsubsecnumwidth=\skip88
-\cftbeforeparaskip=\skip89
-\cftparaindent=\skip90
-\cftparanumwidth=\skip91
-\cftbeforesubparaskip=\skip92
-\cftsubparaindent=\skip93
-\cftsubparanumwidth=\skip94
-\cftbeforeloftitleskip=\skip95
-\cftafterloftitleskip=\skip96
-\cftbeforefigskip=\skip97
-\cftfigindent=\skip98
-\cftfignumwidth=\skip99
-\c@lofdepth=\count151
-\c@lotdepth=\count152
-\cftbeforelottitleskip=\skip100
-\cftafterlottitleskip=\skip101
-\cftbeforetabskip=\skip102
-\cfttabindent=\skip103
-\cfttabnumwidth=\skip104
+\cftbeforechapskip=\skip80
+\cftchapindent=\skip81
+\cftchapnumwidth=\skip82
+\cftbeforesecskip=\skip83
+\cftsecindent=\skip84
+\cftsecnumwidth=\skip85
+\cftbeforesubsecskip=\skip86
+\cftsubsecindent=\skip87
+\cftsubsecnumwidth=\skip88
+\cftbeforesubsubsecskip=\skip89
+\cftsubsubsecindent=\skip90
+\cftsubsubsecnumwidth=\skip91
+\cftbeforeparaskip=\skip92
+\cftparaindent=\skip93
+\cftparanumwidth=\skip94
+\cftbeforesubparaskip=\skip95
+\cftsubparaindent=\skip96
+\cftsubparanumwidth=\skip97
+\cftbeforeloftitleskip=\skip98
+\cftafterloftitleskip=\skip99
+\cftbeforefigskip=\skip100
+\cftfigindent=\skip101
+\cftfignumwidth=\skip102
+\c@lofdepth=\count152
+\c@lotdepth=\count153
+\cftbeforelottitleskip=\skip103
+\cftafterlottitleskip=\skip104
+\cftbeforetabskip=\skip105
+\cfttabindent=\skip106
+\cfttabnumwidth=\skip107
 )
-\newnumberwidth=\skip105
-\beforebibskip=\skip106
-\newchnumberwidth=\skip107
-\figurelabelwidth=\skip108
-\tablelabelwidth=\skip109
+\newnumberwidth=\skip108
+\beforebibskip=\skip109
+\newchnumberwidth=\skip110
+\figurelabelwidth=\skip111
+\tablelabelwidth=\skip112
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\footmisc\footmisc.sty"
 Package: footmisc 2011/06/06 v5.5b a miscellany of footnote facilities
 \FN@temptoken=\toks41
 \footnotemargin=\dimen181
-\c@pp@next@reset=\count153
+\c@pp@next@reset=\count154
 Package footmisc Info: Declaring symbol style bringhurst on input line 855.
 Package footmisc Info: Declaring symbol style chicago on input line 863.
 Package footmisc Info: Declaring symbol style wiley on input line 872.
@@ -940,6 +939,76 @@ n" for footnote setup (not 100\% the same as with KOMA).
 Package: scrtime 2015/10/03 v3.19a KOMA-Script package (time of LaTeX run)
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\carlisle\remreset.sty"))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\algorithm2e\algorithm2e.sty"
+Package: algorithm2e 2013/01/06 v5.00 algorithms environments
+\c@AlgoLine=\count155
+\algocf@hangindent=\skip113
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\xspace.sty"
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ltxmisc\relsize.sty"
+Package: relsize 2003/07/04 ver 3.1
+)
+********************************************************
+Package `algorithm2e' Release 5.1 -- october 19 2015 --
+- algorithm2e-announce@lirmm.fr mailing list for announcement about releases
+- algorithm2e-discussion@lirmm.fr mailing list for discussion about package
+subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
+- Author: Christophe Fiorio (christophe.fiorio@umontpellier.fr)
+********************************************************
+\skiptotal=\skip114
+\skiplinenumber=\skip115
+\skiprule=\skip116
+\skiphlne=\skip117
+\skiptext=\skip118
+\skiplength=\skip119
+\algomargin=\skip120
+\skipalgocfslide=\skip121
+\algowidth=\dimen182
+\inoutsize=\dimen183
+\inoutindent=\dimen184
+\interspacetitleruled=\dimen185
+\interspacealgoruled=\dimen186
+\interspacetitleboxruled=\dimen187
+\algocf@ruledwidth=\skip122
+\algocf@inoutbox=\box37
+\algocf@inputbox=\box38
+\AlCapSkip=\skip123
+\AlCapHSkip=\skip124
+\algoskipindent=\skip125
+\algocf@nlbox=\box39
+\algocf@hangingbox=\box40
+\algocf@untilbox=\box41
+\algocf@skipuntil=\skip126
+\algocf@capbox=\box42
+\algoheightruledefault=\skip127
+\algoheightrule=\skip128
+\algotitleheightruledefault=\skip129
+\algotitleheightrule=\skip130
+\c@algocfline=\count156
+\c@algocfproc=\count157
+\c@algocf=\count158
+\algocf@algoframe=\box43
+\algocf@algobox=\box44
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amscls\amsthm.sty"
+Package: amsthm 2015/03/04 v2.20.2
+\thm@style=\toks42
+\thm@bodyfont=\toks43
+\thm@headfont=\toks44
+\thm@notefont=\toks45
+\thm@headpunct=\toks46
+\thm@preskip=\skip131
+\thm@postskip=\skip132
+\thm@headsep=\skip133
+\dth@everypar=\toks47
+)
+\c@definition=\count159
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lipsum\lipsum.sty"
+Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
+\c@lips@count=\count160
+)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\minted\minted.sty"
 Package: minted 2016/07/20 v2.4 Yet another Pygments shim for LaTeX
 
@@ -952,11 +1021,11 @@ Package: fancyvrb 2008/02/07
 
 Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
 <2008/02/07> (tvz)
-\FV@CodeLineNo=\count154
+\FV@CodeLineNo=\count161
 \FV@InFile=\read1
-\FV@TabBox=\box37
-\c@FancyVerbLine=\count155
-\FV@StepNumber=\count156
+\FV@TabBox=\box45
+\c@FancyVerbLine=\count162
+\FV@StepNumber=\count163
 \FV@OutFile=\write3
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\upquote\upquote.sty"
@@ -1121,20 +1190,20 @@ Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 ))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lineno\lineno.sty"
 Package: lineno 2005/11/02 line numbers on paragraphs v4.41
-\linenopenalty=\count157
-\output=\toks42
-\linenoprevgraf=\count158
-\linenumbersep=\dimen182
-\linenumberwidth=\dimen183
-\c@linenumber=\count159
-\c@pagewiselinenumber=\count160
-\c@LN@truepage=\count161
-\c@internallinenumber=\count162
-\c@internallinenumbers=\count163
-\quotelinenumbersep=\dimen184
-\bframerule=\dimen185
-\bframesep=\dimen186
-\bframebox=\box38
+\linenopenalty=\count164
+\output=\toks48
+\linenoprevgraf=\count165
+\linenumbersep=\dimen188
+\linenumberwidth=\dimen189
+\c@linenumber=\count166
+\c@pagewiselinenumber=\count167
+\c@LN@truepage=\count168
+\c@internallinenumber=\count169
+\c@internallinenumbers=\count170
+\quotelinenumbersep=\dimen190
+\bframerule=\dimen191
+\bframesep=\dimen192
+\bframebox=\box46
 
 
 LaTeX Warning: Command \@parboxrestore  has changed.
@@ -1146,38 +1215,38 @@ LaTeX Info: Redefining \\ on input line 3056.
 Package fvextra Warning: csquotes should be loaded after fvextra, to avoid a wa
 rning from the lineno package on input line 37.
 
-\c@FV@TrueTabGroupLevel=\count164
-\c@FV@TrueTabCounter=\count165
-\FV@TabBox@Group=\box39
-\FV@TmpLength=\skip110
-\c@FV@HighlightLinesStart=\count166
-\c@FV@HighlightLinesStop=\count167
-\FV@BreakIndent=\dimen187
-\FV@BreakSymbolSepLeft=\dimen188
-\FV@BreakSymbolSepRight=\dimen189
-\FV@BreakSymbolIndentLeft=\dimen190
+\c@FV@TrueTabGroupLevel=\count171
+\c@FV@TrueTabCounter=\count172
+\FV@TabBox@Group=\box47
+\FV@TmpLength=\skip134
+\c@FV@HighlightLinesStart=\count173
+\c@FV@HighlightLinesStop=\count174
+\FV@BreakIndent=\dimen193
+\FV@BreakSymbolSepLeft=\dimen194
+\FV@BreakSymbolSepRight=\dimen195
+\FV@BreakSymbolIndentLeft=\dimen196
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 562.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-\FV@BreakSymbolIndentRight=\dimen191
-\c@FancyVerbLineBreakLast=\count168
-\FV@LineBox=\box40
-\FV@LineIndentBox=\box41
+\FV@BreakSymbolIndentRight=\dimen197
+\c@FancyVerbLineBreakLast=\count175
+\FV@LineBox=\box48
+\FV@LineIndentBox=\box49
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\calc.sty"
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count169
-\calc@Bcount=\count170
-\calc@Adimen=\dimen192
-\calc@Bdimen=\dimen193
-\calc@Askip=\skip111
-\calc@Bskip=\skip112
+\calc@Acount=\count176
+\calc@Bcount=\count177
+\calc@Adimen=\dimen198
+\calc@Bdimen=\dimen199
+\calc@Askip=\skip135
+\calc@Bskip=\skip136
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count171
-\calc@Cskip=\skip113
+\calc@Ccount=\count178
+\calc@Cskip=\skip137
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ifplatform\ifplatform.sty"
 Package: ifplatform 2010/10/22 v0.4 Testing for the operating system
@@ -1188,105 +1257,109 @@ Package: catchfile 2011/03/01 v1.6 Catch the contents of a file (HO)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xstring\xstring.sty"
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xstring\xstring.tex"
 \@xs@message=\write4
-\integerpart=\count172
-\decimalpart=\count173
+\integerpart=\count179
+\decimalpart=\count180
 )
 Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\framed\framed.sty"
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip114
-\fb@frw=\dimen194
-\fb@frh=\dimen195
-\FrameRule=\dimen196
-\FrameSep=\dimen197
+\OuterFrameSep=\skip138
+\fb@frw=\dimen200
+\fb@frh=\dimen201
+\FrameRule=\dimen202
+\FrameSep=\dimen203
 )
 \minted@appexistsfile=\read2
-\minted@bgbox=\box42
+\minted@bgbox=\box50
 \minted@code=\write5
-\c@minted@FancyVerbLineTemp=\count174
-\c@minted@pygmentizecounter=\count175
-\c@listing=\count176
+\c@minted@FancyVerbLineTemp=\count181
+\c@minted@pygmentizecounter=\count182
+\c@listing=\count183
 )
-runsystem(if not exist _minted-Quickselect_Report mkdir _minted-Quickselect_Rep
-ort)...executed.
+runsystem(if not exist _minted-Convex_Hulls_Report mkdir _minted-Convex_Hulls_R
+eport)...executed.
 
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
-File: lstlang1.sty 2015/06/04 1.6 listings language file
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\bm.sty"
+Package: bm 2014/10/28 v1.1c Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup5
+\symboldletters=\mathgroup6
+\symboldsymbols=\mathgroup7
+\symboldupright=\mathgroup8
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
+LaTeX Info: Redefining \bm on input line 207.
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang2.sty"
-File: lstlang2.sty 2015/06/04 1.6 listings language file
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang3.sty"
-File: lstlang3.sty 2015/06/04 1.6 listings language file
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\setspace\setspace.sty"
+Package: setspace 2011/12/19 v6.7a set line spacing
 )
 
-Package csquotes Warning: Load 'inputenc' before 'csquotes' on input line 93.
+Package csquotes Warning: Load 'inputenc' before 'csquotes' on input line 139.
 
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
-runsystem(for ^%i in (pygmentize.exe pygmentize.bat pygmentize.cmd) do set > Qu
-ickselect_Report.aex <nul: /p x=^%~$PATH:i>> Quickselect_Report.aex)...executed
-.
+runsystem(for ^%i in (pygmentize.exe pygmentize.bat pygmentize.cmd) do set > Co
+nvex_Hulls_Report.aex <nul: /p x=^%~$PATH:i>> Convex_Hulls_Report.aex)...execut
+ed.
 
-runsystem(del Quickselect_Report.aex)...executed.
+runsystem(del Convex_Hulls_Report.aex)...executed.
 
-("Quickselect Report.aux")
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 93.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 93.
+("Convex Hulls Report.aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 139.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 139.
+
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    ... okay on input line 139.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count177
-\scratchdimen=\dimen198
-\scratchbox=\box43
-\nofMPsegments=\count178
-\nofMParguments=\count179
-\everyMPshowfont=\toks43
-\MPscratchCnt=\count180
-\MPscratchDim=\dimen199
-\MPnumerator=\count181
-\makeMPintoPDFobject=\count182
-\everyMPtoPDFconversion=\toks44
+\scratchcounter=\count184
+\scratchdimen=\dimen204
+\scratchbox=\box51
+\nofMPsegments=\count185
+\nofMParguments=\count186
+\everyMPshowfont=\toks49
+\MPscratchCnt=\count187
+\MPscratchDim=\dimen205
+\MPnumerator=\count188
+\makeMPintoPDFobject=\count189
+\everyMPtoPDFconversion=\toks50
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: floatrow package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\AtBeginShipoutBox=\box44
-Package hyperref Info: Link coloring ON on input line 93.
+\AtBeginShipoutBox=\box52
+Package hyperref Info: Link coloring ON on input line 139.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count183
+\c@section@level=\count190
 )
-LaTeX Info: Redefining \ref on input line 93.
-LaTeX Info: Redefining \pageref on input line 93.
-LaTeX Info: Redefining \nameref on input line 93.
+LaTeX Info: Redefining \ref on input line 139.
+LaTeX Info: Redefining \pageref on input line 139.
+LaTeX Info: Redefining \nameref on input line 139.
 
-("Quickselect Report.out") ("Quickselect Report.out")
+("Convex Hulls Report.out") ("Convex Hulls Report.out")
 \@outlinefile=\write6
 
 *geometry* driver: auto-detecting
@@ -1327,8 +1400,8 @@ Package geometry Warning: The marginal notes overrun the paper.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count184
-LaTeX Info: Redefining \microtypecontext on input line 93.
+\c@lstlisting=\count191
+LaTeX Info: Redefining \microtypecontext on input line 139.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1343,37 +1416,40 @@ File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
 )
 
 Package hyperref Warning: Option `colorlinks' has already been used,
-(hyperref)                setting the option has no effect on input line 93.
+(hyperref)                setting the option has no effect on input line 139.
 
-Package hyperref Info: Option `breaklinks' set `true' on input line 93.
+Package hyperref Info: Option `breaklinks' set `true' on input line 139.
 
 Package hyperref Warning: Option `bookmarks' has already been used,
-(hyperref)                setting the option has no effect on input line 93.
+(hyperref)                setting the option has no effect on input line 139.
 
 LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <20.74> not available
-(Font)              Font shape `T1/pplj/b/n' tried instead on input line 95.
-LaTeX Font Info:    Try loading font information for U+zeur on input line 95.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\eulervm\uzeur.fd"
-File: uzeur.fd 2005/01/11 v4.0 (WaS)
+(Font)              Font shape `T1/pplj/b/n' tried instead on input line 140.
+LaTeX Font Info:    Try loading font information for OT1+pplx on input line 140
+.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1pplx.fd"
+File: ot1pplx.fd 2004/09/06 font definitions for OT1/pplx.
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\microtype\mt-eur.cfg"
-File: mt-eur.cfg 2006/07/31 v1.1 microtype config. file: AMS Euler Roman (RS)
-)
-LaTeX Font Info:    Try loading font information for U+zeus on input line 95.
+LaTeX Font Info:    Try loading font information for OML+zplm on input line 140
+.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\eulervm\uzeus.fd"
-File: uzeus.fd 2005/01/11 v4.0 (WaS)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omlzplm.fd"
+File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\microtype\mt-eus.cfg"
-File: mt-eus.cfg 2006/07/28 v1.2 microtype config. file: AMS Euler Script (RS)
-)
-LaTeX Font Info:    Try loading font information for U+zeuex on input line 95.
+LaTeX Font Info:    Try loading font information for OMS+zplm on input line 140
+.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\eulervm\uzeuex.fd"
-File: uzeuex.fd 2005/01/11 v4.0 (WaS)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omszplm.fd"
+File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 95.
+LaTeX Font Info:    Try loading font information for OMX+zplm on input line 140
+.
 
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omxzplm.fd"
+File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
+)
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 140
+.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1zplm.fd"
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
@@ -1382,131 +1458,158 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             `zplm' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <14> not available
-(Font)              Font shape `T1/pplj/b/n' tried instead on input line 98.
-LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <12> not available
-(Font)              Font shape `T1/pplj/b/n' tried instead on input line 99.
-Package microtype Info: Character `029' is missing
-(microtype)             in font `T1/pplj/m/sc/12'.
-(microtype)             Ignoring protrusion settings for this character.
  [1
 
 {C:/Users/albyr/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <14> not available
+(Font)              Font shape `T1/pplj/b/n' tried instead on input line 144.
+ [1]
+Chapter 1.
+LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <24.88> not available
+(Font)              Font shape `T1/pplj/b/n' tried instead on input line 148.
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--150
+
+ []
+
+LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <12> not available
+(Font)              Font shape `T1/pplj/b/n' tried instead on input line 153.
+<"hull_example".pdf, id=114, 578.16pt x 433.62pt>
+File: "hull_example".pdf Graphic file (type pdf)
+ <use "hull_example".pdf>
+Package pdftex.def Info: "hull_example".pdf used on input line 164.
+(pdftex.def)             Requested size: 256.07741pt x 192.05714pt.
+
+[2
+
+] [3 <./hull_example.pdf>]
+Chapter 2.
+
+Underfull \hbox (badness 10000) in paragraph at lines 178--180
+
+ []
+
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/pplj/m/sc/12'.
+(microtype)             Ignoring protrusion settings for this character.
+
+Underfull \hbox (badness 10000) in paragraph at lines 186--188
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 189--192
+
+ []
+
+[4
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 204--205
+
+ []
+
+<"jarvis_march".pdf, id=150, 578.16pt x 433.62pt>
+File: "jarvis_march".pdf Graphic file (type pdf)
+ <use "jarvis_march".pdf>
+Package pdftex.def Info: "jarvis_march".pdf used on input line 233.
+(pdftex.def)             Requested size: 256.07741pt x 192.05714pt.
+
+[5] [6 <./jarvis_march.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 247--250
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--255
+
+ []
+
+[7] (_minted-Convex_Hulls_Report/default-pyg-prefix.pygstyle)
+(_minted-Convex_Hulls_Report/tango.pygstyle)
+(_minted-Convex_Hulls_Report/6A3E4A98D814D86CB5FC522CCD1824BABEC4237B271591AFA7
+46612F9DD71A60.pygtex
 Package microtype Info: Loading generic settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 127.
-
-Overfull \hbox (39.11908pt too wide) in paragraph at lines 127--128
-[]    \T1/cmtt/m/n/12 if []position(pivot) $\U/zeur/m/n/12 <$ \T1/cmtt/m/n/12 k
-[], return []quickselect(start, position(pivot))[]; 
- []
-
-
-Overfull \hbox (26.7721pt too wide) in paragraph at lines 127--128
-[]    \T1/cmtt/m/n/12 if []position(pivot) $\U/zeur/m/n/12 >$ \T1/cmtt/m/n/12 k
-[], return []quickselect(position(pivot), end)[]; 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 127--128
-
- []
-
-(_minted-Quickselect_Report/default-pyg-prefix.pygstyle)
-(_minted-Quickselect_Report/tango.pygstyle)
-(_minted-Quickselect_Report/1CA89C87F8BB026A79DB6DC83FB5981DC56BD362A526EB5D112
-22BE3361BB4ED.pygtex
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 2.
- [2])
-(_minted-Quickselect_Report/473922F17093A9591A1E0919BDB0ECC8C56BD362A526EB5D112
-22BE3361BB4ED.pygtex)
-Underfull \hbox (badness 10000) in paragraph at lines 209--210
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 4.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 337--339
 
  []
 
-[3]
-LaTeX Font Info:    Try loading font information for TS1+pplj on input line 221
-.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ts1pplj.fd"
-File: ts1pplj.fd 2004/09/06 font definitions for TS1/pplj.
-)
-LaTeX Font Info:    Font shape `T1/pplj/bx/it' in size <12> not available
-(Font)              Font shape `T1/pplj/b/it' tried instead on input line 237.
- [4]
-<"increasing_size".pdf, id=77, 578.16pt x 433.62pt>
-File: "increasing_size".pdf Graphic file (type pdf)
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 350--353
 
-<use "increasing_size".pdf>
-Package pdftex.def Info: "increasing_size".pdf used on input line 249.
-(pdftex.def)             Requested size: 426.79135pt x 320.09303pt.
- [5 <./increasing_size.pdf>]
-<"increasing_rank".pdf, id=92, 578.16pt x 433.62pt>
-File: "increasing_rank".pdf Graphic file (type pdf)
+ []
 
-<use "increasing_rank".pdf>
-Package pdftex.def Info: "increasing_rank".pdf used on input line 264.
-(pdftex.def)             Requested size: 426.79135pt x 320.09303pt.
- [6 <./increasing_rank.pdf>]
-<"increasing_size_time".pdf, id=104, 578.16pt x 433.62pt>
-File: "increasing_size_time".pdf Graphic file (type pdf)
 
-<use "increasing_size_time".pdf>
-Package pdftex.def Info: "increasing_size_time".pdf used on input line 290.
-(pdftex.def)             Requested size: 384.1096pt x 288.0824pt.
+Underfull \hbox (badness 10000) in paragraph at lines 354--359
 
-<"increasing_rank_time".pdf, id=105, 578.16pt x 433.62pt>
-File: "increasing_rank_time".pdf Graphic file (type pdf)
+ []
 
-<use "increasing_rank_time".pdf>
-Package pdftex.def Info: "increasing_rank_time".pdf used on input line 296.
-(pdftex.def)             Requested size: 384.1096pt x 288.0824pt.
- [7] ("Quickselect Report.bbl" [8 <./increasing_size_time.pdf> <./increasing_ra
-nk_time.pdf>])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 306.
- [9]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 306.
- ("Quickselect Report.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 306.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 306.
-Package rerunfilecheck Info: File `"Quickselect Report".out' has not changed.
-(rerunfilecheck)             Checksum: 004A7663B85444B48DEC30DE0134750D;740.
-runsystem(del Quickselect_Report.pyg)...executed.
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 364--365
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 306.
- ) 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 371--372
+
+ []
+
+[10] [11]
+(_minted-Convex_Hulls_Report/24203A2508416561FE852226AD09DC6BBEC4237B271591AFA7
+46612F9DD71A60.pygtex [12]) [13] [14]
+Chapter 3.
+[15
+
+] ("Convex Hulls Report.bbl" [16])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 539.
+ [17
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 539.
+ ("Convex Hulls Report.aux")
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 539.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 539.
+Package rerunfilecheck Info: File `"Convex Hulls Report".out' has not changed.
+(rerunfilecheck)             Checksum: DAFFE8D5208A3A6A0D5058DC3BCFA7FA;1813.
+runsystem(del Convex_Hulls_Report.pyg)...executed.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 539.
+ )
+(\end occurred inside a group at level 1)
+
+### simple group (level 1) entered at line 1061 ({)
+### bottom level 
 Here is how much of TeX's memory you used:
- 20178 strings out of 493673
- 350580 string characters out of 3141530
- 626887 words of memory out of 3000000
- 22920 multiletter control sequences out of 15000+200000
- 86083 words of font info for 250 fonts, out of 3000000 for 9000
+ 21523 strings out of 493673
+ 370460 string characters out of 3141530
+ 719670 words of memory out of 3000000
+ 24162 multiletter control sequences out of 15000+200000
+ 89484 words of font info for 325 fonts, out of 3000000 for 9000
  1027 hyphenation exceptions out of 8191
- 57i,21n,79p,967b,783s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc} <C:\Users
-\albyr\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecit1000.pk>
- <C:\Users\albyr\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ec
-tt1000.pk> <C:\Users\albyr\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec
-\dpi600\ectt1200.pk><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmex10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/
-euler/euex10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts
-/euler/eufm10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfont
-s/euler/eurm10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/euler/eurm7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/fpl/fp
-lbj8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/fpl/fplrc8a.pfb
-><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/fpl/fplrij8a.pfb><C:/Pro
-gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplb8a.pfb><C:/Program 
-Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Program Files (
-x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files (x86)/MiK
-TeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on "Quickselect Report.pdf" (9 pages, 327600 bytes).
+ 60i,21n,81p,968b,6389s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\albyr\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknap
+pen\ec\dpi600\ectt1000.pk> <C:\Users\albyr\AppData\Local\MiKTeX\2.9\fonts\pk\lj
+four\jknappen\ec\dpi600\ecit1000.pk>{C:/Program Files (x86)/MiKTeX 2.9/fonts/en
+c/dvips/fontname/8r.enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmex10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmmi10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/fpl/fplbj8
+a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/mathpazo/fplmr.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/fpl/fplrc8a.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/fpl/fplrij8a.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplb8a.pfb><C:/Program Files (x86)/M
+iKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files (x86)/MiKTeX 2.
+9/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on "Convex Hulls Report.pdf" (18 pages, 208305 bytes).
 PDF statistics:
- 325 PDF objects out of 1000 (max. 8388607)
- 26 named destinations out of 1000 (max. 500000)
- 54373 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 397 PDF objects out of 1000 (max. 8388607)
+ 62 named destinations out of 1000 (max. 500000)
+ 59595 words of extra memory for PDF output out of 61914 (max. 10000000)
 

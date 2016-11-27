@@ -1,0 +1,540 @@
+\documentclass[
+12pt,
+a4paper,
+oneside,
+headinclude,
+footinclude]{report}
+
+
+
+\usepackage[table,xcdraw,svgnames, dvipsnames]{xcolor}
+\usepackage[capposition=bottom]{floatrow}
+\usepackage[colorlinks]{hyperref} % to add hyperlinks
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{csquotes}
+\usepackage{amsmath} % For the big bracket
+\usepackage[export]{adjustbox}[2011/08/13]
+% \usepackage{subfig}
+\usepackage{array}
+\usepackage{url}
+\usepackage{graphicx} % to insert images
+\usepackage{titlepic} % to insert image on front page
+\usepackage{geometry} % to define margin
+\usepackage{listings} % to add code
+\usepackage{caption}
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage[utf8]{inputenc} % Required for including letters with accents
+\usepackage{color}
+\usepackage{subcaption}
+\usepackage[dottedtoc ]{classicthesis}
+\usepackage{listings} % For Python code
+
+\usepackage[ruled]{algorithm2e} % For pseudo-code
+
+\usepackage{mathpazo}
+
+\usepackage{amsthm} % For definitions and theorems
+
+\theoremstyle{definition} % Define the style of definitions
+\newtheorem{definition}{Definition}[section]
+
+
+\usepackage{lipsum} % For testing
+
+\usepackage{minted} % For Rust code
+
+\usepackage{color}
+
+\usemintedstyle{tango}
+
+\usepackage{etoolbox}
+
+\usepackage{bm} % For bold math
+
+\usepackage{setspace}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+
+
+\definecolor{Code}{rgb}{0,0,0}
+\definecolor{Decorators}{rgb}{0.5,0.5,0.5}
+\definecolor{Numbers}{rgb}{0.5,0,0}
+\definecolor{MatchingBrackets}{rgb}{0.25,0.5,0.5}
+\definecolor{Keywords}{rgb}{0,0,1}
+\definecolor{self}{rgb}{0,0,0}
+\definecolor{Strings}{rgb}{0,0.63,0}
+\definecolor{Comments}{rgb}{0,0.63,1}
+\definecolor{Backquotes}{rgb}{0,0,0}
+\definecolor{Classname}{rgb}{0,0,0}
+\definecolor{FunctionName}{rgb}{0,0,0}
+\definecolor{Operators}{rgb}{0,0,0}
+\definecolor{Background}{rgb}{0.98,0.98,0.98}
+\lstdefinelanguage{Python}{
+	numbers=left,
+	numberstyle=\footnotesize,
+	numbersep=1em,
+	xleftmargin=1em,
+	framextopmargin=2em,
+	framexbottommargin=2em,
+	showspaces=false,
+	showtabs=false,
+	showstringspaces=false,
+	frame=l,
+	tabsize=4,
+	% Basic
+	basicstyle=\ttfamily\small\setstretch{1},
+	backgroundcolor=\color{Background},
+	% Comments
+	commentstyle=\color{Comments}\slshape,
+	% Strings
+	stringstyle=\color{Strings},
+	morecomment=[s][\color{Strings}]{"""}{"""},
+	morecomment=[s][\color{Strings}]{'''}{'''},
+	% keywords
+	morekeywords={import,from,class,def,for,while,if,is,in,elif,else,not,and,or,print,break,continue,return,True,False,None,access,as,,del,except,exec,finally,global,import,lambda,pass,print,raise,try,assert},
+	keywordstyle={\color{Keywords}\bfseries},
+	% additional keywords
+	morekeywords={[2]@invariant,pylab,numpy,np,scipy},
+	keywordstyle={[2]\color{Decorators}\slshape},
+	emph={self},
+	emphstyle={\color{self}\slshape},
+	%
+}
+
+
+\lstset{language=Python}
+
+\definecolor{webbrown}{rgb}{.6,0,0}
+
+\usepackage{titlesec} % to customize titles
+\titleformat{\chapter}{\normalfont\huge}{\textbf{\thechapter.}}{20pt}{\huge\textbf}[\vspace{2ex}\titlerule] % to customize chapter title aspect
+\titleformat{\section} % to customize section titles
+  {\fontsize{14}{15}\bfseries}{\thesection}{1em}{}
+
+\titlespacing*{\chapter}{0pt}{-50pt}{20pt} % to customize chapter title space
+
+\graphicspath{ {../Figures/} } % images folder
+\parindent0pt \parskip10pt % make block paragraphs
+\geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=3cm,headheight=3cm,headsep=3cm,footskip=1cm} % define margin
+\hyphenation{Fortran hy-phen-ation}
+
+\AtBeginDocument{%
+    \hypersetup{
+    colorlinks=true, breaklinks=true, bookmarks=true,
+    urlcolor=webbrown, citecolor=Black, linkcolor=Black% Link colors
+}}
+
+\pagestyle{plain}
+\title{\textbf{Analysis of an optimal output-sensitive algorithm for bidimensional convex hulls}}
+\author{{Alberto Parravicini}}
+\date{}	% default \today
+
+% =============================================== BEGIN
+
+\begin{document}
+\maketitle
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+\section*{Abstract}
+\lipsum[1]
+
+
+\chapter{Theoretical Background}
+The first chapter contains the theoretical background necessary to understand the later sections of the report.\\
+\section{Convex Hulls}
+Given an Euclidean Space of d-Dimensions $E^d$ and a set of points $P$ in defined in this space, 
+
+\begin{definition}The \textbf{Convex Hull} $\mathbf{CH(P)}$ of $P$ is the \textit{minimal convex set} containing all the points in P. \end{definition}
+A \textit{convex set} is a set in which, $\forall\ x, y \in S$, the segment $xy \subseteq S$. \cite{O'Rourke:1998:CGC:521378}\\
+Equivalently, one can define the \textit{Convex Hull} as the intersection of \textit{all convex sets} that contains $S$, as the intersection of \textit{all halfspaces} (the set of points on the side of a plane) that contain $S$, or as of the union of \textit{all convex combinations} of the points in $S$, i.e. the points $CH(S)$ are such that: \cite{Preparata:1985:CGI:4333}
+\begin{equation}
+\sum_{i=1}^{|S|}{w_i \cdot x_i},\ \forall x_i \in S,\ \forall w_i:\ w_i \geq 0\ and\ \sum_{i=1}^{|S|}{w_i}=1
+\end{equation}
+In this report, it is assumed that the Euclidean Space is \textbf{bidimensional}, unless otherwise specified.\\
+The computation of the \textit{Convex Hull} is a classical problem of \textit{computational geometry}, and finds applications in collision detection algorithms \cite{O'Rourke:1998:CGC:521378} and visual pattern matching \cite{6313439}, among others.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth, center, keepaspectratio=1]{{"hull_example"}.pdf}
+	\caption{\emph{Example of convex hull in 2 dimensions.}}
+\end{figure}
+
+
+\section{Output-sensitive algorithms}
+Usually, the running time of algorithms is based on the size of their inputs. The complexity of \textit{output-sensitive} algorithms, however is a function of both the input size the output size. \cite{Chan1996}\\
+It can be difficult to compare output-sensitive algorithms with algorithms whose complexity is purely input-dependent, unless it is possible to determine an upper bound on the output size.
+This is the case of convex hull algorithms, as presented in the following sections.
+
+
+
+
+\chapter{Algorithms for computing convex hulls}
+In the literature there exists a wide number of algoritmhs for computing convex hulls in 2 or more dimensions. In this chapter, \textit{Jarvis March} and \textit{Graham Scan} are presented, two commonly employed algorithms for computing 2-dimensional convex hulls. Then, these two algorithms are used to as building blocks of an \textit{optimal algorithm}, originally presented by T. M. Chan. \cite{Chan1996}
+This last algorithm is described in details, and an implementation is provided.\\
+
+\textbf{Note:} usually, the algorithms assume points to be in \textit{general position}, i.e. no three points form a straight line (the points are not \textit{collinear}).\\
+This apparently restricting assumption is justified by the existence of the so-called \textbf{Perturbation Methods}: in short, the idea is to move every point by an infinitesimal amount, as to remove the collinearity. \cite{Emiris:1991:EAR:894044}\\
+In practice, it is generally more efficient to modify the algorithms directly, to handle these special cases. Examples of how to do so are given in the following sections.
+\section{Jarvis March} 
+\subsection{Introduction}
+\textit{Jarvis March}, also referred as \textit{Gift Wrapping}, is a simple algorithm that exploit the following property of convex hulls:\\
+given an edge of the convex hull, it is clear that the next edge to be added to the hull is the one that maximizes the angle between the last edge and the new one.\\
+
+Additionally, assuming that we build the hull in counter-clockwise order, one can easily see that no points can lie on the right of the edges of the hull.\\
+This last observation makes it possible not to compute explicitely the angle between pairs of edges, which is in general a slow procedure subject to numerical approximation.
+Indeed, to find whether a point $r$ lies on the right of a given segment going through two points $p, q$, it is enough to evaluate:\\
+\[
+Det\left(
+\begin{bmatrix}
+1 & p_x & p_y \\
+1 & q_x & q_y \\
+1 & r_x & r_y \\
+\end{bmatrix}\right )
+\]
+If the determinant is $< 0$, the point $r$ is on the right of $pq$.
+
+As implementative detail, the first point to be added to the hull is the leftmost point in our set, as it is always part of the final hull.
+\subsection{Pseudocode}
+In this section is given the pseudocode of \textit{Jarvis March:} \cite{Preparata:1985:CGI:4333}\\
+
+
+
+\begin{algorithm}[H]
+\SetKwInput{Input}{Input}
+\SetKwInput{Output}{Output}
+\SetKwFor{Loop}{Loop}{}{EndLoop}
+\DontPrintSemicolon
+\SetAlgoVlined
+\Input{a list $S$ of bidimensional points.}
+\Output{the convex hull of the set, sorted counterclockwise.}
+hull =[]\\
+$x_0 =$ the leftmost point.\\
+hull.push($x_0$)\\
+\Loop{hull.last() != hull.first()}{
+	candidate = S.first()\\
+	\ForEach{p in S}{
+		\If{p != hull.last() and p is on the right of the segment "hull.last(), candidate"}{
+		candidate = p}}
+	\leIf{candidate != hull.first}
+	{hull.push(candidate)}{break}
+}
+return hull
+\caption{Jarvis March}
+\end{algorithm}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth, center, keepaspectratio=1]{{"jarvis_march"}.pdf}
+	\caption{\emph{A step of the \textit{Jarvis March}. The thick line is the next segment that will be added to the hull.}}
+\end{figure}
+
+\subsection{Complexity Analysis}
+From the previous pseudo-code it can be seen that the algorithms is composed of two nested loops.\\
+The outer loop will be executed $h$ times, where $h$ is the size of the final hull. This happens as the outer cycle breaks when the next point to be added is already in the hull.\\
+The inner loop scans all the points in $s$.\\
+As a result, the overall complexity of the algorithm is $O(hn)$.
+
+
+\newpage
+\section{Graham Scan}
+\subsection{Introduction}
+Another well-known convex hull algorithm is the so-called \textbf{Graham Scan}.
+The core idea of the algorithm is to preprocess the points by sorting them in counter-clockwise order around the leftmost point of the set $S$. \\
+From here, it is possible to compute the hull in an incremental fashion, by making use of a stack-like structure that allows to process each of the point only once.\\
+
+What the algorithm does is to push sequentially the points on the stack (which represents the hull). If the top three points on the stack cause a right turn, the second-to-last point is removed. \\
+The idea, once again, is that the edges of a counter-clockwise sorted hull will make only left turns.
+\subsection{Pseudocode}
+In this section is given the pseudocode of \textit{Graham Scan:} \cite{Preparata:1985:CGI:4333}\\
+
+
+\begin{algorithm}[H]
+	\SetKwInput{Input}{Input}
+	\SetKwInput{Output}{Output}
+	\SetKwFor{Loop}{Loop}{}{EndLoop}
+	\DontPrintSemicolon
+	\SetAlgoVlined
+	\Input{a list $S$ of bidimensional points.}
+	\Output{the convex hull of the set, sorted counterclockwise.}
+	hull =[]\\
+	$x_0 =$ the leftmost point.\\
+	Put $x_0$ as the first element of $S$.\\
+	Sort the remaining points in counter-clockwise order, with respect to $x_0$.\\
+	Add the first 3 points in $S$ to the hull. \\
+	
+	
+	\ForAll{the remaining points in S}{
+		\While{hull.second\_to\_last(), hull.last(), p form a right turn}{
+			hull.pop()
+		}
+		hull.push(p)
+	}
+	return hull
+	\caption{Graham Scan}
+\end{algorithm}
+
+\newpage
+\subsection{Implementation}
+\begin{minted}[baselinestretch=1, fontsize=\footnotesize]{python}
+# Compute the convex hull of the given list of points by using Graham scan
+# Inspired by "http://www.geeksforgeeks.org/convex-hull-set-2-graham-scan/"
+def convex_hull_graham_scan(input_points):
+	# Copy the input points, so that it is possible to modify them
+	points = list(input_points)
+	convex_hull = []
+	
+	# Find the point with the smallest x.
+	smallest_x_point_index = 0
+	for index, p in enumerate(points):
+		if (p.x < points[smallest_x_point_index].x) or \
+			((p.x == points[smallest_x_point_index].x) and
+			(p.y < points[smallest_x_point_index].y)):
+				smallest_x_point_index = index
+	
+	# Put the point with smallest x at the beginning of the list.
+	points[0], points[smallest_x_point_index] = points[
+	smallest_x_point_index], points[0]
+	
+	# Order the list with respect to the angle that each point forms 
+	# with the anchor. Given two points a, b, in the output a is before b
+	# if the polar angle of a w.r.t the anchor is bigger than the one of b,
+	# in counter-clockwise direction.
+	anchor = Point(points[0].x, points[0].y)
+	points = [anchor] + radial_sort(points[1:], anchor, cw = False)
+	
+	# If more points have the same angle w.r.t. the anchor, keep only the farthest one.
+	# Used to deal with collinear points-
+	i = 1
+	while i < len(points) and 
+		(orientation_test(anchor, points[i], points[(i + 1) % len(points)]) == 0):
+			points.pop((i + 1) % len(points))
+	
+	
+	# Add the first 3 points to the convex hull.
+	# The first 2 will be for sure part of the hull.
+	convex_hull += points[0:3]
+	
+	for p in points[3:]:
+		# While the i-th point forms a non-left turn with the last 2 elements 
+		# of the convex hull...
+		while orientation_test(convex_hull[-2], convex_hull[-1], p) <= 0:
+			# Delete from the convex hull the point that causes a right turn.
+			convex_hull.pop()
+		# Once no new right turns are found, add the point that gives a left turn.   
+		convex_hull.append(p)
+	
+	return convex_hull
+\end{minted}
+
+
+\subsection{Complexity Analysis}
+The complexity analysis of Graham Scan can be split in two parts:
+first, the counter-clockwise sorting of the points, which can be done in $O(n\cdot log n)$ time; second, the scan of all the points in $S$, and, if needed, the scan of the hull stack.\\
+ 
+The two nested loops might lead to imagine a quadratic complexity, but
+in practice it isn't possible to remove from the stack elements that haven't been see yet by the external loop. Indeed, each point is added to the hull once, and removed at most once.\\
+Consequently, the cost of the second part of the algorithm is $O(n)$, which result in an overall cost of $O(n\cdot log\ n)$.
+
+Now, it would be interseting to compare the complexity of \textit{Jarvis March} to the one of \textit{Graham Scan}. However, being Jarvis March is an \textit{output-sensitive} algorithm,
+this comparison is not straightforward: if the size of the hull $h$ is smaller than $log\ n$, then Jarvis March would perform better; without a-priori knowledge of the points distribution, however, it isn't possible to state something like that.
+
+
+\section{T. Chan's Optimal Algorithm for Bidimensional Hulls}
+\subsection{Introduction}
+Starting from the considerations of the last section, it would be interesting to have an algorithm which can, regardless of the input, perform better that both \textit{Jarvis March} and \textit{Graham Scan}.\\
+\textit{Kirkpatrick} and \textit{Seidel} \cite{Kirkpatrick_hull} built a $O(n\cdot log\ h)$ algorithm to compute the convex hull of a set of bidimensional points. Their algorithm is however quite complex, and hard to implement in a practical context.\\
+To overcome the issue, \textit{T. Chan} \cite{Chan1996} built an $O(n\cdot log\ h)$ algorithm that uses \textit{Jarvis March} and \textit{Graham Scan} as building blocks to compute the convex hull in a simple, yet optimal, way.\\ 
+
+The algorithm initially splits the list $S$, of size $n$ in groups of size at most $m$. As such, there will be $\lceil n/m \rceil$ groups. \\
+Then, the convex hull of each group is computed, by using \textit{Graham Scan} (or another $O(n\cdot logn)$ algorithm).
+The idea of this preprocessing step is that, in a given group, only the points in the partial hull will have a chance to be part of the final hull.
+So, by computing the $\lceil n/m \rceil$ partial hulls, it is possible to discard a significant portion of the points in $S$.
+Without loss of generality, it is possible to assume that the partial hulls will be returned with a counter-clockwise sorting.\\
+
+After finding the partial hulls, \textit{Jarvis March} comes into play:
+once again, given the last edge $p_{k-1}p_k$ belonging to the final hull, the next edge $p_kp$ to be added is the one that maximizes the angle between the two edges; equivalently, the next point $p$ to be added is the one that is on the right of every other point, with respect to the last hull edge $p_{k-1}p_k$.\\
+However, given the last edge of the hull and the partial hulls, it isn't necessary to evaluate every point of the hulls to find $p$: in fact, in a partial hull the point $p$ that maximizes the angle $\angle p_{k-1}p_kp$ is the one that forms the right tangent $p_kp$ to the polygon.
+
+As the final hull will have size $h$, $h$ steps of \textit{Jarvis March} will be required.\\
+
+Now, it is reasonable to ask what should be the appropriate value of $m$. \\
+Let's imagine that the hull size $H$ is known: it turns out that by setting $H$ = $m$, the algorithm will have optimal complexity (the details of the proof are found in section 2.3.4, Complexity Analysis).\\ However, the value of $h$ isn't known: to solve the problem, the algorithm is called multiple times, and at each iteration $i$, the algorithm sets $m = H = 2^{2^i}$.
+
+
+\subsection{Pseudocode}
+In this section is given the pseudocode of \textit{Chan's algorithm:} \cite{Chan1996}\\
+
+
+\begin{algorithm}[H]
+	\SetKwInput{Input}{Input}
+	\SetKwInput{Output}{Output}
+	\SetKwFor{Loop}{Loop}{}{EndLoop}
+	\DontPrintSemicolon
+	\SetAlgoVlined
+	\Input{a list $S$ of bidimensional points, the parameters $m, H$}
+	\Output{the convex hull of the set, sorted counterclockwise, or an empty list, if $H$ is $<$ $h$}
+	Partition $S$ into subsets $S_1,\ \ldots,\ S_{\lceil n/m \rceil}$.\\
+	\For{$i = 1,\ \ldots,\  \lceil n/m \rceil$}
+	{
+		Compute the convex hull of $S_i$ by using Graham Scan, store the output in a counter-clockwise sorted list.
+	}  
+	$p_0 = (0, -\infty)$\\
+	$p_1 =$ the leftmost point of $S$.
+	
+	\For{$k = 1,\ \ldots, \ H$}
+	{
+		\For{$i = 1,\ \ldots,\ \lceil n/m \rceil$}
+		{
+			Compute the points $q_i \in S$ that maximizes $\angle p_{k-1}p_kq_i$, with $q_i \ne p_k$, by performing binary search on the vertices of the partial hull $S_i$.
+		}
+		$p_{k+1} = $ the point $q \in \{q_1,\ \ldots,\ q_{\lceil n/m \rceil}\}$.\\
+	\lIf{$p_{k+1} = p_t$}{return $\{p_1,\ \ldots,\ p_k\}$}
+	}
+	
+	return \textit{incomplete}
+	\caption{ChanHullStep, a step of Chan's algorithm}
+\end{algorithm}
+
+\begin{algorithm}[H]
+	\SetKwInput{Input}{Input}
+	\SetKwInput{Output}{Output}
+	\SetKwFor{Loop}{Loop}{}{EndLoop}
+	\DontPrintSemicolon
+	\SetAlgoVlined
+	\Input{a list $S$ of bidimensional points}
+	\Output{the convex hull of the set}
+	\For{$i = 1,2,\ \ldots$}{
+		L = ChanHullStep(S, m, H), where $m = H = min\{|S|, 2^{2^i}\}$\\
+		\lIf{L $\ne$ incomplete}{return L}
+	}
+	\caption{Chan's algorithm}
+\end{algorithm}
+
+\subsection{Implementation}
+The previous algorithm has been implemented in \textbf{Python}. What follows is an extract of the code, with the necessary comments.\
+Note that the implementation of some sub-functions is not shown here. The full code can be found \href{https://github.com/AlbertoParravicini/data_structures_and_algorithms/tree/master/Project}{here}.
+\newpage
+\begin{minted}[baselinestretch=1, fontsize=\footnotesize]{python}
+def hull_2d_step(points, m, H):
+	# Partition the points in groups of size at most m.
+	points_in_groups = list(chunks(points, m))
+	hulls = []	
+	final_hull = []
+	
+	# Compute the convex hull of each group, and store its vertices in ccw order.
+	for group_i in points_in_groups:
+		hulls.append(convex_hull_graham_scan(group_i))
+	# Leftmost point of the list
+	final_hull.append(Point(-MIN_VALUE, -MIN_VALUE))
+	# Find the next point, ccw, belonging to the hull of p_1
+	p_k = Point(MIN_VALUE, MIN_VALUE)
+	
+	# Hull index of the last point added to the final hull,
+	# and during the loop of the hull that is a candidate for containing 
+	# the next point of the final hull.
+	current_hull_number = -1
+	# Position of the last point added to the final hull, 
+	# inside its partial hull
+	pos_in_last_hull = -1
+	
+	# Hull number of the last point inserted, updated after inserting a new point 
+	# in the final hull.
+	old_hull = -1
+	
+	# Find the leftmost point.
+	for hull_index, hull_i in enumerate(hulls):
+		for i in range(0, len(hull_i)):
+			if hull_i[i].x < final_hull[0].x:
+				final_hull[0] = hull_i[i]
+				current_hull_number = hull_index
+				pos_in_last_hull = i
+	
+	for k in range(0, H):
+		# Compute the next point in the hull of hull[-1],
+		# also store the index of that hull
+		p_k = hulls[current_hull_number][(pos_in_last_hull + 1) %
+			len(hulls[current_hull_number])]
+		old_hull = current_hull_number
+	
+	for hull_index, hull_i in enumerate(hulls):
+		# Find the bottom tangent to from p_k-1, p_k to a point q_i in hull_i
+		if hull_index != old_hull:
+			temp_p = find_tangent_bin_search(hull_i, final_hull[-1])
+			if temp_p:
+				temp_tan = temp_p["tan_point"]
+				temp_tan_index = temp_p["tan_index"]
+		
+				# Test if the tangent point lies on the left of 
+				# the segment hull[-1], p_k:
+				# If so, the angle given by the tangent point is bigger,
+				# and we have a new candidate.
+				o = orientation_test(final_hull[-1], temp_tan, p_k)
+				
+				# If angle (hull[-2], hull[-1], temp_p) > 
+				# angle(hull[-2], hull[-1], p_k)
+				if o > 0:
+				p_k = temp_tan
+				current_hull_number = hull_index
+				pos_in_last_hull = temp_tan_index
+		if old_hull == current_hull_number:
+			pos_in_last_hull = (
+				pos_in_last_hull + 1) % len(hulls[current_hull_number])
+		if p_k == final_hull[0]:
+			return final_hull
+		final_hull.append(p_k)
+	
+	return False
+
+
+def hull_2d(points):
+	t = 1
+	while True:
+		H = min(2**2**t, len(points))
+		hull = hull_2d_step(points, H, H)
+		if hull:
+			return hull
+		t += 1
+\end{minted}
+
+\subsection{Complexity Analysis}
+The analysis of the running time of \textit{Chan's algorithm} can be decomposed in multiple steps.
+First, compute the convex hull of each subset of $S$, by using Graham Scan. As there are $\lceil n/m \rceil$ subsets, each of size $m$, the cost of this step is 
+$O((n/m) \cdot (m\cdot lo\ gm)) = O(n \cdot log\ m)$.\\
+Then, for all the $H$ points in the final hull, we have to compute the tangent to each subset $S_i$. There will be $H$ points in the final hull, and each step of \textit{Jarvis March} will inspect $\lceil n/m \rceil$ partial hulls.\\
+Finding the tangent is done with binary search in $O(log\ m)$, where $m$ is the size of a partial hull.\\
+Consequently, this phase has an overall cost of $O(H(n/m)log\ m)$.
+The total cost of a step of \textit{Chan's algorithm} will thus be $O(n\ log\ m + (H(n/m)log\ m) = O(log\ m(n(1 + H/m)))$, and it will return the final hull if $H \geq h$, the real hull size.\\
+By choosing $m = H$, the complexity becomes 
+$$ O(log\ m(n(1 + H/m))) = O(n\ log\ H)$$.\\
+As we don't know in advance the real value of $h$, it is required to iterate the algorithm multiple times. At each step $i$, the algorithm sets $m = H = 2^{2^i}$, and as the algorithm ends as soon as $H \geq h$, the number of iterations will be $\lceil log\ log\ h\rceil$.\\
+The cost of an iteration will be $O(n\ log\ H) = O(n2^i)$.
+Finally, it is possible to compute the overall cost of \textit{Chan's algorithm} as
+$$O\left(\sum_{i = 1}^{\lceil log\ log\ h\rceil}{n2^i}\right) = O(n2^{\lceil log\ log\ h\rceil + 1}) = O(n\ log\ h)$$
+
+
+
+
+\chapter{Empirical Analysis of Chan's Algorithm}
+\section{Introduction}
+\lipsum[1]
+\section{\textbf{First Test:} increasing number of points, fixed hull size}
+\lipsum[1]
+\section{\textbf{Second Test:} increasing size of hull, fixed number of points}
+\lipsum[1]
+\section{\textbf{Third Test:} increasing number of points with uniform distribution}
+\lipsum[1]
+\section{\textbf{Fourth Test:} comparison with Graham Scan in case of increasing hull size}
+\lipsum[1]
+
+
+\bibliographystyle{plainurl}
+\bibliography{bibliography}
+
+\end{document}
+
