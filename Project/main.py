@@ -9,7 +9,7 @@ from inspect import getsource
 import time 
 
 def test_increasing_points():
-    filename = "Results/increasing_n_JM" + time.strftime("%Y_%m_%d_%H_%M_%S.csv")
+    filename = "Results/increasing_n_GS" + time.strftime("%Y_%m_%d_%H_%M_%S.csv")
 
     with open(filename, "a") as results:
         results.write("iteration_number, input_size, hull_size, time[sec]\n")
@@ -62,7 +62,7 @@ def test_increasing_points():
             
             start_time = timeit.default_timer()
             #hull = points_matrix[spatial.ConvexHull(points_matrix[:n, ]).vertices]
-            hull = jarvis_march(points[:n])
+            hull = convex_hull_graham_scan(points[:n])
             end_time = timeit.default_timer()
             print("!!! HULL OF SIZE ", len(hull), " -> EXECUTION TIME:", (end_time - start_time), "\n")
 
@@ -135,9 +135,63 @@ def test_increasing_hull():
             tot_time += end_time - start_time
         print("\n\nTOTAL ITERATION TIME: ", tot_time)
 
+def test_increasing_points_hull():
+    filename = "Results/increasing_points_hull_" + time.strftime("%Y_%m_%d_%H_%M_%S.csv")
+
+    with open(filename, "a") as results:
+        results.write("iteration_number, input_size, hull_size, time[sec]\n")
+
+    min_size = 10000
+    max_size = 110000
+    increment = 10000
+
+    repetitions = 10
+
+    radius = 0.5
+
+    center_x = 0.5
+    center_y = 0.5
+
+    for r in range(1, repetitions + 1):
+        print("\n\nITERATION NUMBER ", r)
+        tot_time = 0
+
+        # Generate a list of points. 
+        # "fixed_hull_size" points will lie on a circle, and will form a hull of fixed size. 
+        # "max_size" - "fixed_hull_size" points will lie strictly inside the circle. 
+        # For each sub-iteration of increasing size, only a portion of the internal points is used. 
+        points = []
+        for i in range(0, max_size):
+            x = np.random.rand()
+            y = np.random.rand()
+            points.append(Point(x,y))
+        
+        # TO USE spatial.ConvexHull
+        # points_matrix = np.reshape([p.to_array() for p in points], [-1, 2])
+
+        # PLOTTING
+        # plt.plot(points_matrix[:, 0], points_matrix[:, 1], "o")
+        # plt.show()
+
+        for n in range(min_size, max_size, increment):
+            print("\n WORKING WITH VECTOR OF SIZE ", n)
+            
+            start_time = timeit.default_timer()
+            #hull = points_matrix[spatial.ConvexHull(points_matrix[:n, ]).vertices]
+            hull = hull_2d(points[:n])
+            end_time = timeit.default_timer()
+            print("!!! HULL OF SIZE ", len(hull), " -> EXECUTION TIME:", (end_time - start_time), "\n")
+
+            with open(filename, "a") as results:
+                results.write(str(r) + ", " + str(n) + ", " + str(len(hull)) + ", " + str(end_time - start_time) + "\n")
+            tot_time += end_time - start_time
+        print("\n\nTOTAL ITERATION TIME: ", tot_time)
+
 def main():
     test_increasing_points()
     
+
+
     # num_points = 1200
     # #np.random.seed(47516)
     # seed = int(np.floor(np.random.rand() * 100000))
@@ -178,11 +232,15 @@ def main():
 
 
     # points = [     
-    #     Point(1.66, 15.76),
-    #     Point(17.93, 4.27),
-    #      Point(9.44, 19.60),
-    #     Point(5.26, 19.20)
+    #     Point(0.0013889274677962571, -0.013555650889113225)
+    #     ,Point(-0.0016666666666666668, 0.004385810623020935)
+    #     ,Point(0.0008334027792245672, 0.0030711794594722613)
+    #     ,Point(0.0016666666666666668, 0.000616710127083022)
+    #     ,Point(-0.0014437584577056057, -0.0062082663462808335)
+    #     ,Point(-0.009678865108180433, 0.2804668674955018)
+    #     ,Point(0.001909352591070292, 0.007336821668514451)
+    #     ,Point(-0.003083182977989309, -0.0012405374580908382)
     # ]
-    # query_point = Point(19.94, 6.89)
-    # print(find_tangent_bin_search(points, query_point))
+    
+    # print(convex_hull_graham_scan(points))
 main()

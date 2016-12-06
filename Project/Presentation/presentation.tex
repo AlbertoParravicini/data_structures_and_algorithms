@@ -1,0 +1,315 @@
+\documentclass[14pt, handout]{beamer}
+
+% Presento style file
+\usepackage{config/presento}
+
+% custom command and packages
+\input{config/custom-command}
+
+% Information
+\title{CONVEX HULLS}
+\subtitle{Chan's optimal output sensitive algorithms for convex hulls}
+\author{Alberto Parravicini}
+\institute{Université libre de Bruxelles}
+\date{December 15, 2016}
+
+\begin{document}
+
+% Title page
+\begin{frame}[plain]
+\maketitle
+\end{frame}
+
+\begin{frame}{What's on the menu?}
+ \begin{fullpageitemize}
+  \item<1->[\rtarrow] {\montserratfont\ Basic notions}
+  \item<2->[\rtarrow] {\montserratfont\ Algorithms for convex hulls}
+  \item<3->[\rtarrow] {\montserratfont\ Optimal 2D algorithm}
+  \item<4->[\rtarrow] {\montserratfont\ Optimal 3D algorithm}
+ \end{fullpageitemize}
+\end{frame}
+
+%\section{Basic Notions}
+\begin{frame}{Crash course on convex hulls}
+ \begin{center}
+ A \textit{convex set} $S$ is a set in which, $\forall\ x, y \in S$, the segment $xy \subseteq S$.
+ \vspace{8mm}
+ 	
+ Given a set of points $P$ in $d$ dimensions, the \textbf{Convex Hull} $\mathbf{CH(P)}$ of $P$ is:
+ 
+ \begin{baseitemize}
+ 	\item<1->[\rtarrow] the \textit{minimal convex set} containing $P$.
+ 	\vspace{3mm}
+ 	\item<2->[\rtarrow] the union of \textit{all convex combinations} of  points in $P$, i.e. the points $CH(P)$ are s.t.
+	\vspace{-2mm}
+ 	$$\sum_{i=1}^{|P|}{w_i \cdot x_i},\ \forall x_i \in P,\ \forall w_i:\ w_i \geq 0\ and\ \sum_{i=1}^{|P|}{w_i}=1$$
+ \end{baseitemize}
+ \end{center}
+\end{frame}
+
+\begin{frame}{Output sensitive algorithm}
+	\begin{center}
+	The complexity of an \textcolor{colorblue}{\textit{output-sensitive}} algorithm is a function of both the \textcolor{colorblue}{\textit{input size}} and the \textcolor{colorblue}{\textit{output size}}.
+	\end{center}
+\end{frame}
+
+
+%\section{Algorithms for convex hulls}
+
+% JARVIS MARCH %%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Jarvis's march}
+	\begin{center}
+		\begin{fullpageitemize}		
+			\item<1->[\rtarrow] \textbf{Core idea:} given an edge $\bm{pq}$ of the convex hull, the next edge $\bm{qr}$ to be added will maximize the angle $\bm{\angle pqr}$\\
+			\vspace{8mm}
+			
+			\item<2->[\rtarrow] At each step we scan all the $\bm{n}$ points.\\
+			\item<3->[\rtarrow] How many steps? $\bm{h}$, size of the hull.\\
+			\item<4->[\rtarrow] \textbf{Complexity:} \textcolor{colorgreen}{$\bm{O(n h)}$}
+		\end{fullpageitemize}
+	\end{center}
+\end{frame}
+
+\begin{frame}{One step, visually}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth, keepaspectratio=1]{{"../Latex/jarvis_march"}.pdf}
+		\caption{\emph{A step of the \textit{Jarvis March}. The \textcolor{colorred}{red} line is the next segment that will be added to the hull.}}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Jarvis's march}
+	\fontsize{10}{12}\notosansfont
+	\begin{algorithm}[H]
+		\SetKwInput{Input}{Input}
+		\SetKwInput{Output}{Output}
+		\SetKwFor{Loop}{Loop}{}{EndLoop}
+		\DontPrintSemicolon
+		\SetAlgoVlined
+		\Input{a list $S$ of bidimensional points.}
+		\Output{the convex hull of the set, sorted counterclockwise.}
+		hull =[]\\
+		$x_0 =$ the leftmost point.\\
+		hull.push($x_0$)\\
+		\Loop{hull.last() != hull.first()}{
+			candidate = S.first()\\
+			\ForEach{p in S}{
+				\If{p != hull.last() and p is on the right of the segment "hull.last(), candidate"}{
+					candidate = p}}
+			\leIf{candidate != hull.first}
+			{hull.push(candidate)}{break}
+		}
+		return hull
+		\caption{Jarvis March}
+	\end{algorithm}
+
+\end{frame}
+
+% GRAHAM SCAN %%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Graham's scan}
+	\begin{center}
+		\vspace{-5mm}
+		\begin{fullpageitemize}
+			\item<1->[\rtarrow] Sort the points in clockwise order around the leftmost point - \textbf{Cost:}  \textcolor{colorgreen}{$\bm{O(n\ log\ n)}$}
+			\vspace{5mm}
+			\item<2->[\rtarrow] Keep the current hull in a stack $H = \{h_0,\ \ldots,\ h_{curr}\}$.
+			\vspace{5mm}
+			
+			\item<3->[\rtarrow] Inspect each point $p$ in order - \textbf{Cost:}  \textcolor{colorgreen}{$\bm{O(n)}$}
+			
+			\vspace{2mm}
+			\fontsize{12}{14}\notosansfont
+			\begin{sublist}
+				\item<4->While $h_{curr-1}h_{curr}p$ is a right turn, pop $h_{curr}$.
+				\item<5->Push $p$ to $H$.
+			\end{sublist}
+		
+			\vspace{5mm}
+			\item<6->[\rtarrow] \textbf{Overall complexity:} \textcolor{colorgreen}{$\bm{O(n\ log\ n)}$}
+		\end{fullpageitemize}	
+	\end{center}
+\end{frame}
+
+\begin{frame}{Graham's scan}
+	\fontsize{10}{12}\notosansfont
+	\begin{algorithm}[H]
+		\SetKwInput{Input}{Input}
+		\SetKwInput{Output}{Output}
+		\SetKwFor{Loop}{Loop}{}{EndLoop}
+		\DontPrintSemicolon
+		\SetAlgoVlined
+		\Input{a list $S$ of bidimensional points.}
+		\Output{the convex hull of the set, sorted counterclockwise.}
+		hull =[]\\
+		$x_0 =$ the leftmost point.\\
+		Put $x_0$ as the first element of $S$.\\
+		Sort the remaining points in counter-clockwise order, with respect to $x_0$.\\
+		Add the first 3 points in $S$ to the hull. \\
+		
+		
+		\ForAll{the remaining points in S}{
+			\While{hull.second\_to\_last(), hull.last(), p form a right turn}{
+				hull.pop()
+			}
+			hull.push(p)
+		}
+		return hull
+		\caption{Graham Scan}
+	\end{algorithm}	
+\end{frame}
+
+
+% CHAN 2D %%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Can we do better?}
+	\begin{center}
+		\begin{fullpageitemize}
+			\item<1-> So far:
+			\begin{baseitemize}
+				\item<2->[\rtarrow] \textbf{Jarvis's march:} \textcolor{colorgreen}{$\bm{O(nh)}$}
+				\item<3->[\rtarrow] \textbf{Graham's scan:} \textcolor{colorgreen}{$\bm{O(n\ log\ n)}$}
+			\end{baseitemize}
+		\vspace{5mm}		
+		\item<4->[\rtarrow] How do we compare their complexity?\\
+		\item<5->[\rtarrow] We would like to do even better!
+		\end{fullpageitemize}
+		\onslide<6->Can we get to \textcolor{colorgreen}{$\bm{O(n\ log\ h)}$}?
+	\end{center}
+\end{frame}
+
+%\section{Chan's 2D algorithm}
+\begin{frame}{Chan's 2D algorithm}
+	\begin{center}
+		\vspace{-2mm}
+		\begin{fullpageitemize}
+			\item<1->[\rtarrow] \textbf{Idea:} Some points will never be in the hull! Discard them to speed up \textit{Jarvis's march}.
+			%\vspace{-5mm}
+			
+			\item<2->[\rtarrow] Combine \textit{Jarvis's march} and \textit{Graham's scan}.
+			
+			\vspace{4mm}
+			\item<3->[\rtarrow] Algorithm (\textbf{Chan 2D}):			
+			\fontsize{12}{14}\notosansfont
+			\begin{sublist}
+				\item<3-> Split the $n$ points in groups of size $m$ \\($\lceil n/m \rceil$ groups).
+				\item<4-> Compute the hull $H_i$ of each group \\ \textbf{Cost:} \textcolor{colorgreen}{$\bm{O((n/m) \cdot (m\ log\ m)) = O(n\ log\ m)}$}
+				
+				\item<5-> Until the hull is complete, repeat:
+				\begin{sublist}
+					\item<6-> Given the current hull $H_{tot} = \{h_0,\ \ldots,\ h_{curr}\}$, find for each $H_i$ the point right tangent to $h_{curr}$ (binary search, \textcolor{colorgreen}{$\bm{O(log\ m) \lceil n/m \rceil}$}).	
+					\item<7-> Pick the tangent point $p$ that maximizes  $\angle h_{curr-1}h_{curr}p$.
+				\end{sublist}
+			\end{sublist}
+		\end{fullpageitemize}	
+	\end{center}
+\end{frame}
+
+\begin{frame}{One step, visually}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth, keepaspectratio=1]{{"../Latex/chan_step"}.pdf}
+		\caption{\emph{A step of \textit{Chan's algorithm}. In \textcolor{colorblue}{blue}, the existing hull, in \textcolor{colororange}{orange}, the tangents, in \textcolor{colorred}{red}, the new edge that will be added.}}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Chan's 2D algorithm, part 2}
+	\begin{center}
+		\vspace{-5mm}
+		\begin{fullpageitemize}
+			\item<1-> \textbf{Complexity:} \textcolor{colorgreen}{$\bm{O(n\ log\ m + (h(n/m)log\ m))}$}
+			\item<2-> What about $m$? Let's pretend the size $h$ of the final hull is known a-priori.
+			\item<3-> If we put $m = h$, we get complexity $O(n\ log\ h + (h(n/h)log\ h)) =$ \textcolor{colorgreen}{$\bm{O(n\ log\ h)}$}
+			\item<4-> But h is not known! 
+			
+			\fontsize{12}{14}\notosansfont
+			\begin{sublist}
+				\item Reiterate the algorithm multiple times, with $m = 2^{2^{i}}$
+				\item Iteration cost: \textcolor{colorgreen}{$\bm{O(n\ log\ H) = O(n2^i)}$}
+				\item $O\left(\sum_{i = 1}^{\lceil log\ log\ h\rceil}{n2^i}\right) = O(n2^{\lceil log\ log\ h\rceil + 1}) =$ \textcolor{colorgreen}{$\bm{O(n\ log\ h)}$}
+			\end{sublist}
+			
+			
+		\end{fullpageitemize}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Chan's 2D pseudo-code}
+	\fontsize{8}{10}\notosansfont
+	\begin{algorithm}[H]
+		\SetKwInput{Input}{Input}
+		\SetKwInput{Output}{Output}
+		\SetKwFor{Loop}{Loop}{}{EndLoop}
+		\DontPrintSemicolon
+		\SetAlgoVlined
+		\Input{a list $S$ of bidimensional points, the parameters $m, H$}
+		\Output{the convex hull of the set, sorted counterclockwise, or an empty list, if $H$ is $<$ $h$}
+		Partition $S$ into subsets $S_1,\ \ldots,\ S_{\lceil n/m \rceil}$.\\
+		\For{$i = 1,\ \ldots,\  \lceil n/m \rceil$}
+		{
+			Compute the convex hull of $S_i$ by using Graham Scan, store the output in a counter-clockwise sorted list.
+		}  
+		$p_0 = (0, -\infty)$\\
+		$p_1 =$ the leftmost point of $S$.
+		
+		\For{$k = 1,\ \ldots, \ H$}
+		{
+			\For{$i = 1,\ \ldots,\ \lceil n/m \rceil$}
+			{
+				Compute the points $q_i \in S$ that maximizes $\angle p_{k-1}p_kq_i$, with $q_i \ne p_k$, by performing binary search on the vertices of the partial hull $S_i$.
+			}
+			$p_{k+1} = $ the point $q \in \{q_1,\ \ldots,\ q_{\lceil n/m \rceil}\}$.\\
+			\lIf{$p_{k+1} = p_t$}{return $\{p_1,\ \ldots,\ p_k\}$}
+		}
+		
+		return \textit{incomplete}
+		\caption{ChanHullStep, a step of Chan's algorithm}
+	\end{algorithm}
+\end{frame}
+
+\begin{frame}{Chan's 2D pseudo-code, reprise}
+	\fontsize{8}{10}\notosansfont
+	\begin{algorithm}[H]
+		\SetKwInput{Input}{Input}
+		\SetKwInput{Output}{Output}
+		\SetKwFor{Loop}{Loop}{}{EndLoop}
+		\DontPrintSemicolon
+		\SetAlgoVlined
+		\Input{a list $S$ of bidimensional points}
+		\Output{the convex hull of the set}
+		\For{$i = 1,2,\ \ldots$}{
+			L = ChanHullStep(S, m, H), where $m = H = min\{|S|, 2^{2^i}\}$\\
+			\lIf{L $\ne$ incomplete}{return L}
+		}
+		\caption{Chan's algorithm}
+	\end{algorithm}
+\end{frame}
+
+\begin{frame}{Chan's 2D - Empirical analysis}
+	\fontsize{12}{14}\notosansfont
+	\begin{fullpageitemize}
+		\item Is a real implementation \textcolor{colorgreen}{$\bm{O(n\ log\ h)}$}?
+		\vspace{2mm}
+		\item \textbf{Test 1:} fixed hull size (1000), increasing number of points.
+	\end{fullpageitemize}
+	\vspace{-9mm}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1\textwidth, keepaspectratio=1]{{"../Latex/increasing_points_pres"}.pdf}
+	\end{figure}	
+\end{frame}
+
+\begin{frame}{Chan's 2D - Empirical analysis}
+	\fontsize{12}{14}\notosansfont
+	\begin{fullpageitemize}
+		\item Is a real implementation \textcolor{colorgreen}{$\bm{O(n\ log\ h)}$}?
+		\vspace{2mm}
+		\item \textbf{Test 2:} fixed number of points (40000), increasing hull size.
+	\end{fullpageitemize}
+	\vspace{-9mm}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1\textwidth, keepaspectratio=1]{{"../Latex/increasing_hull_pres"}.pdf}
+	\end{figure}	
+\end{frame}
+
+\framecard[colorgreen]{{\color{white}\hugetext{THANK YOU!}}}
+\end{document}

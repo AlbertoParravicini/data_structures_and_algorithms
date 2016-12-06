@@ -55,6 +55,9 @@ footinclude]{report}
 
 \usepackage{setspace}
 
+% For tables
+\usepackage{amssymb}
+
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
@@ -114,7 +117,7 @@ footinclude]{report}
 \usepackage{titlesec} % to customize titles
 \titleformat{\chapter}{\normalfont\huge}{\textbf{\thechapter.}}{20pt}{\huge\textbf}[\vspace{2ex}\titlerule] % to customize chapter title aspect
 \titleformat{\section} % to customize section titles
-  {\fontsize{14}{15}\bfseries}{\thesection}{1em}{}
+{\fontsize{14}{15}\bfseries}{\thesection}{1em}{}
 
 \titlespacing*{\chapter}{0pt}{-50pt}{20pt} % to customize chapter title space
 
@@ -124,9 +127,9 @@ footinclude]{report}
 \hyphenation{Fortran hy-phen-ation}
 
 \AtBeginDocument{%
-    \hypersetup{
-    colorlinks=true, breaklinks=true, bookmarks=true,
-    urlcolor=webbrown, citecolor=Black, linkcolor=Black% Link colors
+	\hypersetup{
+		colorlinks=true, breaklinks=true, bookmarks=true,
+		urlcolor=webbrown, citecolor=Black, linkcolor=Black% Link colors
 }}
 
 \pagestyle{plain}
@@ -135,6 +138,7 @@ footinclude]{report}
 \date{}	% default \today
 
 % =============================================== BEGIN
+
 
 \begin{document}
 \maketitle
@@ -148,13 +152,13 @@ footinclude]{report}
 \chapter{Theoretical Background}
 The first chapter contains the theoretical background necessary to understand the later sections of the report.\\
 \section{Convex Hulls}
-Given an Euclidean Space of d-Dimensions $E^d$ and a set of points $P$ in defined in this space, 
+Given an Euclidean Space of d-Dimensions $E^d$ and a set of points $P$ defined in this space, 
 
-\begin{definition}The \textbf{Convex Hull} $\mathbf{CH(P)}$ of $P$ is the \textit{minimal convex set} containing all the points in P. \end{definition}
-A \textit{convex set} is a set in which, $\forall\ x, y \in S$, the segment $xy \subseteq S$. \cite{O'Rourke:1998:CGC:521378}\\
-Equivalently, one can define the \textit{Convex Hull} as the intersection of \textit{all convex sets} that contains $S$, as the intersection of \textit{all halfspaces} (the set of points on the side of a plane) that contain $S$, or as of the union of \textit{all convex combinations} of the points in $S$, i.e. the points $CH(S)$ are such that: \cite{Preparata:1985:CGI:4333}
+\begin{definition}The \textbf{Convex Hull} $\mathbf{CH(P)}$ of $P$ is the \textit{minimal convex set} containing all the points in $P$. \end{definition}
+A \textit{convex set} $S$ is a set in which, $\forall\ x, y \in S$, the segment $xy \subseteq S$. \cite{O'Rourke:1998:CGC:521378}\\
+Equivalently, one can define the \textit{Convex Hull} as the intersection of \textit{all convex sets} that contains $P$, as the intersection of \textit{all halfspaces} (the set of points on the side of a plane) that contain $P$, or as of the union of \textit{all convex combinations} of the points in $P$, i.e. the points $CH(P)$ are such that: \cite{Preparata:1985:CGI:4333}
 \begin{equation}
-\sum_{i=1}^{|S|}{w_i \cdot x_i},\ \forall x_i \in S,\ \forall w_i:\ w_i \geq 0\ and\ \sum_{i=1}^{|S|}{w_i}=1
+\sum_{i=1}^{|P|}{w_i \cdot x_i},\ \forall x_i \in P,\ \forall w_i:\ w_i \geq 0\ and\ \sum_{i=1}^{|P|}{w_i}=1
 \end{equation}
 In this report, it is assumed that the Euclidean Space is \textbf{bidimensional}, unless otherwise specified.\\
 The computation of the \textit{Convex Hull} is a classical problem of \textit{computational geometry}, and finds applications in collision detection algorithms \cite{O'Rourke:1998:CGC:521378} and visual pattern matching \cite{6313439}, among others.
@@ -366,6 +370,12 @@ As the final hull will have size $h$, $h$ steps of \textit{Jarvis March} will be
 Now, it is reasonable to ask what should be the appropriate value of $m$. \\
 Let's imagine that the hull size $H$ is known: it turns out that by setting $H$ = $m$, the algorithm will have optimal complexity (the details of the proof are found in section 2.3.4, Complexity Analysis).\\ However, the value of $h$ isn't known: to solve the problem, the algorithm is called multiple times, and at each iteration $i$, the algorithm sets $m = H = 2^{2^i}$.
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth, center, keepaspectratio=1]{{"chan_step"}.pdf}
+	\caption{\emph{A step of \textit{Chan's algorithm}. In \textcolor{MidnightBlue}{blue}, the existing hull, in \textcolor{Orange}{orange}, the tangents, in \textcolor{BrickRed}{red}, the new edge that will be added.}}
+\end{figure}
+
 
 \subsection{Pseudocode}
 In this section is given the pseudocode of \textit{Chan's algorithm:} \cite{Chan1996}\\
@@ -505,7 +515,7 @@ def hull_2d(points):
 \subsection{Complexity Analysis}
 The analysis of the running time of \textit{Chan's algorithm} can be decomposed in multiple steps.
 First, compute the convex hull of each subset of $S$, by using Graham Scan. As there are $\lceil n/m \rceil$ subsets, each of size $m$, the cost of this step is 
-$O((n/m) \cdot (m\cdot lo\ gm)) = O(n \cdot log\ m)$.\\
+$O((n/m) \cdot (mlog \m)) = O(n \cdot log\ m)$.\\
 Then, for all the $H$ points in the final hull, we have to compute the tangent to each subset $S_i$. There will be $H$ points in the final hull, and each step of \textit{Jarvis March} will inspect $\lceil n/m \rceil$ partial hulls.\\
 Finding the tangent is done with binary search in $O(log\ m)$, where $m$ is the size of a partial hull.\\
 Consequently, this phase has an overall cost of $O(H(n/m)log\ m)$.
@@ -522,15 +532,171 @@ $$O\left(\sum_{i = 1}^{\lceil log\ log\ h\rceil}{n2^i}\right) = O(n2^{\lceil log
 
 \chapter{Empirical Analysis of Chan's Algorithm}
 \section{Introduction}
-\lipsum[1]
+To test whether the theoretical results about \textit{Chan's algorithm} are coherent with the implemented version of the algorithm, multiple tests have been performed. \\
+The criterion taken into account to measure the performances is the \textbf{execution time}, as function of \textbf{input size} and \textbf{output size}.
+
+Given the complexity of the algorithm, other measures (such as explicitly counting the number of arithmetical operations) would have been hard to use in practice.\\
+Clearly, the execution times should not be evaluated by themselves, as they are dependent on the implementation, on the chosen programming language and on the machine running the algorithm.\\
+However, it is useful to compare them as a function on \textit{inout and output size}, as they clearly capture the scaling and the complexity of the algorithm.
+
+\textit{Chan's algorithm} was tested on sets of points of increasing size, built by keeping the \textit{hull size} constant, and on sets of fixed size but with increasing \textit{hull size}. \\
+Then, the algorithm was tested against sets of increasing size but no further constraint, and compared with \textbf{Graham Scan}, to see how faster \textit{Chan's algorithm} is in a practical scenario.
+
+All the results are reported in the following sections.
+The original data are available at \href{https://github.com/AlbertoParravicini/data\_structures\_and\_algorithms/tree/master/Project/Results}{https://github.com/AlbertoParravicini/ \\ data\_structures\_and\_algorithms/tree/master/Project/Results}
+
+The tests were performed on a \textit{Surface Pro 4} with a Intel Core i5-6300U  CPU clocked at 2.95 Ghz, and 4 GB of DDR3 RAM at 1867Mhz.
+
+
 \section{\textbf{First Test:} increasing number of points, fixed hull size}
-\lipsum[1]
+The first test consisted in running \textit{Chan's algorithm} against sets of points of increasing size, while keeping the hull size constant. To do so, the hull was generated by sampling a fixed amount of points from a circumference, and by letting the other points being strictly inside the circumference.\\
+The goal of this test is to eliminate the dependency of the algorithm on the \textbf{output size}, and to see if, by fixing the output size, the complexity becomes \textit{linear} on the \textbf{input size}.
+
+The size of the hull was set to $1000$, and the number of points ranged from $10000$ to $200000$ (counting the hull), with increments of $10000$ points. \\ 
+For each size, $10$ tests have been performed.
+
+The results are summarized below, and displayed in the following plot.
+
+	\begin{table}[h]
+		\centering % centering table
+		
+		\begin{tabular}{l l l l l l} % creating eight columns
+			\hline
+			\hline 
+			\\[-1.5ex]
+			\textcolor{BrickRed}{Set Size} & \textcolor{BrickRed}{Median} & \textcolor{BrickRed}{Mean} & \textcolor{BrickRed}{St. Deviation} & \textcolor{BrickRed}{Minimum} & \textcolor{BrickRed}{Maximum}\\ [0.5ex]
+			\hline % inserts single-line
+			\\[-1.5ex]
+			\textcolor{MidnightBlue}{10000} &  2.145138 & 2.160720 & 0.08463724 & 2.065363 & 2.354396 \\ 
+				\textcolor{MidnightBlue}{$\ldots$}\\
+			\textcolor{MidnightBlue}{200000} & 47.280301 & 49.648977 & 6.79343614 & 44.137937 & 67.650292 \\[1ex] % [1ex] adds vertical space
+			\hline % inserts single-line
+		\end{tabular}
+	\end{table}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.2\textwidth, center, keepaspectratio=1]{{"increasing_points"}.pdf}
+	\caption{\emph{In {\color{RoyalBlue} blue}, the measured execution times. In {\color{red}red}, the linear regression of the measured execution times. The {\color{RoyalBlue} blue}} vertical lines are the variance of each set size.}
+\end{figure}
+
+It can be seen from the plot that if the hull size is kept constant, the scaling is clearly linear with respect to the input size.
+
+
+
 \section{\textbf{Second Test:} increasing size of hull, fixed number of points}
-\lipsum[1]
+\textit{Chan's algorithm} was tested against a set of points of fixed size, with increasing size of hull. The points on the hull were drawn from a circumference, while the other points were strictly inside of it.\\
+The test measures if the scaling becomes \textit{logarithmic} with respect to the \textit{output size}, if the \textit{input size} is kept constant.
+
+The size of the set of points was set to $40000$ (including the hull), and the size of the hull ranged from $1000$ to $20000$, with increments of $1000$.\\ 
+For each size, $10$ tests have been performed.
+
+The results are summarized below, and displayed in the following plot.
+
+\begin{table}[h]
+	\centering % centering table
+	
+	\begin{tabular}{l l l l l l} % creating eight columns
+		\hline
+		\hline 
+		\\[-1.5ex]
+		\textcolor{BrickRed}{Hull Size} & \textcolor{BrickRed}{Median} & \textcolor{BrickRed}{Mean} & \textcolor{BrickRed}{St. Deviation} & \textcolor{BrickRed}{Minimum} & \textcolor{BrickRed}{Maximum}\\ [0.5ex]
+		\hline % inserts single-line
+		\\[-1.5ex]
+		\textcolor{MidnightBlue}{1000} & 8.974487 & 9.234982 & 0.908936& 8.120295 & 11.4063 \\ 
+			\textcolor{MidnightBlue}{$\ldots$}\\
+		\textcolor{MidnightBlue}{20000} & 10.33646 &10.19473 &0.444094& 9.527542 &10.88218 \\[1ex] % [1ex] adds vertical space
+		\hline % inserts single-line
+	\end{tabular}
+\end{table}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.2\textwidth, center, keepaspectratio=1]{{"increasing_hull"}.pdf}
+	\caption{\emph{In {\color{RoyalBlue} blue}, the measured execution times. In {\color{red}red}, the logarithmic regression of the measured execution times. The {\color{RoyalBlue} blue}} vertical lines are the variance of each set size.}
+\end{figure}
+
+
+
+
 \section{\textbf{Third Test:} increasing number of points with uniform distribution}
-\lipsum[1]
-\section{\textbf{Fourth Test:} comparison with Graham Scan in case of increasing hull size}
-\lipsum[1]
+In this section, \textit{Chan's algorithm} was tested against sets of point of increasing size. No further constraints was imposed on the hull size. Points were drawn from a uniform bivariate distribution with support $[0, 1)$.
+It was measured how the hull size changes as a function of the \textit{input size}, and how this relation is reflected on the execution times.
+
+The size of the set of points ranged from $10000$ to $10000$, with increments of $10000$.\\ 
+For each size, $10$ tests have been performed.
+
+The results are summarized in the following tables.
+
+
+\begin{table}[h]
+	\centering % centering table
+	
+	\begin{tabular}{l l l l l l l} % creating eight columns
+		\hline
+		\hline 
+		\\[-1.5ex]
+		\textcolor{BrickRed}{Number of points} & \textcolor{BrickRed}{Median} & \textcolor{BrickRed}{Mean} & \textcolor{BrickRed}{St. Deviation} & \textcolor{BrickRed}{Minimum} & \textcolor{BrickRed}{Maximum}\\ [0.5ex]
+		\hline % inserts single-line
+		\\[-1.5ex]		
+	\textcolor{MidnightBlue}{10000} & 23 & 22.8 & 2.93 & 18 & 28\\
+	\textcolor{MidnightBlue}{20000} & 24 & 24 & 4.29 & 17 & 31\\
+	\textcolor{MidnightBlue}{30000} & 29 & 27.2 & 5.51 & 20 & 35\\
+	\textcolor{MidnightBlue}{40000} & 28 & 26.3 & 4.80 & 19 & 34\\
+	\textcolor{MidnightBlue}{50000} & 28 & 26.7 & 4.29 & 20 & 34\\
+	\textcolor{MidnightBlue}{60000} & 27 & 27.3 & 3.77 & 20 & 33\\
+	\textcolor{MidnightBlue}{70000} & 28.5 & 28 & 3.52 & 21 & 32\\
+	\textcolor{MidnightBlue}{80000} & 29.5 & 28.4 & 3.89 & 20 & 34\\
+	\textcolor{MidnightBlue}{90000}& 29 & 28.5 & 4.06 & 21 & 35\\
+	\textcolor{MidnightBlue}{100000} & 30 & 29.4 & 4.55 & 22 & 35\\[1ex]
+
+		
+		\hline % inserts single-line
+		\caption{Hull size as function of input size.}
+	\end{tabular}
+\end{table}
+
+It can be seen that the size of the hull increases very slowly compared to the input size. As the hull size has a \textit{logarithmic} impact on the final complexity, this implies that the hull size has a very minor influence over the overall execution times. As such, the scaling seems to be almost linear with respect to the input size.\\
+It can also be noted how small the convex hull is, compared to the input size: this is most likely caused by the uniform distribution used to generate the points, which causes the points of the hull to be very close to the boundaries of the support. 
+
+\begin{table}[h]
+	\centering % centering table
+	
+	\begin{tabular}{l l l l l l l} % creating eight columns
+		\hline
+		\hline 
+		\\[-1.5ex]
+		\textcolor{BrickRed}{Number of points} & \textcolor{BrickRed}{Median} & \textcolor{BrickRed}{Mean} & \textcolor{BrickRed}{St. Deviation} & \textcolor{BrickRed}{Minimum} & \textcolor{BrickRed}{Maximum}\\ [0.5ex]
+		\hline % inserts single-line
+		\\[-1.5ex]		
+			\textcolor{MidnightBlue}{10000} & 0.769  & 0.862 & 0.283 & 0.597 & 1.502\\
+			\textcolor{MidnightBlue}{20000} & 1.582  & 1.701 & 0.459 & 1.197 & 2.712\\
+			\textcolor{MidnightBlue}{30000} & 2.396  & 2.388 & 0.364 & 1.860 & 2.994\\
+			\textcolor{MidnightBlue}{40000} & 3.025  & 3.168 & 0.708 & 2.502 & 5.006\\
+			\textcolor{MidnightBlue}{50000} & 3.863  & 3.876 & 0.777 & 3.044 & 5.570\\
+			\textcolor{MidnightBlue}{60000} & 4.411  & 4.457 & 0.648 & 3.657 & 5.609\\
+			\textcolor{MidnightBlue}{70000} & 5.087  & 5.079 & 0.544 & 4.331 & 5.793\\
+			\textcolor{MidnightBlue}{80000} & 6.115  & 5.987 & 0.657 & 5.010 & 6.911\\
+			\textcolor{MidnightBlue}{90000} & 6.574  & 6.886 & 1.392 & 5.637 & 10.38\\
+			\textcolor{MidnightBlue}{100000} & 7.556 & 8.654 & 2.982 & 6.173 & 16.052\\[1ex]
+		
+		\hline % inserts single-line
+		\caption{Execution time as function of input size.}
+	\end{tabular}
+\end{table}
+
+
+
+%\section{\textbf{Fourth Test:} comparison with Graham Scan in case of increasing hull size}
+%As last test, \textit{Chan's algorithm} was compared to \textit{Graham's Scan}: on paper, \textit{Chan's algorithm} should give better results, as the size of the hull cannot be bigger than the input size. 
+%
+%The size of the hull was kept fixed at $1000$, and the number of points ranged from $10000$ to $200000$ (counting the hull), with increments of $10000$ points. \\ 
+%For each size, $10$ tests have been performed.
+%
+%From the empirical data, it looks like \textit{Graham's Scan} is initially faster, which is due to implementative characteristics that make \textit{Graham's Scan} run better on small datasets.\\
+%As the input size increases the \textit{Chan's algorithm }linear scaling (as the \textit{output size is kept constant}) makes it progressively better than the $O(n\ log\ n)$ scaling of \textit{Graham's Scan}.
 
 
 \bibliographystyle{plainurl}
