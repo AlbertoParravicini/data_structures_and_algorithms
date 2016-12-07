@@ -13,6 +13,8 @@
 \institute{Université libre de Bruxelles}
 \date{December 15, 2016}
 
+\setbeamertemplate{bibliography item}[text] % No icons in bibliography
+
 \begin{document}
 
 % Title page
@@ -29,22 +31,22 @@
  \end{fullpageitemize}
 \end{frame}
 
-%\section{Basic Notions}
+\section{Basic Notions}
 \begin{frame}{Crash course on convex hulls}
- \begin{center}
- A \textit{convex set} $S$ is a set in which, $\forall\ x, y \in S$, the segment $xy \subseteq S$.
- \vspace{8mm}
- 	
- Given a set of points $P$ in $d$ dimensions, the \textbf{Convex Hull} $\mathbf{CH(P)}$ of $P$ is:
- 
- \begin{baseitemize}
- 	\item<1->[\rtarrow] the \textit{minimal convex set} containing $P$.
- 	\vspace{3mm}
- 	\item<2->[\rtarrow] the union of \textit{all convex combinations} of  points in $P$, i.e. the points $CH(P)$ are s.t.
-	\vspace{-2mm}
- 	$$\sum_{i=1}^{|P|}{w_i \cdot x_i},\ \forall x_i \in P,\ \forall w_i:\ w_i \geq 0\ and\ \sum_{i=1}^{|P|}{w_i}=1$$
- \end{baseitemize}
- \end{center}
+	\begin{center}
+	A \textit{convex set} $S$ is a set in which, $\forall\ x, y \in S$, the segment $xy \subseteq S$.
+	\vspace{8mm}
+	 	
+	Given a set of points $P$ in $d$ dimensions, the \textbf{Convex Hull} $\mathbf{CH(P)}$ of $P$ is:
+	 
+	\begin{baseitemize}
+	 	\item<1->[\rtarrow] the \textit{minimal convex set} containing $P$.
+	 	\vspace{3mm}
+	 	\item<2->[\rtarrow] the union of \textit{all convex combinations} of  points in $P$, i.e. the points $CH(P)$ are s.t.
+		\vspace{-2mm}
+		$$\sum_{i=1}^{|P|}{w_i \cdot x_i},\ \forall x_i \in P,\ \forall w_i:\ w_i \geq 0\ and\ \sum_{i=1}^{|P|}{w_i}=1$$
+	\end{baseitemize}
+	\end{center}
 \end{frame}
 
 \begin{frame}{Output sensitive algorithm}
@@ -54,7 +56,7 @@
 \end{frame}
 
 
-%\section{Algorithms for convex hulls}
+\section{Algorithms for convex hulls}
 
 % JARVIS MARCH %%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Jarvis's march}
@@ -176,7 +178,7 @@
 	\end{center}
 \end{frame}
 
-%\section{Chan's 2D algorithm}
+\section{Chan's 2D algorithm}
 \begin{frame}{Chan's 2D algorithm}
 	\begin{center}
 		\vspace{-2mm}
@@ -311,5 +313,62 @@
 	\end{figure}	
 \end{frame}
 
+
+% CHAN 3D %%%%%%%%%%%%%%%%%%%%%%%
+\section{Chan's 3D algorithm}
+\begin{frame}{Chan's 3D algorithm}
+	\begin{center}
+		\vspace{-2mm}
+		\begin{fullpageitemize}
+			\item<1->[\rtarrow] \textbf{Idea:} The structure of the algorithm doesn't change, just the ingredients.
+	
+			\fontsize{12}{14}\notosansfont
+			\begin{sublist}
+				\vspace{2mm}
+				\item<2->[] Given a set $S$ of $n$ points with an hull of size $h$:
+				\vspace{2mm}
+				\item<3-> Jarvis's march $\longrightarrow$ \textbf{Chand and Kapur's gift wrapping} - \textcolor{colorgreen}{$\bm{O(nh)}$}.
+				\item<4-> Graham's scan $\longrightarrow$ \textbf{Preparata and Hong's 3D algorithm} - \textcolor{colorgreen}{$\bm{O(n\ log\ n)}$}.
+				\item<5-> Finding tangents in 2D $\longrightarrow$ \textbf{Tangents in 3D with Dobkin-Kirkpatrick hierarchy} - \textcolor{colorgreen}{$\bm{O(log\ n)}$}.
+			\end{sublist}		
+		
+			\item<6-> The overall complexity is still \textcolor{colorgreen}{$\bm{O(n\ log\ h)}$}.
+		\end{fullpageitemize}	
+	\end{center}
+\end{frame}
+
+\begin{frame}{Chan's 3D algorithm}
+	\begin{center}
+		\begin{fullpageitemize}
+			\item<1->[\rtarrow] \textbf{3D Gift wrapping}
+			\fontsize{12}{14}\notosansfont
+			\begin{sublist}
+				\item<2-> Pick an edge $e_j$ of a face $f$ of the partial hull. 
+				\item<3-> Find $p$ that maximizes the angle between $f$ and the new face given by $e_j$ and $p$. Repeat for the 3 edges of $f$.
+				\item<4-> Use \textit{breadth first visit} to build the entire hull.
+			\end{sublist}
+		
+		
+		\end{fullpageitemize}
+	\begin{center}
+\end{frame}
+
+
+
+
+
 \framecard[colorgreen]{{\color{white}\hugetext{THANK YOU!}}}
+
+\begin{frame}[allowframebreaks]
+	\frametitle{References}
+	\nocite{*}
+	\scriptsize{\bibliographystyle{plainurl}}	
+	\bibliography{bibliography} %bibtex file name without .bib extension
+	\begin{baseitemize}
+		\item \textbf{Beamer theme:} \textit{Presento}, by 
+		Ratul Saha. \textit{The research system in Germany}, by Hazem Alsaied
+	\end{baseitemize}
+\end{frame}
+
+
 \end{document}
