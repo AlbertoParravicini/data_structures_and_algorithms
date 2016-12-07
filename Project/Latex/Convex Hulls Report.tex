@@ -179,7 +179,7 @@ This is the case of convex hull algorithms, as presented in the following sectio
 
 
 \chapter{Algorithms for computing convex hulls}
-In the literature there exists a wide number of algoritmhs for computing convex hulls in 2 or more dimensions. In this chapter, \textit{Jarvis March} and \textit{Graham Scan} are presented, two commonly employed algorithms for computing 2-dimensional convex hulls. Then, these two algorithms are used to as building blocks of an \textit{optimal algorithm}, originally presented by T. M. Chan. \cite{Chan1996}
+In the literature there exists a wide number of algorithms for computing convex hulls in 2 or more dimensions. In this chapter, \textit{Jarvis March} and \textit{Graham Scan} are presented, two commonly employed algorithms for computing 2-dimensional convex hulls. Then, these two algorithms are used to as building blocks of an \textit{optimal algorithm}, originally presented by T. M. Chan. \cite{Chan1996}
 This last algorithm is described in details, and an implementation is provided.\\
 
 \textbf{Note:} usually, the algorithms assume points to be in \textit{general position}, i.e. no three points form a straight line (the points are not \textit{collinear}).\\
@@ -191,7 +191,7 @@ In practice, it is generally more efficient to modify the algorithms directly, t
 given an edge of the convex hull, it is clear that the next edge to be added to the hull is the one that maximizes the angle between the last edge and the new one.\\
 
 Additionally, assuming that we build the hull in counter-clockwise order, one can easily see that no points can lie on the right of the edges of the hull.\\
-This last observation makes it possible not to compute explicitely the angle between pairs of edges, which is in general a slow procedure subject to numerical approximation.
+This last observation makes it possible not to compute explicitly the angle between pairs of edges, which is in general a slow procedure subject to numerical approximation.
 Indeed, to find whether a point $r$ lies on the right of a given segment going through two points $p, q$, it is enough to evaluate:\\
 \[
 Det\left(
@@ -698,6 +698,20 @@ It can also be noted how small the convex hull is, compared to the input size: t
 %From the empirical data, it looks like \textit{Graham's Scan} is initially faster, which is due to implementative characteristics that make \textit{Graham's Scan} run better on small datasets.\\
 %As the input size increases the \textit{Chan's algorithm }linear scaling (as the \textit{output size is kept constant}) makes it progressively better than the $O(n\ log\ n)$ scaling of \textit{Graham's Scan}.
 
+
+\section{3d algorithm}
+it is possible to extend the algortihm to 3d. the general structure is the smae, but the algorithms that are used as building blocks have to be adapted to work on 3d points.
+Specifically, jarvis marcgh becosmes gift wraping, grahama scan becomes quickhull (or nay other nlogn algortihm). the partuial hulls have to be stored in a dobkin kirpatrick hierarchy so that it is possible to compute the supporting planes (the 3 dimensional equivalent to 2d tangents, which are needed by the gift wrapping algorithm) in logarithmic time, as in the 2d case.
+
+\subsection{3d gift wrapping}
+
+\subsection{quickhull}
+
+\subsection{dobkin kirpatrick}
+
+\subsection{supporting planes in 3d}
+
+\subsection{pseudocode}
 
 \bibliographystyle{plainurl}
 \bibliography{bibliography}

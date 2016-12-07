@@ -1,1 +1,5 @@
 \beamer@endinputifotherversion {3.36pt}
+\beamer@sectionintoc {1}{Basic Notions}{3}{0}{1}
+\beamer@sectionintoc {2}{Algorithms for convex hulls}{6}{0}{2}
+\beamer@sectionintoc {3}{Chan's 2D algorithm}{13}{0}{3}
+\beamer@sectionintoc {4}{Chan's 3D algorithm}{21}{0}{4}

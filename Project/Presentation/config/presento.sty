@@ -166,105 +166,105 @@
 % "The research system in Germany" THEME %%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%}}}
-%%{{{ --- Options ----------------------
-%
-%\newif\if@useTitleProgressBar
-%\@useTitleProgressBarfalse
-%\DeclareOption{titleprogressbar}{\@useTitleProgressBartrue}
-%
-%\ProcessOptions\relax
-%
-%
-%%{{{ --- Progressbar ------------------
-%
-%\makeatletter
-%\def\progressbar@sectionprogressbar{}
-%\def\progressbar@titleprogressbar{}
-%\newcount\progressbar@tmpcounta % auxiliary counter
-%\newcount\progressbar@tmpcountb % auxiliary counter
-%\newdimen\progressbar@pbht      % progressbar height
-%\newdimen\progressbar@pbwd      % progressbar width
-%\newdimen\progressbar@tmpdim    % auxiliary dimension
-%
-%\progressbar@pbwd=22em
-%\progressbar@pbht=0.4pt
-%
-%% the progress bar
-%\def\progressbar@sectionprogressbar{%
-%	\progressbar@tmpcounta=\insertframenumber
-%	\progressbar@tmpcountb=\inserttotalframenumber
-%	\progressbar@tmpdim=\progressbar@pbwd
-%	\divide\progressbar@tmpdim by 100
-%	\multiply\progressbar@tmpdim by \progressbar@tmpcounta
-%	\divide\progressbar@tmpdim by \progressbar@tmpcountb
-%	\multiply\progressbar@tmpdim by 100
-%	
-%	\makebox[\textwidth][c]{
-%		\begin{tikzpicture}[tight background]
-%		
-%		\node[anchor=west, colorgreen, inner sep=0pt] at (0pt, 0pt) {\insertsectionHEAD};
-%		
-%		\draw[anchor=west, colorgreen!20, fill=colorgreen!20, inner sep=0pt]
-%		(2pt, -16pt) rectangle ++ (\progressbar@pbwd, \progressbar@pbht);
-%		
-%		\draw[anchor=west, colorgreen, fill=colorgreen, inner sep=0pt]
-%		(2pt, -16pt) rectangle ++ (\progressbar@tmpdim, \progressbar@pbht);
-%		\end{tikzpicture}%
-%	}
-%}
-%
-%\if@useTitleProgressBar
-%\def\progressbar@titleprogressbar{%
-%	\progressbar@tmpcounta=\insertframenumber
-%	\progressbar@tmpcountb=\inserttotalframenumber
-%	\progressbar@tmpdim=\paperwidth
-%	\divide\progressbar@tmpdim by 100
-%	\multiply\progressbar@tmpdim by \progressbar@tmpcounta
-%	\divide\progressbar@tmpdim by \progressbar@tmpcountb
-%	\multiply\progressbar@tmpdim by 100
-%	
-%	\begin{tikzpicture}[tight background]
-%	\draw[mDarkBrown, fill=mDarkBrown] (0, 0) rectangle ($(\paperwidth, 0.2pt) - (0.4pt, 0)$);
-%	\draw[mLightBrown, fill=mLightBrown] (0, 0) rectangle (\progressbar@tmpdim, 0.2pt);
-%	\end{tikzpicture}
-%}
-%\fi
-%%}}}
-%
-%
-%%{{{ --- Sections ---------------------
-%
-%% Insert frame with section title at every section start
-%\AtBeginSection[]
-%{
-%	\begingroup
-%	\setbeamercolor{background canvas}{bg=black!2}
-%	\begin{frame}[plain]
-%		\vspace{2em}\usebeamerfont{section title}
-%		\progressbar@sectionprogressbar%
-%	\end{frame}
-%	\endgroup
-%}
-%
-%%}}}
-%
-%
-%%{{{ --- Commands ---------------------
-%
-%\newcommand{\insertsectionHEAD}{%
-%	\expandafter\insertsectionHEADaux\insertsectionhead}
-%\newcommand{\insertsectionHEADaux}[3]{\textsc{\MakeLowercase{#3}}
-%}
-%
-%\newcommand{\plain}[2][]{%
-%	\begingroup
-%	\setbeamercolor{background canvas}{bg=colorgreen}
-%	\begin{frame}{#1}
-%		\centering
-%		\vfill\vspace{1em}\usebeamerfont{section title}\textcolor{white}{\scshape #2}\vfill
-%	\end{frame}
-%	\endgroup
-%}
-%
-%%}}}
+%}}}
+%{{{ --- Options ----------------------
+
+\newif\if@useTitleProgressBar
+\@useTitleProgressBarfalse
+\DeclareOption{titleprogressbar}{\@useTitleProgressBartrue}
+
+\ProcessOptions\relax
+
+
+%{{{ --- Progressbar ------------------
+
+\makeatletter
+\def\progressbar@sectionprogressbar{}
+\def\progressbar@titleprogressbar{}
+\newcount\progressbar@tmpcounta % auxiliary counter
+\newcount\progressbar@tmpcountb % auxiliary counter
+\newdimen\progressbar@pbht      % progressbar height
+\newdimen\progressbar@pbwd      % progressbar width
+\newdimen\progressbar@tmpdim    % auxiliary dimension
+
+\progressbar@pbwd=22em
+\progressbar@pbht=0.4pt
+
+% the progress bar
+\def\progressbar@sectionprogressbar{%
+	\progressbar@tmpcounta=\insertframenumber
+	\progressbar@tmpcountb=\inserttotalframenumber
+	\progressbar@tmpdim=\progressbar@pbwd
+	\divide\progressbar@tmpdim by 100
+	\multiply\progressbar@tmpdim by \progressbar@tmpcounta
+	\divide\progressbar@tmpdim by \progressbar@tmpcountb
+	\multiply\progressbar@tmpdim by 100
+	
+	\makebox[\textwidth][c]{
+		\begin{tikzpicture}[tight background]
+		
+		\node[anchor=west, colorgreen, inner sep=0pt] at (0pt, 0pt) {\insertsectionHEAD};
+		
+		\draw[anchor=west, colorgreen!20, fill=colorgreen!20, inner sep=0pt]
+		(2pt, -16pt) rectangle ++ (\progressbar@pbwd, \progressbar@pbht);
+		
+		\draw[anchor=west, colorgreen, fill=colorgreen, inner sep=0pt]
+		(2pt, -16pt) rectangle ++ (\progressbar@tmpdim, \progressbar@pbht);
+		\end{tikzpicture}%
+	}
+}
+
+\if@useTitleProgressBar
+\def\progressbar@titleprogressbar{%
+	\progressbar@tmpcounta=\insertframenumber
+	\progressbar@tmpcountb=\inserttotalframenumber
+	\progressbar@tmpdim=\paperwidth
+	\divide\progressbar@tmpdim by 100
+	\multiply\progressbar@tmpdim by \progressbar@tmpcounta
+	\divide\progressbar@tmpdim by \progressbar@tmpcountb
+	\multiply\progressbar@tmpdim by 100
+	
+	\begin{tikzpicture}[tight background]
+	\draw[mDarkBrown, fill=mDarkBrown] (0, 0) rectangle ($(\paperwidth, 0.2pt) - (0.4pt, 0)$);
+	\draw[mLightBrown, fill=mLightBrown] (0, 0) rectangle (\progressbar@tmpdim, 0.2pt);
+	\end{tikzpicture}
+}
+\fi
+%}}}
+
+
+%{{{ --- Sections ---------------------
+
+% Insert frame with section title at every section start
+\AtBeginSection[]
+{
+	\begingroup
+	\setbeamercolor{background canvas}{bg=black!2}
+	\begin{frame}[plain]
+		\vspace{2em}\usebeamerfont{section title}
+		\progressbar@sectionprogressbar%
+	\end{frame}
+	\endgroup
+}
+
+%}}}
+
+
+%{{{ --- Commands ---------------------
+
+\newcommand{\insertsectionHEAD}{%
+	\expandafter\insertsectionHEADaux\insertsectionhead}
+\newcommand{\insertsectionHEADaux}[3]{\textsc{\MakeLowercase{#3}}
+}
+
+\newcommand{\plain}[2][]{%
+	\begingroup
+	\setbeamercolor{background canvas}{bg=colorgreen}
+	\begin{frame}{#1}
+		\centering
+		\vfill\vspace{1em}\usebeamerfont{section title}\textcolor{white}{\scshape #2}\vfill
+	\end{frame}
+	\endgroup
+}
+
+%}}}

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (MiKTeX 2.9) (preloaded format=xelatex 2016.8.22)  6 DEC 2016 18:42
+This is XeTeX, Version 3.14159265-2.6-0.99992 (MiKTeX 2.9) (preloaded format=xelatex 2016.8.22)  7 DEC 2016 19:28
 entering extended mode
 **presentation.tex
 (presentation.tex
@@ -1584,46 +1584,51 @@ CapsFont=AlegreyaSansSC-Regular].
 . \fontdimen 4\font =0\fontdimen 4\font \fontdimen 7\font =0\fontdimen 2\font 
 .................................................
 \c@totalfr=\count216
+\progressbar@tmpcounta=\count217
+\progressbar@tmpcountb=\count218
+\progressbar@pbht=\dimen276
+\progressbar@pbwd=\dimen277
+\progressbar@tmpdim=\dimen278
 ) (config/custom-command.tex
 (C:\Users\albyr\AppData\Roaming\MiKTeX\2.9\tex\latex\textpos\textpos.sty
 Package: textpos 2016/06/07 v1.8
 
 Package: textpos 2016/06/07 1.8, absolute positioning of text on the page
 \TP@textbox=\box86
-\TPHorizModule=\dimen276
-\TPVertModule=\dimen277
-\TP@margin=\dimen278
-\TP@absmargin=\dimen279
+\TPHorizModule=\dimen279
+\TPVertModule=\dimen280
+\TP@margin=\dimen281
+\TP@absmargin=\dimen282
 Grid set 16 x 16 = 22.7622pt x 17.07166pt
-\TPboxrulesize=\dimen280
+\TPboxrulesize=\dimen283
 \TP@tbargs=\toks52
-\TP@prevdepth=\dimen281
+\TP@prevdepth=\dimen284
 )) (presentation.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 16.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 16.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 18.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 18.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tipa\t3cmr.fd"
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    ... okay on input line 18.
 
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1660,7 +1665,7 @@ LaTeX Font Info:    ... okay on input line 16.
 
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box87
-Package hyperref Info: Link coloring OFF on input line 16.
+Package hyperref Info: Link coloring OFF on input line 18.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1668,93 +1673,93 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count217
+\c@section@level=\count219
 )
-LaTeX Info: Redefining \ref on input line 16.
-LaTeX Info: Redefining \pageref on input line 16.
-LaTeX Info: Redefining \nameref on input line 16.
+LaTeX Info: Redefining \ref on input line 18.
+LaTeX Info: Redefining \pageref on input line 18.
+LaTeX Info: Redefining \nameref on input line 18.
 
 (presentation.out) (presentation.out)
 \@outlinefile=\write5
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 16.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 18.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 16.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 18.
 \symnumbers=\mathgroup11
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 16.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 18.
 LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
-(Font)              `pureletters' in the math version `normal' on input line 16
+(Font)              `pureletters' in the math version `normal' on input line 18
 .
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
 (Font)                  OT1/mathkerncmss/m/sl --> EU1/NotoSans-Regular(1)/m/it 
-on input line 16.
+on input line 18.
 LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
-(Font)              `pureletters' in the math version `bold' on input line 16.
+(Font)              `pureletters' in the math version `bold' on input line 18.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/mathkerncmss/bx/sl --> EU1/NotoSans-Regular(1)/m/it
- on input line 16.
+ on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
 (Font)                  OT1/cmss/m/n --> EU1/NotoSans-Regular(1)/m/n on input l
-ine 16.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 16.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 16.
+ine 18.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 18.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
 (Font)                  OT1/cmss/m/n --> EU1/NotoSans-Regular(1)/m/n on input l
-ine 16.
+ine 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  OT1/cmss/bx/n --> EU1/NotoSans-Regular(1)/m/n on input 
-line 16.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 16.
+line 18.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 (Font)                  OT1/cmr/m/it --> EU1/NotoSans-Regular(1)/m/it on input 
-line 16.
+line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> EU1/NotoSans-Regular(1)/m/it on input
- line 16.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 16.
+ line 18.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
 (Font)                  OT1/cmtt/m/n --> EU1/Inconsolata(1)/m/n on input line 1
-6.
+8.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> EU1/Inconsolata(1)/m/n on input line 1
-6.
+8.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
 (Font)                  EU1/NotoSans-Regular(1)/m/n --> EU1/NotoSans-Regular(1)
-/bx/n on input line 16.
+/bx/n on input line 18.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  EU1/NotoSans-Regular(1)/m/it --> EU1/NotoSans-Regular(1
-)/bx/it on input line 16.
+)/bx/it on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
 (Font)                  OT1/cmss/bx/n --> EU1/NotoSans-Regular(1)/bx/n on input
- line 16.
+ line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
 (Font)                  EU1/NotoSans-Regular(1)/bx/n --> EU1/NotoSans-Regular(1
-)/bx/n on input line 16.
+)/bx/n on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  EU1/NotoSans-Regular(1)/m/n --> EU1/NotoSans-Regular(1)
-/bx/n on input line 16.
+/bx/n on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  EU1/NotoSans-Regular(1)/m/it --> EU1/NotoSans-Regular(1
-)/bx/it on input line 16.
+)/bx/it on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  EU1/Inconsolata(1)/m/n --> EU1/Inconsolata(1)/bx/n on i
-nput line 16.
-LaTeX Font Info:    Redeclaring symbol font `boldpureletters' on input line 16.
+nput line 18.
+LaTeX Font Info:    Redeclaring symbol font `boldpureletters' on input line 18.
 
 LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
 (Font)              `boldpureletters' in the math version `normal' on input lin
-e 16.
+e 18.
 LaTeX Font Info:    Overwriting symbol font `boldpureletters' in version `norma
 l'
 (Font)                  OT1/mathkerncmss/bx/sl --> EU1/NotoSans-Regular(1)/bx/i
-t on input line 16.
+t on input line 18.
 LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
 (Font)              `boldpureletters' in the math version `bold' on input line 
-16.
+18.
 LaTeX Font Info:    Overwriting symbol font `boldpureletters' in version `bold'
 
 (Font)                  OT1/mathkerncmss/bx/sl --> EU1/NotoSans-Regular(1)/bx/i
-t on input line 16.
+t on input line 18.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\beamer\base\translator\dicts\tran
 slator-basic-dictionary\translator-basic-dictionary-English.dict"
@@ -1780,7 +1785,7 @@ Dictionary: translator-numbers-dictionary, Language: English
 slator-theorem-dictionary\translator-theorem-dictionary-English.dict"
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \includegraphics on input line 16.
+LaTeX Info: Redefining \includegraphics on input line 18.
 .................................................
 . fontspec info: "setup-math"
 . 
@@ -1788,74 +1793,74 @@ LaTeX Info: Redefining \includegraphics on input line 16.
 .................................................
 \symlegacymaths=\mathgroup12
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 16.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 16.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 16.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 16.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 16.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 16.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 16.
-LaTeX Font Info:    Redeclaring math accent \check on input line 16.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 16.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 16.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 16.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 16.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 16.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 16.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 16.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 16.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 16.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 16.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 16.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 16.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 16.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 16.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 16.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 16.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 18.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 18.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 18.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 18.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 18.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 18.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 18.
+LaTeX Font Info:    Redeclaring math accent \check on input line 18.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 18.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 18.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 18.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 18.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 18.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 18.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 18.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 18.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 18.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 18.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 18.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 18.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 18.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 18.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 18.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 18.
 LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
-(Font)              `operators' in the math version `normal' on input line 16.
+(Font)              `operators' in the math version `normal' on input line 18.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmss/m/n --> EU1/NotoSans-Regular(1)/m/n on input l
-ine 16.
+ine 18.
 LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
-(Font)              `operators' in the math version `bold' on input line 16.
+(Font)              `operators' in the math version `bold' on input line 18.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/cmss/bx/n --> EU1/NotoSans-Regular(1)/m/n on input 
-line 16.
+line 18.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  EU1/NotoSans-Regular(1)/m/n --> EU1/NotoSans-Regular(1)
-/m/n on input line 16.
-LaTeX Font Info:    Redeclaring math alphabet \mathrm on input line 16.
+/m/n on input line 18.
+LaTeX Font Info:    Redeclaring math alphabet \mathrm on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 (Font)                  EU1/NotoSans-Regular(1)/m/it --> EU1/NotoSans-Regular(1
-)/m/it on input line 16.
+)/m/it on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 (Font)                  EU1/NotoSans-Regular(1)/bx/n --> EU1/NotoSans-Regular(1
-)/bx/n on input line 16.
+)/bx/n on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
 (Font)                  EU1/NotoSans-Regular(1)/m/n --> EU1/NotoSans-Regular(1)
-/m/n on input line 16.
+/m/n on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
 (Font)                  EU1/Inconsolata(1)/m/n --> EU1/Inconsolata(1)/m/n on in
-put line 16.
+put line 18.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  EU1/NotoSans-Regular(1)/m/n --> EU1/NotoSans-Regular(1)
-/bx/n on input line 16.
+/bx/n on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  EU1/NotoSans-Regular(1)/bx/it --> EU1/NotoSans-Regular(
-1)/bx/it on input line 16.
+1)/bx/it on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  EU1/NotoSans-Regular(1)/bx/n --> EU1/NotoSans-Regular(1
-)/bx/n on input line 16.
+)/bx/n on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  EU1/Inconsolata(1)/bx/n --> EU1/Inconsolata(1)/bx/n on 
-input line 16.
+input line 18.
 
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.14} into 
 your preamble.
- on input line 16.
+ on input line 18.
 
 (presentation.nav)
 Requested font "[fonts/NotoSans-Regular]/OT:script=latn;language=DFLT;mapping=t
@@ -1889,7 +1894,7 @@ Requested font "cmmi12" at 14.4pt
 Requested font "cmsy10" at 14.4pt
 Requested font "cmex10" at 14.4pt
 Requested font "cmex7" at 7.0pt
-LaTeX Font Info:    Try loading font information for U+msa on input line 30.
+LaTeX Font Info:    Try loading font information for U+msa on input line 32.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -1897,7 +1902,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 Requested font "msam10" at 14.4pt
 Requested font "msam10" at 10.0pt
 Requested font "msam7" at 7.0pt
-LaTeX Font Info:    Try loading font information for U+msb on input line 30.
+LaTeX Font Info:    Try loading font information for U+msb on input line 32.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1940,6 +1945,12 @@ ex-text;mapping=tex-text;" at 4.0pt
  [2
 
 ]
+Requested font "[fonts/AlegreyaSansSC-Regular]/OT:script=latn;language=DFLT;map
+ping=tex-text;mapping=tex-text;" at 20.74pt
+ -> ./fonts/AlegreyaSansSC-Regular.otf
+ [3
+
+]
 Requested font "[fonts/NotoSans-Bold]/OT:script=latn;language=DFLT;mapping=tex-
 text;mapping=tex-text;" at 14.4pt
  -> ./fonts/NotoSans-Bold.ttf
@@ -1950,14 +1961,16 @@ Requested font "[fonts/NotoSans-Bold]/OT:script=latn;language=DFLT;mapping=tex-
 text;mapping=tex-text;" at 7.0pt
  -> ./fonts/NotoSans-Bold.ttf
 
-Overfull \vbox (8.36606pt too high) detected at line 48
+Overfull \vbox (8.36606pt too high) detected at line 50
  []
 
-[3
-
-] [4
+[4
 
 ] [5
+
+] [6
+
+] [7
 
 ]
 File: "../Latex/jarvis_march".pdf Graphic file (type QTm)
@@ -1969,10 +1982,10 @@ Requested font "[fonts/NotoSans-Italic]/OT:script=latn;language=DFLT;mapping=te
 x-text;mapping=tex-text;" at 12.0pt
  -> ./fonts/NotoSans-Italic.ttf
 
-Overfull \vbox (4.34187pt too high) detected at line 79
+Overfull \vbox (4.34187pt too high) detected at line 81
  []
 
-[6
+[8
 
 ]
 Requested font "[fonts/NotoSans-Regular]/OT:script=latn;language=DFLT;" at 10.0
@@ -1999,7 +2012,7 @@ text;mapping=tex-text;" at 5.0pt
 Requested font "[fonts/NotoSans-Regular]/OT:script=latn;language=DFLT;" at 14.4
 pt
  -> ./fonts/NotoSans-Regular.ttf
- [7
+ [9
 
 ]
 Requested font "[fonts/NotoSans-Regular]/OT:script=latn;language=DFLT;" at 12.0
@@ -2059,30 +2072,32 @@ text;mapping=tex-text;" at 6.0pt
 Requested font "cmr12" at 12.0pt
 Requested font "cmr8" at 8.0pt
 Requested font "cmr6" at 6.0pt
- [8
+ [10
 
-] [9
+] [11
 
-] [10
+] [12
+
+] [13
 
 ]
 Requested font "[fonts/NotoSans-Bold]/OT:script=latn;language=DFLT;" at 12.0pt
  -> ./fonts/NotoSans-Bold.ttf
 
-Overfull \vbox (7.95338pt too high) detected at line 204
+Overfull \vbox (7.95338pt too high) detected at line 206
  []
 
-[11
+[14
 
 ]
 File: "../Latex/chan_step".pdf Graphic file (type QTm)
  <use  ""../Latex/chan_step".pdf" >
-Overfull \vbox (15.62898pt too high) detected at line 212
+Overfull \vbox (15.62898pt too high) detected at line 214
  []
 
-[12
+[15
 
-] [13
+] [16
 
 ]
 Requested font "[fonts/NotoSans-Regular]/OT:script=latn;language=DFLT;" at 8.0p
@@ -2090,50 +2105,71 @@ t
  -> ./fonts/NotoSans-Regular.ttf
 Requested font "[fonts/NotoSans-Italic]/OT:script=latn;language=DFLT;" at 8.0pt
  -> ./fonts/NotoSans-Italic.ttf
- [14
+ [17
 
-] [15
+] [18
 
 ]
 File: "../Latex/increasing_points_pres".pdf Graphic file (type QTm)
  <use  ""../Latex/increasing_points_pres".pdf" >
-Overfull \vbox (18.11456pt too high) detected at line 298
+Overfull \vbox (18.11456pt too high) detected at line 300
  []
 
-[16
+[19
 
 ]
 File: "../Latex/increasing_hull_pres".pdf Graphic file (type QTm)
  <use  ""../Latex/increasing_hull_pres".pdf" >
-Overfull \vbox (15.40167pt too high) detected at line 312
+Overfull \vbox (15.40167pt too high) detected at line 314
  []
 
-[17
+[20
 
-] [18
+] [21
+
+] [22
+
+]
+Requested font "[fonts/NotoSans-Italic]/OT:script=latn;language=DFLT;" at 12.0p
+t
+ -> ./fonts/NotoSans-Italic.ttf
+ [23
+
+]
+Overfull \vbox (8.78001pt too high) detected at line 386
+ []
+
+[24
+
+] [25
+
+] (presentation.bbl) [26
+
+] [27
+
 
 ]
 \tf@nav=\write6
 \tf@toc=\write7
 \tf@snm=\write8
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 315.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 315.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 406.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 406.
  (presentation.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 315.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 315.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 315.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 406.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 406.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 406.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 47273 strings out of 428755
- 1057194 string characters out of 3163194
+ 47430 strings out of 428755
+ 1061416 string characters out of 3163194
  1209522 words of memory out of 3000000
- 49892 multiletter control sequences out of 15000+200000
- 19098 words of font info for 126 fonts, out of 3000000 for 9000
+ 50044 multiletter control sequences out of 15000+200000
+ 19114 words of font info for 128 fonts, out of 3000000 for 9000
  1096 hyphenation exceptions out of 8191
- 73i,16n,102p,10385b,3039s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 73i,16n,102p,10385b,3172s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on presentation.pdf (18 pages).
+Output written on presentation.pdf (27 pages).
