@@ -1,4 +1,4 @@
-\documentclass[14pt, handout]{beamer}
+\documentclass[14pt]{beamer}
 
 % Presento style file
 \usepackage{config/presento}
@@ -112,7 +112,7 @@
 	\begin{center}
 		\vspace{-5mm}
 		\begin{fullpageitemize}
-			\item<1->[\rtarrow] Sort the points in clockwise order around the leftmost point - \textbf{Cost:}  \textcolor{colorgreen}{$\bm{O(n\ log\ n)}$}
+			\item<1->[\rtarrow] Sort the points in counter-clockwise order around the leftmost point - \textbf{Cost:}  \textcolor{colorgreen}{$\bm{O(n\ log\ n)}$}
 			\vspace{5mm}
 			\item<2->[\rtarrow] Keep the current hull in a stack $H = \{h_0,\ \ldots,\ h_{curr}\}$.
 			\vspace{5mm}
@@ -224,7 +224,7 @@
 			
 			\fontsize{12}{14}\notosansfont
 			\begin{sublist}
-				\item<5-> Reiterate the algorithm, with $m = 2^{2^{i}}$
+				\item<5-> Reiterate the algorithm, with $m = 2^{2^{i}} = H$
 				\item<6-> Iteration cost: \textcolor{colorgreen}{$\bm{O(n\ log\ H) = O(n2^i)}$}
 				\item<7-> $O\left(\sum_{i = 1}^{\lceil log\ log\ h\rceil}{n2^i}\right) = O(n2^{\lceil log\ log\ h\rceil + 1}) =$ \textcolor{colorgreen}{$\bm{O(n\ log\ h)}$}
 			\end{sublist}
@@ -329,7 +329,7 @@
 				\item<2->[] Given a set $S$ of $n$ points with an hull of size $h$:
 				\vspace{2mm}
 				\item<3-> Jarvis's march $\longrightarrow$ \textbf{Chand and Kapur's gift wrapping} - \textcolor{colorgreen}{$\bm{O(nh)}$}.
-				\item<4-> Graham's scan $\longrightarrow$ \textbf{Quickhull 3D} - \textcolor{colorgreen}{$\bm{O(n\ log\ n)}$}.
+				\item<4-> Graham's scan $\longrightarrow$ \textbf{Preparata and Hong 3D Algorithm} - \textcolor{colorgreen}{$\bm{O(n\ log\ n)}$}.
 				\item<5-> Finding tangents in 2D $\longrightarrow$ \textbf{Supporting planes in 3D with Dobkin-Kirkpatrick hierarchy} - \textcolor{colorgreen}{$\bm{O(log\ n)}$}.
 			\end{sublist}		
 			
@@ -349,7 +349,7 @@
 				\item<4-> Use \textit{breadth first visit} to build the entire hull.
 			\end{sublist}
 			
-			\item<5->[\rtarrow] \textbf{Quickhull 3D, a divide-and-conquer algorithm for convex hulls}	
+			\item<5->[\rtarrow] \textbf{Preparata and Hong 3D algorithm, a divide-and-conquer algorithm for convex hulls}	
 			\fontsize{12}{14}\notosansfont
 			\begin{sublist}
 				\item<6-> Split the set of points $S$ in $S_1$ and $S_2$.
@@ -395,7 +395,7 @@
 	\frametitle{References}
 	\nocite{*}
 	\scriptsize{\bibliographystyle{plainurl}}	
-	\bibliography{bibliography} %bibtex file name without .bib extension
+	\bibliography{../Latex/bibliography} %bibtex file name without .bib extension
 	\begin{baseitemize}
 		\item \textbf{Beamer theme:} \textit{Presento}, by 
 		Ratul Saha. \textit{The research system in Germany}, by Hazem Alsaied

@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{quickhull_3d}
 C.~Bradford Barber, David~P. Dobkin, and Huhdanpaa Hannu.
@@ -10,6 +10,9 @@ T.~M. Chan.
 \newblock Optimal output-sensitive convex hull algorithms in two and three
   dimensions.
 \newblock {\em Discrete {\&} Computational Geometry}, 16(4):361--368, 1996.
+
+\bibitem{gift_wrapping_3d}
+Donald~R. Chand and Sham~S. Kapur.
 
 \bibitem{Emiris:1991:EAR:894044}
 Ioannis~Z. Emiris and John~F. Canny.
@@ -36,6 +39,11 @@ David~G. Kirkpatrick and Raimund Seidel.
 Joseph O'Rourke.
 \newblock {\em Computational Geometry in C}.
 \newblock Cambridge University Press, 2nd edition, 1998.
+
+\bibitem{Preparata:1977:CHF:359423.359430}
+F.~P. Preparata and S.~J. Hong.
+\newblock Convex hulls of finite sets of points in two and three dimensions.
+\newblock {\em Commun. ACM}, 20(2):87--93, February 1977.
 
 \bibitem{Preparata:1985:CGI:4333}
 Franco~P. Preparata and Michael~I. Shamos.

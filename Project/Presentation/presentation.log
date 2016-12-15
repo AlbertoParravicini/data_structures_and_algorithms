@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (MiKTeX 2.9) (preloaded format=xelatex 2016.8.22)  7 DEC 2016 19:28
+This is XeTeX, Version 3.14159265-2.6-0.99992 (MiKTeX 2.9) (preloaded format=xelatex 2016.8.22)  14 DEC 2016 17:17
 entering extended mode
 **presentation.tex
 (presentation.tex
@@ -1944,11 +1944,18 @@ ex-text;mapping=tex-text;" at 4.0pt
  -> ./fonts/NotoSans-Regular.ttf
  [2
 
+] [3
+
+]
+[4
+
+] [5
+
 ]
 Requested font "[fonts/AlegreyaSansSC-Regular]/OT:script=latn;language=DFLT;map
 ping=tex-text;mapping=tex-text;" at 20.74pt
  -> ./fonts/AlegreyaSansSC-Regular.otf
- [3
+ [6
 
 ]
 Requested font "[fonts/NotoSans-Bold]/OT:script=latn;language=DFLT;mapping=tex-
@@ -1964,13 +1971,31 @@ text;mapping=tex-text;" at 7.0pt
 Overfull \vbox (8.36606pt too high) detected at line 50
  []
 
-[4
+[7
 
-] [5
+]
+Overfull \vbox (8.36606pt too high) detected at line 50
+ []
 
-] [6
+[8
 
-] [7
+]
+Overfull \vbox (8.36606pt too high) detected at line 50
+ []
+
+[9
+
+] [10
+
+] [11
+
+] [12
+
+] [13
+
+] [14
+
+] [15
 
 ]
 File: "../Latex/jarvis_march".pdf Graphic file (type QTm)
@@ -1985,7 +2010,7 @@ x-text;mapping=tex-text;" at 12.0pt
 Overfull \vbox (4.34187pt too high) detected at line 81
  []
 
-[8
+[16
 
 ]
 Requested font "[fonts/NotoSans-Regular]/OT:script=latn;language=DFLT;" at 10.0
@@ -2012,7 +2037,7 @@ text;mapping=tex-text;" at 5.0pt
 Requested font "[fonts/NotoSans-Regular]/OT:script=latn;language=DFLT;" at 14.4
 pt
  -> ./fonts/NotoSans-Regular.ttf
- [9
+ [17
 
 ]
 Requested font "[fonts/NotoSans-Regular]/OT:script=latn;language=DFLT;" at 12.0
@@ -2072,13 +2097,34 @@ text;mapping=tex-text;" at 6.0pt
 Requested font "cmr12" at 12.0pt
 Requested font "cmr8" at 8.0pt
 Requested font "cmr6" at 6.0pt
- [10
+ [18
 
-] [11
+] [19
 
-] [12
+] [20
 
-] [13
+] [21
+
+] [22
+
+] [23
+
+] [24
+
+] [25
+
+] [26
+
+] [27
+
+] [28
+
+] [29
+
+] [30
+
+]
+[31
 
 ]
 Requested font "[fonts/NotoSans-Bold]/OT:script=latn;language=DFLT;" at 12.0pt
@@ -2087,7 +2133,43 @@ Requested font "[fonts/NotoSans-Bold]/OT:script=latn;language=DFLT;" at 12.0pt
 Overfull \vbox (7.95338pt too high) detected at line 206
  []
 
-[14
+[32
+
+]
+Overfull \vbox (7.95338pt too high) detected at line 206
+ []
+
+[33
+
+]
+Overfull \vbox (7.95338pt too high) detected at line 206
+ []
+
+[34
+
+]
+Overfull \vbox (7.95338pt too high) detected at line 206
+ []
+
+[35
+
+]
+Overfull \vbox (7.95338pt too high) detected at line 206
+ []
+
+[36
+
+]
+Overfull \vbox (7.95338pt too high) detected at line 206
+ []
+
+[37
+
+]
+Overfull \vbox (7.95338pt too high) detected at line 206
+ []
+
+[38
 
 ]
 File: "../Latex/chan_step".pdf Graphic file (type QTm)
@@ -2095,9 +2177,21 @@ File: "../Latex/chan_step".pdf Graphic file (type QTm)
 Overfull \vbox (15.62898pt too high) detected at line 214
  []
 
-[15
+[39
 
-] [16
+] [40
+
+] [41
+
+] [42
+
+] [43
+
+] [44
+
+] [45
+
+] [46
 
 ]
 Requested font "[fonts/NotoSans-Regular]/OT:script=latn;language=DFLT;" at 8.0p
@@ -2105,17 +2199,18 @@ t
  -> ./fonts/NotoSans-Regular.ttf
 Requested font "[fonts/NotoSans-Italic]/OT:script=latn;language=DFLT;" at 8.0pt
  -> ./fonts/NotoSans-Italic.ttf
- [17
+ [47
 
-] [18
+] [48
 
 ]
 File: "../Latex/increasing_points_pres".pdf Graphic file (type QTm)
- <use  ""../Latex/increasing_points_pres".pdf" >
+
+<use  ""../Latex/increasing_points_pres".pdf" >
 Overfull \vbox (18.11456pt too high) detected at line 300
  []
 
-[19
+[49
 
 ]
 File: "../Latex/increasing_hull_pres".pdf Graphic file (type QTm)
@@ -2123,29 +2218,102 @@ File: "../Latex/increasing_hull_pres".pdf Graphic file (type QTm)
 Overfull \vbox (15.40167pt too high) detected at line 314
  []
 
-[20
+[50
 
-] [21
+] [51
 
-] [22
+] [52
+
+] [53
+
+] [54
+
+] [55
+
+] [56
+
+] [57
 
 ]
 Requested font "[fonts/NotoSans-Italic]/OT:script=latn;language=DFLT;" at 12.0p
 t
  -> ./fonts/NotoSans-Italic.ttf
- [23
+ [58
+
+] [59
+
+] [60
+
+] [61
+
+] [62
+
+] [63
+
+] [64
+
+]
+[65
 
 ]
 Overfull \vbox (8.78001pt too high) detected at line 386
  []
 
-[24
+[66
 
-] [25
+]
+Overfull \vbox (8.78001pt too high) detected at line 386
+ []
 
-] (presentation.bbl) [26
+[67
 
-] [27
+]
+Overfull \vbox (8.78001pt too high) detected at line 386
+ []
+
+[68
+
+]
+Overfull \vbox (8.78001pt too high) detected at line 386
+ []
+
+[69
+
+]
+Overfull \vbox (8.78001pt too high) detected at line 386
+ []
+
+[70
+
+]
+Overfull \vbox (8.78001pt too high) detected at line 386
+ []
+
+[71
+
+]
+Overfull \vbox (8.78001pt too high) detected at line 386
+ []
+
+[72
+
+]
+Overfull \vbox (8.78001pt too high) detected at line 386
+ []
+
+[73
+
+]
+Overfull \vbox (8.78001pt too high) detected at line 386
+ []
+
+[74
+
+] [75
+
+] (presentation.bbl) [76
+
+] [77
 
 
 ]
@@ -2164,12 +2332,12 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 406.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 47430 strings out of 428755
- 1061416 string characters out of 3163194
- 1209522 words of memory out of 3000000
- 50044 multiletter control sequences out of 15000+200000
+ 47534 strings out of 428755
+ 1063731 string characters out of 3163194
+ 1211505 words of memory out of 3000000
+ 50148 multiletter control sequences out of 15000+200000
  19114 words of font info for 128 fonts, out of 3000000 for 9000
  1096 hyphenation exceptions out of 8191
- 73i,16n,102p,10385b,3172s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 73i,16n,102p,10385b,3371s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on presentation.pdf (27 pages).
+Output written on presentation.pdf (77 pages).

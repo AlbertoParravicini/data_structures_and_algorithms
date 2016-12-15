@@ -128,3 +128,34 @@ p <- p + geom_line(size = 1, color ="#244f96", data = X_frame[1:2, ], aes(x = X1
 p <- p + theme_void()
 
 p
+
+
+
+# 3D gift wrapping
+X <- matrix(c(0,0,
+              2, 4,
+              6, 4,
+              4, 10,
+              4, 4,
+              3, 3,
+              4, 5
+              ), ncol = 2, byrow = T)
+
+X_frame = data.frame(X1 = X[, 1], X2 = X[, 2])
+
+p <- ggplot()
+
+p <- p + geom_polygon(color ="#f49e42", data = X_frame[1:3, ], aes(x = X1, y = X2), fill = "#f49e42", alpha = 0.2)
+p <- p + geom_polygon(color ="#427af4", data = X_frame[2:4, ], aes(x = X1, y = X2), fill = "#427af4", alpha = 0.2)
+
+p <- p + geom_line(size = 1, color ="#244f96", data = X_frame[c(1, 5), ], aes(x = X1, y = X2), linetype="dotted")
+p <- p + geom_line(size = 1, color ="#244f96", data = X_frame[c(5, 4), ], aes(x = X1, y = X2), linetype="dotted")
+
+p <- p + geom_curve(aes(xend = 3, yend = 3, x = 4, y = 4 + sqrt(2)), size = 1, fill = "#244f96", color = "#244f96", arrow = arrow(angle = 20, length = unit(0.15, "inches"), ends = "first"))
+
+p <- p + geom_point(size = 2, color ="#f49e42", data = X_frame[1:3, ], aes(x = X1, y = X2))
+p <- p + geom_point(size = 2, color ="#244f96", data = X_frame[4, ], aes(x = X1, y = X2))
+
+p <- p + theme_void()
+
+p

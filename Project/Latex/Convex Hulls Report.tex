@@ -146,7 +146,16 @@ footinclude]{report}
 \setcounter{page}{1}
 
 \section*{Abstract}
-\lipsum[1]
+In this report it is presented an analysis of the optimal output-sensitive algorithms for computing convex hulls in 2 and 3 dimensions, proposed by \textit{T. Chan} \cite{Chan1996}. 
+
+The first section offers the basic background knowledge needed to understand the remaining sections.
+
+The second section presents various algorithms for computing \textbf{bidimensional convex hulls}, with a special focus on \textit{Chan's algorithm}.
+It is also given a \textbf{Python implementation} of \textit{Graham's scan} and of \textit{Chan's algorithm}.
+
+In the third section it is performed an analysis of the \textbf{running time} of \textit{Chan's algorithm}, to test if the empirical results are coherent with the theoretical complexity of the algorithm.
+
+In the fourth and final section, it is presented \textit{Chan's tridimensional algorithm}, along with the algorithms and data-structures required to adapt the bidimensional algorithm to 3 dimensions.
 
 
 \chapter{Theoretical Background}
@@ -178,7 +187,7 @@ This is the case of convex hull algorithms, as presented in the following sectio
 
 
 
-\chapter{Algorithms for computing convex hulls}
+\chapter{Algorithms for computing bidimensional convex hulls}
 In the literature there exists a wide number of algorithms for computing convex hulls in 2 or more dimensions. In this chapter, \textit{Jarvis March} and \textit{Graham Scan} are presented, two commonly employed algorithms for computing 2-dimensional convex hulls. Then, these two algorithms are used to as building blocks of an \textit{optimal algorithm}, originally presented by T. M. Chan. \cite{Chan1996}
 This last algorithm is described in details, and an implementation is provided.\\
 
@@ -515,7 +524,7 @@ def hull_2d(points):
 \subsection{Complexity Analysis}
 The analysis of the running time of \textit{Chan's algorithm} can be decomposed in multiple steps.
 First, compute the convex hull of each subset of $S$, by using Graham Scan. As there are $\lceil n/m \rceil$ subsets, each of size $m$, the cost of this step is 
-$O((n/m) \cdot (mlog \m)) = O(n \cdot log\ m)$.\\
+$O((n/m) \cdot (mlog\ m)) = O(n \cdot log\ m)$.\\
 Then, for all the $H$ points in the final hull, we have to compute the tangent to each subset $S_i$. There will be $H$ points in the final hull, and each step of \textit{Jarvis March} will inspect $\lceil n/m \rceil$ partial hulls.\\
 Finding the tangent is done with binary search in $O(log\ m)$, where $m$ is the size of a partial hull.\\
 Consequently, this phase has an overall cost of $O(H(n/m)log\ m)$.
@@ -618,7 +627,8 @@ The results are summarized below, and displayed in the following plot.
 	\caption{\emph{In {\color{RoyalBlue} blue}, the measured execution times. In {\color{red}red}, the logarithmic regression of the measured execution times. The {\color{RoyalBlue} blue}} vertical lines are the variance of each set size.}
 \end{figure}
 
-
+It can be seen that the logarithmic model is respected for high number of points, while small discrepancies can be found for sets of point of small size.
+This behaviour is probably caused by software overheads
 
 
 \section{\textbf{Third Test:} increasing number of points with uniform distribution}
@@ -699,19 +709,123 @@ It can also be noted how small the convex hull is, compared to the input size: t
 %As the input size increases the \textit{Chan's algorithm }linear scaling (as the \textit{output size is kept constant}) makes it progressively better than the $O(n\ log\ n)$ scaling of \textit{Graham's Scan}.
 
 
-\section{3d algorithm}
-it is possible to extend the algortihm to 3d. the general structure is the smae, but the algorithms that are used as building blocks have to be adapted to work on 3d points.
-Specifically, jarvis marcgh becosmes gift wraping, grahama scan becomes quickhull (or nay other nlogn algortihm). the partuial hulls have to be stored in a dobkin kirpatrick hierarchy so that it is possible to compute the supporting planes (the 3 dimensional equivalent to 2d tangents, which are needed by the gift wrapping algorithm) in logarithmic time, as in the 2d case.
+\chapter{T. Chan's Optimal Algorithm for Tridimensional Hulls}
+\section{Introduction}
+It is possible to extend the previously presented algorithm to tridimensional points.\\
+The general structure remains the same, but the algorithms that are used as building blocks have to be adapted to work in the tridimensional space.\\
+Specifically, \textit{Jarvis's march} is substituted by \textit{Chand and Kapur's gift-wrapping method} \cite{gift_wrapping_3d}, \textit{Graham's scan} is substituted by a $O(n\ log\ n)$ algorithm that works in 3 dimensions, such as \textit{Preparata and Hong divide-and-conquer algorithm} \cite{Preparata:1977:CHF:359423.359430}.\\ Lastly, computing the tangents is substituted by computing \textit{supporting planes}, which can be done in logarithmic time if the partial hulls are stored in \textit{Dobkin-Kirkpatrick hierarchies} \cite{Ericson:2004:RCD:1121584}.
 
-\subsection{3d gift wrapping}
+All these new algorithms have the same complexity of their bidimensional counterparts (with different constant factors, obviously): as such, the overall complexity of the algorithm remains $O(n\ log\ h)$.
 
-\subsection{quickhull}
+The following sections contain a brief analysis of the aforementioned algorithms and data-structures.
 
-\subsection{dobkin kirpatrick}
+\section{Components of the 3D algorithm}
 
-\subsection{supporting planes in 3d}
+\subsection{Tridimensional Gift-Wrapping}
+The tridimensional equivalent of \textit{Jarvis's march} works as follows:
+given a face $f$ of an incomplete convex hull $H$, it is possible to find the 3 faces of $H$ that are adjacent to $f$ by considering the edges $e_j,\ j = 1,2,3$ of $f$.\\
+Consider an edge $e_j$: the next face to be added to the hull will be formed by joining a point $p_j \notin e_j$ to the vertices of $e_j$.\\
+The point $p_j$ will be picked so that the angle between $f$ and the new face is maximized. \\
+As there are $n$ points that have to be considered, the cost of this wrapping step is $O(n)$.\\
 
-\subsection{pseudocode}
+By generating the faces of the hull through a \textit{breadth first visit} or a \textit{depth first visit}, and by using a dictionary to check if a face has already been included to the hull, it is possible to generate the entire convex hull in $O(nh)$ time.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth, center, keepaspectratio=1]{{"gift_wrapping_3d"}.pdf}
+	\caption{One step of the tridimensional gift wrapping algorithm}
+\end{figure}
+
+\subsection{Preparata and Hong's Algorithm for 3D Hulls}
+Instead of \textit{Graham's scan}, it is required to compute the partial hulls $H_1,\ \ldots,\ H_{\lceil n/m \rceil}$ with an $O(n\ log\ n)$ algorithm that supports tridimensional points. \\
+One possible choice is \textit{Preparata and Hong's algorithm} \cite{Preparata:1977:CHF:359423.359430}.\\
+The algorithm uses a \textbf{divide-and-conquer} approach to compute the convex hull: points are recursively split in two groups, until the base case (i.e. a tetrahedron) is found. Then, the groups are merged, two-by-two.
+
+The merging approach works as follow:
+given two non-intersecting convex polyhedrons $A$ and $B$, initially find a tangent line $ab$ from $A$ to $B$, by projecting them on a bidimensional plane and applying a bidimensional algorithm for computing tangents.\\
+The goal is to wrap $A$ and $B$ is a sort of "cylinder" of triangular faces. To do so, build a triangle $abc$ by picking a point $c \in A$ or $c \in B$. $c$ is picked following a principle similar to \textit{gift-wrapping}; from a face $f$ of the "cylinder", an edge $e_J$ is chosen: the new face to be added will be the one touching $e_j$ that maximizes the angle with $f$. \\
+Reiterate to build more triangles, until the edge $ab$ is found again. Then, discard the portions of $A$ and $B$ that are "hidden" by the cylinder.
+
+One merging step takes $O(n)$, and because the sets of points are split in two at each step, the recursion has form
+$T(n) = 2T(\frac{n}{2}) + O(n)$, which gives complexity $T(n) = O(n\ log\ n)$, according to the \textit{Master Theorem}.
+
+\subsection{Dobkin-Kirkpatrick Hierarchies}
+The \textbf{Dobkin-Kirkpatrick hierarchy} of a polytope $P$ is a sequence $P_0,\ \ldots,\ P_k$ of nested increasingly smaller approximations of $P$, with $P = P_0$.\\
+Given $P_i$, $P_{i+1}$ is computed by selecting a maximal set of \textit{independent} (non-adjacent) vertices of $P_i$.\\
+The construction of the hierarchy stops when the $P_k$ is the smallest possible polytope, given the number of dimensions of $P$ ($P_k$ is a tetrahedron, in 3 dimensions).
+
+Building $P_{i+1}$ can be done with a simple greedy procedure, that after adding a vertex $p$ to $P_{i+1}$ marks the neighbours of $p$, so that they cannot be added to $P_{i+1}$.
+
+$P_{i+1}$ is guaranteed to be a fraction of the size of $P_i$ (half the size, in 2 dimensions). As such, the height of the hierarchy is $O(log\ n)$.
+
+To construct $P_{i+1}$ it is necessary to scan once all its vertices, giving a step of complexity $O(|P_{i+1}|)$.
+The overall cost will be (with $q$ being an integer constant $>1$ dependent on the number of dimensions):
+$$n + \frac{n}{q} + \frac{n}{q^2} + \ldots + 1 = O(n)$$
+
+\subsection{Computing Supporting Planes in 3D}
+In 3 dimensions, instead of computing the tangent of a point to a polygon, it is necessary to compute the supporting plane to a polyhedron $P$, imposing that the plane passes through a given edge $e_j$ (external to $P$). \\
+The supporting plane of a polyhedron $P$ is a plane that touches $P$ in one point $p$ (which will be the equivalent of the 2 dimensional tangent point) and such that $P$ is completely contained in one of the half-spaces defined by the plane. \\
+Given $e_j$, there will be 2 supporting planes to $P$; in \textit{Chan's algorithm} as it is necessary to maximize the angle given by a face of the hull delimited by $e_j$ and $p$, only the bottom plane will be kept (the one such that $P$ is completely above the plane).
+
+To compute the supporting plane in logarithmic time, it is necessary to use the \textit{Dobkin-Kirkpatrick hierarchy} of the polyhedron $P$.\\
+Initially, it is computed the supporting plane of the innermost polyhedron $P_k$. $P_k$ is a tetrahedron, so the procedure is done in constant time.\\
+Then, the hierarchy is climbed bottom-up: when moving from $P_{i+1}$ to $P_i$, the tangency point $p$ will remain the same or will move to a neighbour of $p$ in $P_i$. As the number of neighbours is finite, checking if they are tangent points is also done in constant time.
+
+As the hierarchy has height $O(log\ n)$, finding the required supporting plane will take logarithmic time.
+
+
+\section{Pseudocode}
+
+\begin{algorithm}[H]
+	\SetKwInput{Input}{Input}
+	\SetKwInput{Output}{Output}
+	\SetKwFor{Loop}{Loop}{}{EndLoop}
+	\DontPrintSemicolon
+	\SetAlgoVlined
+	\Input{a list $S$ of tridimensional points, the parameters $m, H$}
+	\Output{the convex hull of the set, sorted counterclockwise, or an empty list, if $H$ is $<$ $h$}
+	Partition $S$ into subsets $S_1,\ \ldots,\ S_{\lceil n/m \rceil}$.\\
+	\For{$i = 1,\ \ldots,\  \lceil n/m \rceil$}
+	{
+		Compute the convex hull of $S_i$ by using Preparata and Hong's algorithm, store each partial hull in a Dobkin-Kirkpatrick hierarchy.
+	}  
+	$H = \{f_0\}$, with $f_0$ some facet of $conv(P)$. $H$ is the final hull, implemented as a dictionary.\\
+	$Q = \{f_0\}$, with $Q$ a queue or a stack, used to store the faces processed by \textit{gift-wrapping}.
+	
+	
+	\For{$k = 1,\ \ldots, \ 2H - 4$}
+	{
+		\If{$Q = \emptyset$}{return $F$}
+		\For{$i = 1,\ \ldots,\ \lceil n/m \rceil$}
+		{
+			Pick $f \in Q$, remove it from $Q$.\\
+			Let $e_j,\ j=1,2,3$ the edges of $f$.\\
+			\For{$j=1,2,3$}
+			{
+				Compute the point $p_j$ that maximizes the angle between $f$ and the face formed by $e_j$ and $p_j$, by searching the hierarchy of the partial convex hull $H_i$.
+			}
+		}
+		Add the face formed by $p_j$ and $e_j$, for $j=1,2,3$ to $H$ and $Q$, if the face isn't already in $H$.
+	}
+	
+	return \textit{incomplete}
+	\caption{ChanHullStep3D, a step of Chan's 3D algorithm}
+\end{algorithm}
+
+\begin{algorithm}[H]
+	\SetKwInput{Input}{Input}
+	\SetKwInput{Output}{Output}
+	\SetKwFor{Loop}{Loop}{}{EndLoop}
+	\DontPrintSemicolon
+	\SetAlgoVlined
+	\Input{a list $S$ of tridimensional points}
+	\Output{the convex hull of the set}
+	\For{$i = 1,2,\ \ldots$}{
+		L = ChanHullStep3D(S, m, H), where $m = H = min\{|S|, 2^{2^i}\}$\\
+		\lIf{L $\ne$ incomplete}{return L}
+	}
+	\caption{Chan's 3D algorithm}
+\end{algorithm}
 
 \bibliographystyle{plainurl}
 \bibliography{bibliography}
